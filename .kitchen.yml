@@ -1,0 +1,40 @@
+---
+driver:
+  name: vagrant
+  customize:
+    memory: 2048
+
+driver_config:
+  require_chef_omnibus: false
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: chef/centos-7.0
+    driver:
+      box: chef/centos-7.0
+      box_url: https://vagrantcloud.com/chef/boxes/centos-7.0/versions/1/providers/virtualbox.box
+    attributes:
+      ip:
+        controller: 10.10.10.1
+      creds:
+        admin_password: mySuperSecret 
+
+suites:
+  - name: controller
+    driver:
+      vm_hostname: controller.testcloud.com
+      network:
+        - ["private_network", {type: "dhcp"}]
+    run_list:
+      - recipe[openstack::default]
+    attributes:
+  - name: node
+    driver:
+      vm_hostname: node.testcloud.com
+      network:
+        - ["private_network", {type: "dhcp"}]
+    run_list:
+      - recipe[openstack::default]
+    attributes:
