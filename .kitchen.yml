@@ -4,20 +4,18 @@ driver:
   customize:
     memory: 2048
 
-driver_config:
+provisioner:
+  name: chef_solo
   require_chef_omnibus: false
 
-provisioner:
-  name: chef_zero
-
 platforms:
-  - name: chef/centos-7.0
+  - name: centos-7.0
     driver:
-      box: chef/centos-7.0
-      box_url: https://vagrantcloud.com/chef/boxes/centos-7.0/versions/1/providers/virtualbox.box
+      box: lamudi/centos-7.0
+      box_url: https://vagrantcloud.com/lamudi/boxes/centos-7.0/versions/2/providers/virtualbox.box
     attributes:
       ip:
-        controller: 10.10.10.1
+        controller: 172.28.128.4
       creds:
         admin_password: mySuperSecret 
 
