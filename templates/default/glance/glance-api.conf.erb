@@ -8,7 +8,7 @@ rabbit_host = <%=node[:ip][:rabbitmq]%>
 swift_store_create_container_on_put = True
 swift_store_key = <%=node[:creds][:admin_password]%>
 db_enforce_mysql_charset = False
-
+registry_host = 127.0.0.1
 [database]
 connection = mysql://glance:<%=node[:creds][:mysql_password]%>@localhost/glance
 

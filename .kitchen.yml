@@ -2,8 +2,8 @@
 driver:
   name: vagrant
   customize:
-    memory: 4096
-    cpus: 4
+    memory: 512
+    cpus: 1
 
 provisioner:
   name: chef_zero
@@ -13,16 +13,39 @@ platforms:
   - name: fedora-20
     attributes:
       ip:
-        controller: 172.28.128.12
+        rabbitmq: 172.28.128.12
+        keystone: 172.28.128.13
+        glance: 172.28.128.14
+        cinder: 172.28.128.15 
+        nova: 172.28.128.16
+        neutron: 172.28.128.17
+        swift-proxy: 172.28.128.18
+        heat: 172.28.128.19
+        ceilometer: 172.28.128.20
+        sahara: 172.28.128.21
       creds:
         admin_password: mySuperSecret 
     data_bags_path: "test/integration/data_bags"
 
 suites:
-  - name: controller
+  - name: rabbitmq-server
     driver:
-      vm_hostname: controller.testcloud.com
+      vm_hostname: rabbit.testcloud.com
       network:
         - ["private_network", {ip: "172.28.128.12"}]
     run_list:
-      - recipe[centos_cloud]
+      - recipe[centos_cloud::rabbitmq-server]
+  - name: keystone
+    driver:
+      vm_hostname: keystone.testcloud.com
+      network:
+        - ["private_network", {ip: "172.28.128.13"}]
+    run_list:
+      - recipe[centos_cloud::keystone]
+  - name: glance
+    driver:
+      vm_hostname: glance.testcloud.com
+      network:
+        - ["private_network", {ip: "172.28.128.14"}]
+    run_list:
+      - recipe[centos_cloud::glance]

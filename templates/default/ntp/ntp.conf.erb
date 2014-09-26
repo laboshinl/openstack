@@ -1,11 +1,25 @@
-driftfile /var/lib/ntp/drift
+driftfile /var/lib/ntp/ntp.drift
 
-restrict default kod nomodify notrap nopeer noquery
-restrict -6 default kod nomodify notrap nopeer noquery
+statistics loopstats peerstats clockstats
+filegen loopstats file loopstats type day enable
+filegen peerstats file peerstats type day enable
+filegen clockstats file clockstats type day enable
+
+server 0.pool.ntp.org
+server 1.pool.ntp.org
+server 2.pool.ntp.org
+server 3.pool.ntp.org
+
+restrict 46.8.40.31 nomodify
+restrict 78.140.251.2 nomodify
+restrict 95.213.132.254 nomodify
+restrict 95.213.132.250 nomodify
+
+restrict -4 default nomodify nopeer noquery notrap
+restrict -6 default nomodify nopeer noquery notrap
+
 restrict 127.0.0.1
-restrict -6 ::1
+restrict ::1
 
-server 0.ru.pool.ntp.org
-server 1.ru.pool.ntp.org
-server 2.ru.pool.ntp.org
-server 3.ru.pool.ntp.org
+interface ignore wildcard
+interface listen <%=node[:auto][:external_nic]%>
