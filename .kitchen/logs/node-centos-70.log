@@ -1,0 +1,538 @@
+I, [2014-09-25T14:08:12.039511 #17324]  INFO -- node-centos-70: -----> Destroying <node-centos-70>...
+I, [2014-09-25T14:08:12.039796 #17324]  INFO -- node-centos-70: Finished destroying <node-centos-70> (0m0.00s).
+I, [2014-09-25T14:13:05.645175 #17350]  INFO -- node-centos-70: -----> Creating <node-centos-70>...
+I, [2014-09-25T14:13:06.820997 #17350]  INFO -- node-centos-70: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-09-25T14:13:07.167277 #17350]  INFO -- node-centos-70: ==> default: Importing base box 'opscode-centos-7.0'...
+[KProgress: 20%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...I, [2014-09-25T14:13:32.194631 #17350]  INFO -- node-centos-70: ==> default: Setting the name of the VM: node-centos-70_default_1411640012158_38181
+I, [2014-09-25T14:13:32.533120 #17350]  INFO -- node-centos-70: ==> default: Fixed port collision for 22 => 2222. Now on port 2200.
+I, [2014-09-25T14:13:32.576358 #17350]  INFO -- node-centos-70: ==> default: Clearing any previously set network interfaces...
+I, [2014-09-25T14:13:33.516507 #17350]  INFO -- node-centos-70: ==> default: Preparing network interfaces based on configuration...
+I, [2014-09-25T14:13:33.516852 #17350]  INFO -- node-centos-70:     default: Adapter 1: nat
+I, [2014-09-25T14:13:33.517140 #17350]  INFO -- node-centos-70:     default: Adapter 2: hostonly
+I, [2014-09-25T14:13:33.585692 #17350]  INFO -- node-centos-70: ==> default: Forwarding ports...
+I, [2014-09-25T14:13:33.630694 #17350]  INFO -- node-centos-70:     default: 22 => 2200 (adapter 1)
+I, [2014-09-25T14:13:33.840446 #17350]  INFO -- node-centos-70: ==> default: Running 'pre-boot' VM customizations...
+I, [2014-09-25T14:13:33.974041 #17350]  INFO -- node-centos-70: ==> default: Booting VM...
+I, [2014-09-25T14:13:34.221772 #17350]  INFO -- node-centos-70: ==> default: Waiting for machine to boot. This may take a few minutes...
+I, [2014-09-25T14:13:34.435060 #17350]  INFO -- node-centos-70:     default: SSH address: 127.0.0.1:2200
+I, [2014-09-25T14:13:34.435173 #17350]  INFO -- node-centos-70:     default: SSH username: vagrant
+I, [2014-09-25T14:13:34.435200 #17350]  INFO -- node-centos-70:     default: SSH auth method: private key
+I, [2014-09-25T14:13:49.537634 #17350]  INFO -- node-centos-70:     default: Warning: Connection timeout. Retrying...
+==> default: Machine booted and ready!==> default: Checking for guest additions in VM...I, [2014-09-25T14:13:51.269367 #17350]  INFO -- node-centos-70: ==> default: Setting hostname...
+I, [2014-09-25T14:13:53.015591 #17350]  INFO -- node-centos-70: ==> default: Configuring and enabling network interfaces...
+I, [2014-09-25T14:13:54.941905 #17350]  INFO -- node-centos-70: ==> default: Machine not provisioning because `--no-provision` is specified.
+I, [2014-09-25T14:13:56.029261 #17350]  INFO -- node-centos-70: Vagrant instance <node-centos-70> created.
+I, [2014-09-25T14:13:56.030022 #17350]  INFO -- node-centos-70: Finished creating <node-centos-70> (0m50.38s).
+I, [2014-09-25T14:13:56.030102 #17350]  INFO -- node-centos-70: -----> Converging <node-centos-70>...
+I, [2014-09-25T14:13:56.030586 #17350]  INFO -- node-centos-70: Preparing files for transfer
+I, [2014-09-25T14:13:56.030832 #17350]  INFO -- node-centos-70: Resolving cookbook dependencies with Berkshelf 3.1.5...
+I, [2014-09-25T14:13:56.063747 #17350]  INFO -- node-centos-70: Removing non-cookbook files before transfer
+I, [2014-09-25T14:13:56.293999 #17350]  INFO -- node-centos-70: -----> Installing Chef Omnibus (true)
+I, [2014-09-25T14:13:56.294110 #17350]  INFO -- node-centos-70: downloading https://www.getchef.com/chef/install.sh
+I, [2014-09-25T14:13:56.294137 #17350]  INFO -- node-centos-70:   to file /tmp/install.sh
+I, [2014-09-25T14:13:56.294157 #17350]  INFO -- node-centos-70: trying wget...
+I, [2014-09-25T14:14:02.264710 #17350]  INFO -- node-centos-70: Downloading Chef  for el...
+I, [2014-09-25T14:14:02.266674 #17350]  INFO -- node-centos-70: downloading https://www.getchef.com/chef/metadata?v=&prerelease=false&nightlies=false&p=el&pv=7&m=x86_64
+I, [2014-09-25T14:14:02.266740 #17350]  INFO -- node-centos-70:   to file /tmp/install.sh.10661/metadata.txt
+I, [2014-09-25T14:14:02.266764 #17350]  INFO -- node-centos-70: trying wget...
+I, [2014-09-25T14:14:08.031051 #17350]  INFO -- node-centos-70: url	https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpm
+I, [2014-09-25T14:14:08.031147 #17350]  INFO -- node-centos-70: md5	8731b6558009fc322f6469b415a759f8
+I, [2014-09-25T14:14:08.031176 #17350]  INFO -- node-centos-70: sha256	dc7bc9d6084d29ffec67664fdae455406c3e7657c4aebcbef19f5a9ba459db37
+I, [2014-09-25T14:14:08.031200 #17350]  INFO -- node-centos-70: yolo	true
+I, [2014-09-25T14:14:08.036518 #17350]  INFO -- node-centos-70: downloaded metadata file looks valid...
+I, [2014-09-25T14:14:08.051065 #17350]  INFO -- node-centos-70: downloading https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpm
+I, [2014-09-25T14:14:08.051154 #17350]  INFO -- node-centos-70:   to file /tmp/install.sh.10661/chef-11.16.2-1.el6.x86_64.rpm
+I, [2014-09-25T14:14:08.051184 #17350]  INFO -- node-centos-70: trying wget...
+I, [2014-09-25T14:18:14.896214 #17350]  INFO -- node-centos-70: Comparing checksum with sha256sum...
+I, [2014-09-25T14:18:15.040573 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:15.040647 #17350]  INFO -- node-centos-70: WARNING: Chef-Client has not been regression tested on this O/S Distribution
+I, [2014-09-25T14:18:15.040670 #17350]  INFO -- node-centos-70: WARNING: Do not use this configuration for Production Applications.  Use at your own risk.
+I, [2014-09-25T14:18:15.040696 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:15.040717 #17350]  INFO -- node-centos-70: Installing Chef 
+I, [2014-09-25T14:18:15.040736 #17350]  INFO -- node-centos-70: installing with rpm...
+I, [2014-09-25T14:18:15.072530 #17350]  INFO -- node-centos-70: warning: /tmp/install.sh.10661/chef-11.16.2-1.el6.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+Preparing...                          I, [2014-09-25T14:18:15.286730 #17350]  INFO -- node-centos-70:                            (100%)#                                 (100%)##                                (100%)###                               (100%)####                              (100%)#####                             (100%)######                            (100%)#######                           (100%)########                          (100%)#########                         (100%)##########                        (100%)###########                       (100%)############                      (100%)#############                     (100%)##############                    (100%)###############                   (100%)################                  (100%)#################                 (100%)##################                (100%)###################               (100%)####################              (100%)#####################             (100%)######################            (100%)#######################           (100%)########################          (100%)#########################         (100%)##########################        (100%)###########################       (100%)############################      (100%)#############################     (100%)##############################    (100%)###############################   (100%)################################  (100%)################################# (100%)################################# [100%]
+I, [2014-09-25T14:18:15.293491 #17350]  INFO -- node-centos-70: Updating / installing...
+I, [2014-09-25T14:18:15.293573 #17350]  INFO -- node-centos-70:    1:chef-11.16.2-1.el6               
+                                  (  1%)#                                 (  4%)##                                (  7%)###                               ( 10%)####                              ( 13%)#####                             ( 16%)######                            ( 19%)#######                           ( 22%)########                          ( 25%)#########                         ( 28%)##########                        ( 31%)###########                       ( 34%)############                      ( 37%)#############                     ( 40%)##############                    ( 43%)###############                   ( 46%)################                  ( 49%)#################                 ( 51%)##################                ( 54%)###################               ( 57%)####################              ( 60%)#####################             ( 63%)######################            ( 66%)#######################           ( 69%)########################          ( 72%)#########################         ( 75%)##########################        ( 78%)###########################       ( 81%)############################      ( 84%)#############################     ( 87%)##############################    ( 90%)###############################   ( 93%)################################  ( 96%)I, [2014-09-25T14:18:18.159936 #17350]  INFO -- node-centos-70: ################################# ( 99%)################################# [100%]
+I, [2014-09-25T14:18:18.661193 #17350]  INFO -- node-centos-70: Thank you for installing Chef!
+I, [2014-09-25T14:18:18.726168 #17350]  INFO -- node-centos-70: Transfering files to <node-centos-70>
+I, [2014-09-25T14:18:20.017776 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:18+00:00] INFO: Forking chef instance to converge...
+I, [2014-09-25T14:18:20.029591 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:18+00:00] WARN: 
+I, [2014-09-25T14:18:20.029666 #17350]  INFO -- node-centos-70: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+I, [2014-09-25T14:18:20.029693 #17350]  INFO -- node-centos-70: SSL validation of HTTPS requests is disabled. HTTPS connections are still
+I, [2014-09-25T14:18:20.029716 #17350]  INFO -- node-centos-70: encrypted, but chef is not able to detect forged replies or man in the middle
+I, [2014-09-25T14:18:20.029736 #17350]  INFO -- node-centos-70: attacks.
+I, [2014-09-25T14:18:20.029754 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:20.029772 #17350]  INFO -- node-centos-70: To fix this issue add an entry like this to your configuration file:
+I, [2014-09-25T14:18:20.029790 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:20.029808 #17350]  INFO -- node-centos-70: ```
+I, [2014-09-25T14:18:20.029826 #17350]  INFO -- node-centos-70:   # Verify all HTTPS connections (recommended)
+I, [2014-09-25T14:18:20.029843 #17350]  INFO -- node-centos-70:   ssl_verify_mode :verify_peer
+I, [2014-09-25T14:18:20.029861 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:20.029879 #17350]  INFO -- node-centos-70:   # OR, Verify only connections to chef-server
+I, [2014-09-25T14:18:20.029897 #17350]  INFO -- node-centos-70:   verify_api_cert true
+I, [2014-09-25T14:18:20.029915 #17350]  INFO -- node-centos-70: ```
+I, [2014-09-25T14:18:20.029977 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:20.030006 #17350]  INFO -- node-centos-70: To check your SSL configuration, or troubleshoot errors, you can use the
+I, [2014-09-25T14:18:20.030024 #17350]  INFO -- node-centos-70: `knife ssl check` command like so:
+I, [2014-09-25T14:18:20.030042 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:20.030060 #17350]  INFO -- node-centos-70: ```
+I, [2014-09-25T14:18:20.030078 #17350]  INFO -- node-centos-70:   knife ssl check -c /tmp/kitchen/solo.rb
+I, [2014-09-25T14:18:20.030096 #17350]  INFO -- node-centos-70: ```
+I, [2014-09-25T14:18:20.030114 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:20.030132 #17350]  INFO -- node-centos-70: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+I, [2014-09-25T14:18:20.030149 #17350]  INFO -- node-centos-70: 
+I, [2014-09-25T14:18:20.067219 #17350]  INFO -- node-centos-70: Starting Chef Client, version 11.16.2[0m
+I, [2014-09-25T14:18:20.067299 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:18+00:00] INFO: *** Chef 11.16.2 ***
+I, [2014-09-25T14:18:20.067322 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:18+00:00] INFO: Chef-client pid: 10760
+I, [2014-09-25T14:18:37.064082 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:35+00:00] INFO: Setting the run_list to ["recipe[openstack::default]"] from CLI options
+I, [2014-09-25T14:18:37.071134 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:35+00:00] INFO: Run List is [recipe[openstack::default]]
+I, [2014-09-25T14:18:37.071215 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:35+00:00] INFO: Run List expands to [openstack::default]
+I, [2014-09-25T14:18:37.071242 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:35+00:00] INFO: Starting Chef Run for node-centos-70
+I, [2014-09-25T14:18:37.071265 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:35+00:00] INFO: Running start handlers
+I, [2014-09-25T14:18:37.071287 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:35+00:00] INFO: Start handlers complete.
+I, [2014-09-25T14:18:37.071309 #17350]  INFO -- node-centos-70: Compiling Cookbooks...[0m
+I, [2014-09-25T14:18:37.071331 #17350]  INFO -- node-centos-70: Converging 0 resources[0m
+I, [2014-09-25T14:18:37.071353 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:35+00:00] INFO: Chef Run complete in 0.003106764 seconds
+I, [2014-09-25T14:18:37.071375 #17350]  INFO -- node-centos-70: [0m
+I, [2014-09-25T14:18:37.071396 #17350]  INFO -- node-centos-70: Running handlers:[0m
+I, [2014-09-25T14:18:37.071432 #17350]  INFO -- node-centos-70: [2014-09-25T10:18:35+00:00] INFO: Running report handlers
+I, [2014-09-25T14:18:37.071456 #17350]  INFO -- node-centos-70: Running handlers complete
+I, [2014-09-25T14:18:37.071478 #17350]  INFO -- node-centos-70: [0m[2014-09-25T10:18:35+00:00] INFO: Report handlers complete
+I, [2014-09-25T14:18:37.071500 #17350]  INFO -- node-centos-70: Chef Client finished, 0/0 resources updated in 17.060853933 seconds[0m
+I, [2014-09-25T14:18:37.130920 #17350]  INFO -- node-centos-70: Finished converging <node-centos-70> (4m41.10s).
+I, [2014-09-25T14:18:37.131049 #17350]  INFO -- node-centos-70: -----> Setting up <node-centos-70>...
+I, [2014-09-25T14:18:37.132023 #17350]  INFO -- node-centos-70: Finished setting up <node-centos-70> (0m0.00s).
+I, [2014-09-25T14:18:37.132143 #17350]  INFO -- node-centos-70: -----> Verifying <node-centos-70>...
+I, [2014-09-25T14:18:37.133033 #17350]  INFO -- node-centos-70: Finished verifying <node-centos-70> (0m0.00s).
+I, [2014-09-25T14:18:47.235950 #19488]  INFO -- node-centos-70: -----> Destroying <node-centos-70>...
+I, [2014-09-25T14:18:48.901158 #19488]  INFO -- node-centos-70: ==> default: Forcing shutdown of VM...
+I, [2014-09-25T14:18:52.404663 #19488]  INFO -- node-centos-70: ==> default: Destroying VM and associated drives...
+I, [2014-09-25T14:18:52.796596 #19488]  INFO -- node-centos-70: Vagrant instance <node-centos-70> destroyed.
+I, [2014-09-25T14:18:52.797303 #19488]  INFO -- node-centos-70: Finished destroying <node-centos-70> (0m5.56s).
+I, [2014-09-25T14:24:11.240279 #20175]  INFO -- node-centos-70: -----> Creating <node-centos-70>...
+I, [2014-09-25T14:24:12.131946 #20175]  INFO -- node-centos-70: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-09-25T14:24:12.304178 #20175]  INFO -- node-centos-70: ==> default: You assigned a static IP ending in ".1" to this machine.
+I, [2014-09-25T14:24:12.304256 #20175]  INFO -- node-centos-70: ==> default: This is very often used by the router and can cause the
+I, [2014-09-25T14:24:12.304278 #20175]  INFO -- node-centos-70: ==> default: network to not work properly. If the network doesn't work
+I, [2014-09-25T14:24:12.304296 #20175]  INFO -- node-centos-70: ==> default: properly, try changing this IP.
+I, [2014-09-25T14:24:12.410447 #20175]  INFO -- node-centos-70: ==> default: Importing base box 'opscode-centos-7.0'...
+[KProgress: 20%[KProgress: 50%[KProgress: 70%[KProgress: 90%[KI, [2014-09-25T14:24:34.163321 #20175]  INFO -- node-centos-70: ==> default: Matching MAC address for NAT networking...
+I, [2014-09-25T14:24:34.360670 #20175]  INFO -- node-centos-70: ==> default: You assigned a static IP ending in ".1" to this machine.
+I, [2014-09-25T14:24:34.360752 #20175]  INFO -- node-centos-70: ==> default: This is very often used by the router and can cause the
+I, [2014-09-25T14:24:34.360774 #20175]  INFO -- node-centos-70: ==> default: network to not work properly. If the network doesn't work
+I, [2014-09-25T14:24:34.360793 #20175]  INFO -- node-centos-70: ==> default: properly, try changing this IP.
+I, [2014-09-25T14:24:34.715106 #20175]  INFO -- node-centos-70: ==> default: Setting the name of the VM: node-centos-70_default_1411640674677_27212
+I, [2014-09-25T14:24:35.083726 #20175]  INFO -- node-centos-70: ==> default: Fixed port collision for 22 => 2222. Now on port 2200.
+==> default: Clearing any previously set network interfaces...I, [2014-09-25T14:24:35.362808 #20175]  INFO -- node-centos-70: ==> default: Preparing network interfaces based on configuration...
+I, [2014-09-25T14:24:35.363081 #20175]  INFO -- node-centos-70:     default: Adapter 1: nat
+I, [2014-09-25T14:24:35.363337 #20175]  INFO -- node-centos-70:     default: Adapter 2: hostonly
+I, [2014-09-25T14:24:35.471257 #20175]  INFO -- node-centos-70: ==> default: Forwarding ports...
+I, [2014-09-25T14:24:35.513015 #20175]  INFO -- node-centos-70:     default: 22 => 2200 (adapter 1)
+I, [2014-09-25T14:24:35.738071 #20175]  INFO -- node-centos-70: ==> default: Running 'pre-boot' VM customizations...
+I, [2014-09-25T14:24:35.893646 #20175]  INFO -- node-centos-70: ==> default: Booting VM...
+I, [2014-09-25T14:24:36.138092 #20175]  INFO -- node-centos-70: ==> default: Waiting for machine to boot. This may take a few minutes...
+I, [2014-09-25T14:24:36.331584 #20175]  INFO -- node-centos-70:     default: SSH address: 127.0.0.1:2200
+I, [2014-09-25T14:24:36.331712 #20175]  INFO -- node-centos-70:     default: SSH username: vagrant
+I, [2014-09-25T14:24:36.331742 #20175]  INFO -- node-centos-70:     default: SSH auth method: private key
+I, [2014-09-25T14:24:51.430272 #20175]  INFO -- node-centos-70:     default: Warning: Connection timeout. Retrying...
+I, [2014-09-25T14:24:52.141807 #20175]  INFO -- node-centos-70: ==> default: Machine booted and ready!
+I, [2014-09-25T14:24:52.142372 #20175]  INFO -- node-centos-70: ==> default: Checking for guest additions in VM...
+I, [2014-09-25T14:24:52.182887 #20175]  INFO -- node-centos-70: ==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...E, [2014-09-25T14:25:02.138858 #20175] ERROR -- node-centos-70: Create failed on instance <node-centos-70>.
+E, [2014-09-25T14:25:02.139004 #20175] ERROR -- node-centos-70: ------Exception-------
+E, [2014-09-25T14:25:02.139029 #20175] ERROR -- node-centos-70: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2014-09-25T14:25:02.139047 #20175] ERROR -- node-centos-70: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider=virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: You assigned a static IP ending in ".1" to this machine.
+==> default: This is very often used by the router and can cause the
+==> default: network to not work properly. If the network doesn't work
+==> default: properly, try changing this IP.
+==> default: Importing base box 'opscode-centos-7.0'...
+[KProgress: 20%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+==> default: You assigned a static IP ending in ".1" to this machine.
+==> default: This is very often used by the router and can cause the
+==> default: network to not work properly. If the network doesn't work
+==> default: properly, try changing this IP.
+==> default: Setting the name of the VM: node-centos-70_default_1411640674677_27212
+==> default: Fixed port collision for 22 => 2222. Now on port 2200.
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 22 => 2200 (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2200
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...
+STDERR: The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+/sbin/ifup enp0s8
+
+Stdout from the command:
+
+ERROR    : [/etc/sysconfig/network-scripts/ifup-eth] Error, some other host already uses address 10.10.10.1.
+
+
+Stderr from the command:
+---- End output of vagrant up --no-provision --provider=virtualbox ----
+Ran vagrant up --no-provision --provider=virtualbox returned 1
+E, [2014-09-25T14:25:02.139066 #20175] ERROR -- node-centos-70: ---Nested Exception---
+E, [2014-09-25T14:25:02.139082 #20175] ERROR -- node-centos-70: Class: Mixlib::ShellOut::ShellCommandFailed
+E, [2014-09-25T14:25:02.139099 #20175] ERROR -- node-centos-70: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider=virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: You assigned a static IP ending in ".1" to this machine.
+==> default: This is very often used by the router and can cause the
+==> default: network to not work properly. If the network doesn't work
+==> default: properly, try changing this IP.
+==> default: Importing base box 'opscode-centos-7.0'...
+[KProgress: 20%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+==> default: You assigned a static IP ending in ".1" to this machine.
+==> default: This is very often used by the router and can cause the
+==> default: network to not work properly. If the network doesn't work
+==> default: properly, try changing this IP.
+==> default: Setting the name of the VM: node-centos-70_default_1411640674677_27212
+==> default: Fixed port collision for 22 => 2222. Now on port 2200.
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 22 => 2200 (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2200
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...
+STDERR: The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+/sbin/ifup enp0s8
+
+Stdout from the command:
+
+ERROR    : [/etc/sysconfig/network-scripts/ifup-eth] Error, some other host already uses address 10.10.10.1.
+
+
+Stderr from the command:
+---- End output of vagrant up --no-provision --provider=virtualbox ----
+Ran vagrant up --no-provision --provider=virtualbox returned 1
+E, [2014-09-25T14:25:02.139129 #20175] ERROR -- node-centos-70: ------Backtrace-------
+E, [2014-09-25T14:25:02.139147 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
+E, [2014-09-25T14:25:02.139164 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/shell_out.rb:59:in `run_command'
+E, [2014-09-25T14:25:02.139181 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/base.rb:158:in `run_command'
+E, [2014-09-25T14:25:02.139198 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:123:in `run'
+E, [2014-09-25T14:25:02.139215 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:68:in `create'
+E, [2014-09-25T14:25:02.139231 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-25T14:25:02.139248 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-25T14:25:02.139264 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:305:in `call'
+E, [2014-09-25T14:25:02.139281 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:305:in `block in synchronize_or_call'
+E, [2014-09-25T14:25:02.139297 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:303:in `synchronize'
+E, [2014-09-25T14:25:02.139314 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:303:in `synchronize_or_call'
+E, [2014-09-25T14:25:02.139331 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-25T14:25:02.139351 #20175] ERROR -- node-centos-70: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-25T14:25:02.139368 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-25T14:25:02.139385 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-25T14:25:02.139402 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:252:in `create_action'
+E, [2014-09-25T14:25:02.139418 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-25T14:25:02.139435 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-25T14:25:02.139452 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-25T14:25:02.139468 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-09-25T14:25:02.139485 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-25T14:25:02.139502 #20175] ERROR -- node-centos-70: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-25T14:25:02.139519 #20175] ERROR -- node-centos-70: ----------------------
+I, [2014-09-25T14:25:44.562359 #23287]  INFO -- node-centos-70: -----> Creating <node-centos-70>...
+I, [2014-09-25T14:25:45.491087 #23287]  INFO -- node-centos-70: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-09-25T14:25:45.928125 #23287]  INFO -- node-centos-70: ==> default: VirtualBox VM is already running.
+I, [2014-09-25T14:25:47.016080 #23287]  INFO -- node-centos-70: Vagrant instance <node-centos-70> created.
+I, [2014-09-25T14:25:47.016877 #23287]  INFO -- node-centos-70: Finished creating <node-centos-70> (0m2.45s).
+I, [2014-09-25T14:25:47.016967 #23287]  INFO -- node-centos-70: -----> Converging <node-centos-70>...
+I, [2014-09-25T14:25:47.017496 #23287]  INFO -- node-centos-70: Preparing files for transfer
+I, [2014-09-25T14:25:47.017742 #23287]  INFO -- node-centos-70: Resolving cookbook dependencies with Berkshelf 3.1.5...
+I, [2014-09-25T14:25:47.055189 #23287]  INFO -- node-centos-70: Removing non-cookbook files before transfer
+I, [2014-09-25T14:25:47.294061 #23287]  INFO -- node-centos-70: -----> Installing Chef Omnibus (true)
+I, [2014-09-25T14:25:47.294148 #23287]  INFO -- node-centos-70: downloading https://www.getchef.com/chef/install.sh
+I, [2014-09-25T14:25:47.294171 #23287]  INFO -- node-centos-70:   to file /tmp/install.sh
+I, [2014-09-25T14:25:47.294190 #23287]  INFO -- node-centos-70: trying wget...
+I, [2014-09-25T14:25:53.309423 #23287]  INFO -- node-centos-70: Downloading Chef  for el...
+I, [2014-09-25T14:25:53.312224 #23287]  INFO -- node-centos-70: downloading https://www.getchef.com/chef/metadata?v=&prerelease=false&nightlies=false&p=el&pv=7&m=x86_64
+I, [2014-09-25T14:25:53.312281 #23287]  INFO -- node-centos-70:   to file /tmp/install.sh.10927/metadata.txt
+I, [2014-09-25T14:25:53.312305 #23287]  INFO -- node-centos-70: trying wget...
+I, [2014-09-25T14:25:59.055405 #23287]  INFO -- node-centos-70: url	https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpm
+I, [2014-09-25T14:25:59.055485 #23287]  INFO -- node-centos-70: md5	8731b6558009fc322f6469b415a759f8
+I, [2014-09-25T14:25:59.055522 #23287]  INFO -- node-centos-70: sha256	dc7bc9d6084d29ffec67664fdae455406c3e7657c4aebcbef19f5a9ba459db37
+I, [2014-09-25T14:25:59.055545 #23287]  INFO -- node-centos-70: yolo	true
+I, [2014-09-25T14:25:59.060527 #23287]  INFO -- node-centos-70: downloaded metadata file looks valid...
+I, [2014-09-25T14:25:59.075352 #23287]  INFO -- node-centos-70: downloading https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpm
+I, [2014-09-25T14:25:59.075438 #23287]  INFO -- node-centos-70:   to file /tmp/install.sh.10927/chef-11.16.2-1.el6.x86_64.rpm
+I, [2014-09-25T14:25:59.075465 #23287]  INFO -- node-centos-70: trying wget...
+I, [2014-09-25T14:30:48.908259 #23287]  INFO -- node-centos-70: Comparing checksum with sha256sum...
+I, [2014-09-25T14:30:49.049262 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:49.049336 #23287]  INFO -- node-centos-70: WARNING: Chef-Client has not been regression tested on this O/S Distribution
+I, [2014-09-25T14:30:49.049357 #23287]  INFO -- node-centos-70: WARNING: Do not use this configuration for Production Applications.  Use at your own risk.
+I, [2014-09-25T14:30:49.049375 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:49.049393 #23287]  INFO -- node-centos-70: Installing Chef 
+I, [2014-09-25T14:30:49.049410 #23287]  INFO -- node-centos-70: installing with rpm...
+I, [2014-09-25T14:30:49.082240 #23287]  INFO -- node-centos-70: warning: /tmp/install.sh.10927/chef-11.16.2-1.el6.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEY
+Preparing...                          I, [2014-09-25T14:30:49.293310 #23287]  INFO -- node-centos-70:                            (100%)#                                 (100%)##                                (100%)###                               (100%)####                              (100%)#####                             (100%)######                            (100%)#######                           (100%)########                          (100%)#########                         (100%)##########                        (100%)###########                       (100%)############                      (100%)#############                     (100%)##############                    (100%)###############                   (100%)################                  (100%)#################                 (100%)##################                (100%)###################               (100%)####################              (100%)#####################             (100%)######################            (100%)#######################           (100%)########################          (100%)#########################         (100%)##########################        (100%)###########################       (100%)############################      (100%)#############################     (100%)##############################    (100%)###############################   (100%)################################  (100%)################################# (100%)################################# [100%]
+I, [2014-09-25T14:30:49.300227 #23287]  INFO -- node-centos-70: Updating / installing...
+I, [2014-09-25T14:30:49.300295 #23287]  INFO -- node-centos-70:    1:chef-11.16.2-1.el6               
+                                  (  1%)#                                 (  4%)##                                (  7%)###                               ( 10%)####                              ( 13%)#####                             ( 16%)######                            ( 19%)#######                           ( 22%)########                          ( 25%)#########                         ( 28%)##########                        ( 31%)###########                       ( 34%)############                      ( 37%)#############                     ( 40%)##############                    ( 43%)###############                   ( 46%)################                  ( 49%)#################                 ( 51%)##################                ( 54%)###################               ( 57%)####################              ( 60%)#####################             ( 63%)######################            ( 66%)#######################           ( 69%)########################          ( 72%)#########################         ( 75%)##########################        ( 78%)###########################       ( 81%)############################      ( 84%)#############################     ( 87%)##############################    ( 90%)###############################   ( 93%)################################  ( 96%)I, [2014-09-25T14:30:52.338601 #23287]  INFO -- node-centos-70: ################################# ( 99%)################################# [100%]
+I, [2014-09-25T14:30:52.875409 #23287]  INFO -- node-centos-70: Thank you for installing Chef!
+I, [2014-09-25T14:30:52.945185 #23287]  INFO -- node-centos-70: Transfering files to <node-centos-70>
+I, [2014-09-25T14:30:54.250595 #23287]  INFO -- node-centos-70: [2014-09-25T10:30:52+00:00] INFO: Forking chef instance to converge...
+I, [2014-09-25T14:30:54.261704 #23287]  INFO -- node-centos-70: [2014-09-25T10:30:52+00:00] WARN: 
+I, [2014-09-25T14:30:54.261775 #23287]  INFO -- node-centos-70: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+I, [2014-09-25T14:30:54.261797 #23287]  INFO -- node-centos-70: SSL validation of HTTPS requests is disabled. HTTPS connections are still
+I, [2014-09-25T14:30:54.261816 #23287]  INFO -- node-centos-70: encrypted, but chef is not able to detect forged replies or man in the middle
+I, [2014-09-25T14:30:54.261834 #23287]  INFO -- node-centos-70: attacks.
+I, [2014-09-25T14:30:54.261851 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:54.261868 #23287]  INFO -- node-centos-70: To fix this issue add an entry like this to your configuration file:
+I, [2014-09-25T14:30:54.261897 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:54.261915 #23287]  INFO -- node-centos-70: ```
+I, [2014-09-25T14:30:54.261933 #23287]  INFO -- node-centos-70:   # Verify all HTTPS connections (recommended)
+I, [2014-09-25T14:30:54.261950 #23287]  INFO -- node-centos-70:   ssl_verify_mode :verify_peer
+I, [2014-09-25T14:30:54.261967 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:54.261984 #23287]  INFO -- node-centos-70:   # OR, Verify only connections to chef-server
+I, [2014-09-25T14:30:54.262001 #23287]  INFO -- node-centos-70:   verify_api_cert true
+I, [2014-09-25T14:30:54.262018 #23287]  INFO -- node-centos-70: ```
+I, [2014-09-25T14:30:54.262035 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:54.262052 #23287]  INFO -- node-centos-70: To check your SSL configuration, or troubleshoot errors, you can use the
+I, [2014-09-25T14:30:54.262078 #23287]  INFO -- node-centos-70: `knife ssl check` command like so:
+I, [2014-09-25T14:30:54.262096 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:54.262114 #23287]  INFO -- node-centos-70: ```
+I, [2014-09-25T14:30:54.262132 #23287]  INFO -- node-centos-70:   knife ssl check -c /tmp/kitchen/solo.rb
+I, [2014-09-25T14:30:54.262150 #23287]  INFO -- node-centos-70: ```
+I, [2014-09-25T14:30:54.262168 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:54.262186 #23287]  INFO -- node-centos-70: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+I, [2014-09-25T14:30:54.262204 #23287]  INFO -- node-centos-70: 
+I, [2014-09-25T14:30:54.301596 #23287]  INFO -- node-centos-70: Starting Chef Client, version 11.16.2[0m
+I, [2014-09-25T14:30:54.301673 #23287]  INFO -- node-centos-70: [2014-09-25T10:30:52+00:00] INFO: *** Chef 11.16.2 ***
+I, [2014-09-25T14:30:54.301704 #23287]  INFO -- node-centos-70: [2014-09-25T10:30:52+00:00] INFO: Chef-client pid: 11025
+I, [2014-09-25T14:31:11.187700 #23287]  INFO -- node-centos-70: [2014-09-25T10:31:09+00:00] INFO: Setting the run_list to ["recipe[openstack::default]"] from CLI options
+I, [2014-09-25T14:31:11.194592 #23287]  INFO -- node-centos-70: [2014-09-25T10:31:09+00:00] INFO: Run List is [recipe[openstack::default]]
+I, [2014-09-25T14:31:11.194667 #23287]  INFO -- node-centos-70: [2014-09-25T10:31:09+00:00] INFO: Run List expands to [openstack::default]
+I, [2014-09-25T14:31:11.194703 #23287]  INFO -- node-centos-70: [2014-09-25T10:31:09+00:00] INFO: Starting Chef Run for node-centos-70
+I, [2014-09-25T14:31:11.194728 #23287]  INFO -- node-centos-70: [2014-09-25T10:31:09+00:00] INFO: Running start handlers
+I, [2014-09-25T14:31:11.194750 #23287]  INFO -- node-centos-70: [2014-09-25T10:31:09+00:00] INFO: Start handlers complete.
+I, [2014-09-25T14:31:11.194772 #23287]  INFO -- node-centos-70: Compiling Cookbooks...[0m
+I, [2014-09-25T14:31:11.201765 #23287]  INFO -- node-centos-70: Converging 0 resources[0m
+I, [2014-09-25T14:31:11.201850 #23287]  INFO -- node-centos-70: [2014-09-25T10:31:09+00:00] INFO: Chef Run complete in 0.004250796 seconds
+I, [2014-09-25T14:31:11.201877 #23287]  INFO -- node-centos-70: [0m
+I, [2014-09-25T14:31:11.201899 #23287]  INFO -- node-centos-70: Running handlers:[0m
+I, [2014-09-25T14:31:11.201921 #23287]  INFO -- node-centos-70: [2014-09-25T10:31:09+00:00] INFO: Running report handlers
+I, [2014-09-25T14:31:11.201943 #23287]  INFO -- node-centos-70: Running handlers complete
+I, [2014-09-25T14:31:11.201964 #23287]  INFO -- node-centos-70: [0m[2014-09-25T10:31:09+00:00] INFO: Report handlers complete
+I, [2014-09-25T14:31:11.201985 #23287]  INFO -- node-centos-70: Chef Client finished, 0/0 resources updated in 16.952840008 seconds[0m
+I, [2014-09-25T14:31:11.262463 #23287]  INFO -- node-centos-70: Finished converging <node-centos-70> (5m24.24s).
+I, [2014-09-25T14:31:11.262595 #23287]  INFO -- node-centos-70: -----> Setting up <node-centos-70>...
+I, [2014-09-25T14:31:11.263495 #23287]  INFO -- node-centos-70: Finished setting up <node-centos-70> (0m0.00s).
+I, [2014-09-25T14:31:11.263592 #23287]  INFO -- node-centos-70: -----> Verifying <node-centos-70>...
+I, [2014-09-25T14:31:11.264353 #23287]  INFO -- node-centos-70: Finished verifying <node-centos-70> (0m0.00s).
+I, [2014-09-25T14:59:14.062284 #26354]  INFO -- node-centos-70: -----> Destroying <node-centos-70>...
+I, [2014-09-25T14:59:15.642304 #26354]  INFO -- node-centos-70: ==> default: Forcing shutdown of VM...
+I, [2014-09-25T14:59:16.820277 #26354]  INFO -- node-centos-70: ==> default: Destroying VM and associated drives...
+I, [2014-09-25T14:59:17.207194 #26354]  INFO -- node-centos-70: Vagrant instance <node-centos-70> destroyed.
+I, [2014-09-25T14:59:17.207933 #26354]  INFO -- node-centos-70: Finished destroying <node-centos-70> (0m3.14s).
+I, [2014-09-25T15:19:03.323431 #29837]  INFO -- node-centos-70: -----> Destroying <node-centos-70>...
+I, [2014-09-25T15:19:03.323809 #29837]  INFO -- node-centos-70: Finished destroying <node-centos-70> (0m0.00s).
+I, [2014-09-25T17:05:55.712455 #23049]  INFO -- node-centos-70: -----> Destroying <node-centos-70>...
+I, [2014-09-25T17:05:55.747204 #23049]  INFO -- node-centos-70: Finished destroying <node-centos-70> (0m0.00s).
+I, [2014-09-25T17:07:42.858432 #23405]  INFO -- node-centos-70: -----> Creating <node-centos-70>...
+I, [2014-09-25T17:07:43.932901 #23405]  INFO -- node-centos-70: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-09-25T17:07:44.179165 #23405]  INFO -- node-centos-70: ==> default: Importing base box 'lamudi/centos-7.0'...
+[KProgress: 10%[KProgress: 30%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...I, [2014-09-25T17:08:20.307601 #23405]  INFO -- node-centos-70: ==> default: Checking if box 'lamudi/centos-7.0' is up to date...
+I, [2014-09-25T17:08:22.019441 #23405]  INFO -- node-centos-70: ==> default: Setting the name of the VM: node-centos-70_default_1411650501982_82796
+I, [2014-09-25T17:08:22.270919 #23405]  INFO -- node-centos-70: ==> default: Clearing any previously set forwarded ports...
+I, [2014-09-25T17:08:22.588426 #23405]  INFO -- node-centos-70: ==> default: Fixed port collision for 22 => 2222. Now on port 2200.
+I, [2014-09-25T17:08:22.629828 #23405]  INFO -- node-centos-70: ==> default: Clearing any previously set network interfaces...
+I, [2014-09-25T17:08:22.826160 #23405]  INFO -- node-centos-70: ==> default: Preparing network interfaces based on configuration...
+I, [2014-09-25T17:08:22.826409 #23405]  INFO -- node-centos-70:     default: Adapter 1: nat
+I, [2014-09-25T17:08:22.826583 #23405]  INFO -- node-centos-70:     default: Adapter 2: hostonly
+I, [2014-09-25T17:08:22.932142 #23405]  INFO -- node-centos-70: ==> default: Forwarding ports...
+I, [2014-09-25T17:08:22.980967 #23405]  INFO -- node-centos-70:     default: 22 => 2200 (adapter 1)
+I, [2014-09-25T17:08:23.310343 #23405]  INFO -- node-centos-70: ==> default: Running 'pre-boot' VM customizations...
+I, [2014-09-25T17:08:23.397147 #23405]  INFO -- node-centos-70: ==> default: Booting VM...
+I, [2014-09-25T17:08:23.816082 #23405]  INFO -- node-centos-70: ==> default: Waiting for machine to boot. This may take a few minutes...
+I, [2014-09-25T17:08:24.010147 #23405]  INFO -- node-centos-70:     default: SSH address: 127.0.0.1:2200
+I, [2014-09-25T17:08:24.010258 #23405]  INFO -- node-centos-70:     default: SSH username: vagrant
+I, [2014-09-25T17:08:24.010310 #23405]  INFO -- node-centos-70:     default: SSH auth method: private key
+I, [2014-09-25T17:08:39.148454 #23405]  INFO -- node-centos-70:     default: Warning: Connection timeout. Retrying...
+I, [2014-09-25T17:08:54.262863 #23405]  INFO -- node-centos-70:     default: Warning: Connection timeout. Retrying...
+I, [2014-09-25T17:08:55.821530 #23405]  INFO -- node-centos-70: ==> default: Machine booted and ready!
+I, [2014-09-25T17:08:55.821967 #23405]  INFO -- node-centos-70: ==> default: Checking for guest additions in VM...
+I, [2014-09-25T17:08:55.865294 #23405]  INFO -- node-centos-70: ==> default: Setting hostname...
+I, [2014-09-25T17:08:57.570809 #23405]  INFO -- node-centos-70: ==> default: Configuring and enabling network interfaces...
+I, [2014-09-25T17:09:01.679679 #23405]  INFO -- node-centos-70: ==> default: Machine not provisioning because `--no-provision` is specified.
+I, [2014-09-25T17:09:02.966433 #23405]  INFO -- node-centos-70: Vagrant instance <node-centos-70> created.
+I, [2014-09-25T17:09:02.967257 #23405]  INFO -- node-centos-70: Finished creating <node-centos-70> (1m20.11s).
+I, [2014-09-25T17:09:02.967335 #23405]  INFO -- node-centos-70: -----> Converging <node-centos-70>...
+I, [2014-09-25T17:09:02.967795 #23405]  INFO -- node-centos-70: Preparing files for transfer
+I, [2014-09-25T17:09:02.968023 #23405]  INFO -- node-centos-70: Resolving cookbook dependencies with Berkshelf 3.1.5...
+I, [2014-09-25T17:09:02.999076 #23405]  INFO -- node-centos-70: Removing non-cookbook files before transfer
+I, [2014-09-25T17:09:03.145191 #23405]  INFO -- node-centos-70: Transfering files to <node-centos-70>
+I, [2014-09-25T17:09:07.896655 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:05+00:00] INFO: Forking chef instance to converge...
+I, [2014-09-25T17:09:07.947930 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:05+00:00] WARN: 
+I, [2014-09-25T17:09:07.948080 #23405]  INFO -- node-centos-70: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+I, [2014-09-25T17:09:07.948114 #23405]  INFO -- node-centos-70: SSL validation of HTTPS requests is disabled. HTTPS connections are still
+I, [2014-09-25T17:09:07.948141 #23405]  INFO -- node-centos-70: encrypted, but chef is not able to detect forged replies or man in the middle
+I, [2014-09-25T17:09:07.948164 #23405]  INFO -- node-centos-70: attacks.
+I, [2014-09-25T17:09:07.948251 #23405]  INFO -- node-centos-70: 
+I, [2014-09-25T17:09:07.948278 #23405]  INFO -- node-centos-70: To fix this issue add an entry like this to your configuration file:
+I, [2014-09-25T17:09:07.948320 #23405]  INFO -- node-centos-70: 
+I, [2014-09-25T17:09:07.948345 #23405]  INFO -- node-centos-70: ```
+I, [2014-09-25T17:09:07.948433 #23405]  INFO -- node-centos-70:   # Verify all HTTPS connections (recommended)
+I, [2014-09-25T17:09:07.948458 #23405]  INFO -- node-centos-70:   ssl_verify_mode :verify_peer
+I, [2014-09-25T17:09:07.948484 #23405]  INFO -- node-centos-70: 
+I, [2014-09-25T17:09:07.948508 #23405]  INFO -- node-centos-70:   # OR, Verify only connections to chef-server
+I, [2014-09-25T17:09:07.948596 #23405]  INFO -- node-centos-70:   verify_api_cert true
+I, [2014-09-25T17:09:07.948621 #23405]  INFO -- node-centos-70: ```
+I, [2014-09-25T17:09:07.948644 #23405]  INFO -- node-centos-70: 
+I, [2014-09-25T17:09:07.948667 #23405]  INFO -- node-centos-70: To check your SSL configuration, or troubleshoot errors, you can use the
+I, [2014-09-25T17:09:07.948762 #23405]  INFO -- node-centos-70: `knife ssl check` command like so:
+I, [2014-09-25T17:09:07.948790 #23405]  INFO -- node-centos-70: 
+I, [2014-09-25T17:09:07.948814 #23405]  INFO -- node-centos-70: ```
+I, [2014-09-25T17:09:07.948837 #23405]  INFO -- node-centos-70:   knife ssl check -c /tmp/kitchen/solo.rb
+I, [2014-09-25T17:09:07.948860 #23405]  INFO -- node-centos-70: ```
+I, [2014-09-25T17:09:07.948952 #23405]  INFO -- node-centos-70: 
+I, [2014-09-25T17:09:07.948978 #23405]  INFO -- node-centos-70: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+I, [2014-09-25T17:09:07.949002 #23405]  INFO -- node-centos-70: 
+I, [2014-09-25T17:09:08.314542 #23405]  INFO -- node-centos-70: Starting Chef Client, version 11.16.2[0m
+I, [2014-09-25T17:09:08.314619 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:06+00:00] INFO: *** Chef 11.16.2 ***
+I, [2014-09-25T17:09:08.314640 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:06+00:00] INFO: Chef-client pid: 2912
+I, [2014-09-25T17:09:25.799081 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:23+00:00] INFO: Setting the run_list to ["recipe[openstack::default]"] from CLI options
+I, [2014-09-25T17:09:25.809821 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:23+00:00] INFO: Run List is [recipe[openstack::default]]
+I, [2014-09-25T17:09:25.809916 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:23+00:00] INFO: Run List expands to [openstack::default]
+I, [2014-09-25T17:09:25.809953 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:23+00:00] INFO: Starting Chef Run for node-centos-70
+I, [2014-09-25T17:09:25.809978 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:23+00:00] INFO: Running start handlers
+I, [2014-09-25T17:09:25.810001 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:23+00:00] INFO: Start handlers complete.
+I, [2014-09-25T17:09:25.810024 #23405]  INFO -- node-centos-70: Compiling Cookbooks...[0m
+I, [2014-09-25T17:09:25.810047 #23405]  INFO -- node-centos-70: Converging 0 resources[0m
+I, [2014-09-25T17:09:25.810069 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:23+00:00] INFO: Chef Run complete in 0.003382089 seconds
+I, [2014-09-25T17:09:25.810092 #23405]  INFO -- node-centos-70: [0m
+I, [2014-09-25T17:09:25.810115 #23405]  INFO -- node-centos-70: Running handlers:[0m
+I, [2014-09-25T17:09:25.810137 #23405]  INFO -- node-centos-70: [2014-09-25T13:09:23+00:00] INFO: Running report handlers
+I, [2014-09-25T17:09:25.810159 #23405]  INFO -- node-centos-70: Running handlers complete
+I, [2014-09-25T17:09:25.810187 #23405]  INFO -- node-centos-70: [0m[2014-09-25T13:09:23+00:00] INFO: Report handlers complete
+I, [2014-09-25T17:09:25.810210 #23405]  INFO -- node-centos-70: Chef Client finished, 0/0 resources updated in 17.915492288 seconds[0m
+I, [2014-09-25T17:09:25.864098 #23405]  INFO -- node-centos-70: Finished converging <node-centos-70> (0m22.90s).
+I, [2014-09-25T17:09:25.864358 #23405]  INFO -- node-centos-70: -----> Setting up <node-centos-70>...
+I, [2014-09-25T17:09:25.878443 #23405]  INFO -- node-centos-70: Finished setting up <node-centos-70> (0m0.00s).
+I, [2014-09-25T17:09:25.878571 #23405]  INFO -- node-centos-70: -----> Verifying <node-centos-70>...
+I, [2014-09-25T17:09:25.887190 #23405]  INFO -- node-centos-70: Finished verifying <node-centos-70> (0m0.00s).
+I, [2014-09-25T17:21:08.609038 #27433]  INFO -- node-centos-70: -----> Verifying <node-centos-70>...
+I, [2014-09-25T17:21:08.621924 #27433]  INFO -- node-centos-70: Finished verifying <node-centos-70> (0m0.00s).
+I, [2014-09-25T17:23:00.199552 #27460]  INFO -- node-centos-70: -----> Cleaning up any prior instances of <node-centos-70>
+I, [2014-09-25T17:23:00.223657 #27460]  INFO -- node-centos-70: -----> Destroying <node-centos-70>...
+I, [2014-09-25T17:23:01.969510 #27460]  INFO -- node-centos-70: ==> default: Forcing shutdown of VM...
+I, [2014-09-25T17:23:03.331105 #27460]  INFO -- node-centos-70: ==> default: Destroying VM and associated drives...
+I, [2014-09-25T17:23:03.690467 #27460]  INFO -- node-centos-70: Vagrant instance <node-centos-70> destroyed.
+I, [2014-09-25T17:23:03.691182 #27460]  INFO -- node-centos-70: Finished destroying <node-centos-70> (0m3.47s).
+I, [2014-09-25T17:23:03.691457 #27460]  INFO -- node-centos-70: -----> Testing <node-centos-70>
+I, [2014-09-25T17:23:03.691541 #27460]  INFO -- node-centos-70: -----> Creating <node-centos-70>...
+I, [2014-09-25T17:23:04.756630 #27460]  INFO -- node-centos-70: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-09-25T17:23:05.001159 #27460]  INFO -- node-centos-70: ==> default: Importing base box 'lamudi/centos-7.0'...
+[KProgress: 10%[KProgress: 30%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[KI, [2014-09-25T17:23:35.193154 #27460]  INFO -- node-centos-70: ==> default: Matching MAC address for NAT networking...
+I, [2014-09-25T17:23:35.335770 #27460]  INFO -- node-centos-70: ==> default: Checking if box 'lamudi/centos-7.0' is up to date...
+I, [2014-09-25T17:23:37.155254 #27460]  INFO -- node-centos-70: ==> default: Setting the name of the VM: node-centos-70_default_1411651417118_87521
+I, [2014-09-25T17:23:37.356026 #27460]  INFO -- node-centos-70: ==> default: Clearing any previously set forwarded ports...
+I, [2014-09-25T17:23:37.594993 #27460]  INFO -- node-centos-70: ==> default: Clearing any previously set network interfaces...
+I, [2014-09-25T17:23:37.867223 #27460]  INFO -- node-centos-70: ==> default: Preparing network interfaces based on configuration...
+I, [2014-09-25T17:23:37.867379 #27460]  INFO -- node-centos-70:     default: Adapter 1: nat
+I, [2014-09-25T17:23:37.867589 #27460]  INFO -- node-centos-70:     default: Adapter 2: hostonly
+I, [2014-09-25T17:23:37.955297 #27460]  INFO -- node-centos-70: ==> default: Forwarding ports...
+I, [2014-09-25T17:23:38.008666 #27460]  INFO -- node-centos-70:     default: 22 => 2222 (adapter 1)
+I, [2014-09-25T17:23:38.221315 #27460]  INFO -- node-centos-70: ==> default: Running 'pre-boot' VM customizations...
+I, [2014-09-25T17:23:38.299186 #27460]  INFO -- node-centos-70: ==> default: Booting VM...
+I, [2014-09-25T17:23:38.688366 #27460]  INFO -- node-centos-70: ==> default: Waiting for machine to boot. This may take a few minutes...
+I, [2014-09-25T17:23:38.903432 #27460]  INFO -- node-centos-70:     default: SSH address: 127.0.0.1:2222
+I, [2014-09-25T17:23:38.903555 #27460]  INFO -- node-centos-70:     default: SSH username: vagrant
+I, [2014-09-25T17:23:38.903599 #27460]  INFO -- node-centos-70:     default: SSH auth method: private key
+I, [2014-09-25T17:23:54.017440 #27460]  INFO -- node-centos-70:     default: Warning: Connection timeout. Retrying...
+I, [2014-09-25T17:24:09.119752 #27460]  INFO -- node-centos-70:     default: Warning: Connection timeout. Retrying...
+I, [2014-09-25T17:24:10.693770 #27460]  INFO -- node-centos-70: ==> default: Machine booted and ready!
+I, [2014-09-25T17:24:10.707369 #27460]  INFO -- node-centos-70: ==> default: Checking for guest additions in VM...
+I, [2014-09-25T17:24:10.766307 #27460]  INFO -- node-centos-70: ==> default: Setting hostname...
+I, [2014-09-25T17:24:12.548301 #27460]  INFO -- node-centos-70: ==> default: Configuring and enabling network interfaces...
+I, [2014-09-25T17:24:16.699487 #27460]  INFO -- node-centos-70: ==> default: Machine not provisioning because `--no-provision` is specified.
+I, [2014-09-25T17:24:17.995448 #27460]  INFO -- node-centos-70: Vagrant instance <node-centos-70> created.
+I, [2014-09-25T17:24:17.996441 #27460]  INFO -- node-centos-70: Finished creating <node-centos-70> (1m14.30s).
+I, [2014-09-25T17:24:17.996534 #27460]  INFO -- node-centos-70: -----> Converging <node-centos-70>...
+I, [2014-09-25T17:24:17.997070 #27460]  INFO -- node-centos-70: Preparing files for transfer
+I, [2014-09-25T17:24:17.997316 #27460]  INFO -- node-centos-70: Resolving cookbook dependencies with Berkshelf 3.1.5...
+I, [2014-09-25T17:24:18.017930 #27460]  INFO -- node-centos-70: Removing non-cookbook files before transfer
+I, [2014-09-25T17:24:18.018578 #27460]  INFO -- node-centos-70: Preparing data bags
+I, [2014-09-25T17:24:18.175220 #27460]  INFO -- node-centos-70: Transfering files to <node-centos-70>
+I, [2014-09-25T17:24:23.537077 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:21+00:00] INFO: Forking chef instance to converge...
+I, [2014-09-25T17:24:23.563094 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:21+00:00] WARN: 
+I, [2014-09-25T17:24:23.563166 #27460]  INFO -- node-centos-70: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+I, [2014-09-25T17:24:23.563191 #27460]  INFO -- node-centos-70: SSL validation of HTTPS requests is disabled. HTTPS connections are still
+I, [2014-09-25T17:24:23.563215 #27460]  INFO -- node-centos-70: encrypted, but chef is not able to detect forged replies or man in the middle
+I, [2014-09-25T17:24:23.563236 #27460]  INFO -- node-centos-70: attacks.
+I, [2014-09-25T17:24:23.563256 #27460]  INFO -- node-centos-70: 
+I, [2014-09-25T17:24:23.563276 #27460]  INFO -- node-centos-70: To fix this issue add an entry like this to your configuration file:
+I, [2014-09-25T17:24:23.563296 #27460]  INFO -- node-centos-70: 
+I, [2014-09-25T17:24:23.563317 #27460]  INFO -- node-centos-70: ```
+I, [2014-09-25T17:24:23.563337 #27460]  INFO -- node-centos-70:   # Verify all HTTPS connections (recommended)
+I, [2014-09-25T17:24:23.563368 #27460]  INFO -- node-centos-70:   ssl_verify_mode :verify_peer
+I, [2014-09-25T17:24:23.563390 #27460]  INFO -- node-centos-70: 
+I, [2014-09-25T17:24:23.563411 #27460]  INFO -- node-centos-70:   # OR, Verify only connections to chef-server
+I, [2014-09-25T17:24:23.563431 #27460]  INFO -- node-centos-70:   verify_api_cert true
+I, [2014-09-25T17:24:23.563451 #27460]  INFO -- node-centos-70: ```
+I, [2014-09-25T17:24:23.563471 #27460]  INFO -- node-centos-70: 
+I, [2014-09-25T17:24:23.563491 #27460]  INFO -- node-centos-70: To check your SSL configuration, or troubleshoot errors, you can use the
+I, [2014-09-25T17:24:23.563511 #27460]  INFO -- node-centos-70: `knife ssl check` command like so:
+I, [2014-09-25T17:24:23.563532 #27460]  INFO -- node-centos-70: 
+I, [2014-09-25T17:24:23.563554 #27460]  INFO -- node-centos-70: ```
+I, [2014-09-25T17:24:23.563577 #27460]  INFO -- node-centos-70:   knife ssl check -c /tmp/kitchen/solo.rb
+I, [2014-09-25T17:24:23.563597 #27460]  INFO -- node-centos-70: ```
+I, [2014-09-25T17:24:23.563617 #27460]  INFO -- node-centos-70: 
+I, [2014-09-25T17:24:23.563637 #27460]  INFO -- node-centos-70: * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+I, [2014-09-25T17:24:23.563657 #27460]  INFO -- node-centos-70: 
+I, [2014-09-25T17:24:23.664269 #27460]  INFO -- node-centos-70: Starting Chef Client, version 11.16.2[0m
+I, [2014-09-25T17:24:23.664346 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:21+00:00] INFO: *** Chef 11.16.2 ***
+I, [2014-09-25T17:24:23.664368 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:21+00:00] INFO: Chef-client pid: 2942
+I, [2014-09-25T17:24:40.876640 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:38+00:00] INFO: Setting the run_list to ["recipe[openstack::default]"] from CLI options
+I, [2014-09-25T17:24:40.888385 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:38+00:00] INFO: Run List is [recipe[openstack::default]]
+I, [2014-09-25T17:24:40.888471 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:38+00:00] INFO: Run List expands to [openstack::default]
+I, [2014-09-25T17:24:40.888501 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:38+00:00] INFO: Starting Chef Run for node-centos-70
+I, [2014-09-25T17:24:40.888526 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:38+00:00] INFO: Running start handlers
+I, [2014-09-25T17:24:40.888550 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:38+00:00] INFO: Start handlers complete.
+I, [2014-09-25T17:24:40.888573 #27460]  INFO -- node-centos-70: Compiling Cookbooks...[0m
+I, [2014-09-25T17:24:40.888599 #27460]  INFO -- node-centos-70: Converging 0 resources[0m
+I, [2014-09-25T17:24:40.888622 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:38+00:00] INFO: Chef Run complete in 0.003316958 seconds
+I, [2014-09-25T17:24:40.888646 #27460]  INFO -- node-centos-70: [0m
+I, [2014-09-25T17:24:40.888671 #27460]  INFO -- node-centos-70: Running handlers:[0m
+I, [2014-09-25T17:24:40.888707 #27460]  INFO -- node-centos-70: [2014-09-25T13:24:38+00:00] INFO: Running report handlers
+I, [2014-09-25T17:24:40.888733 #27460]  INFO -- node-centos-70: Running handlers complete
+I, [2014-09-25T17:24:40.888758 #27460]  INFO -- node-centos-70: [0m[2014-09-25T13:24:38+00:00] INFO: Report handlers complete
+I, [2014-09-25T17:24:40.888782 #27460]  INFO -- node-centos-70: Chef Client finished, 0/0 resources updated in 17.352444122 seconds[0m
+I, [2014-09-25T17:24:40.939086 #27460]  INFO -- node-centos-70: Finished converging <node-centos-70> (0m22.94s).
+I, [2014-09-25T17:24:40.939215 #27460]  INFO -- node-centos-70: -----> Setting up <node-centos-70>...
+I, [2014-09-25T17:24:40.940141 #27460]  INFO -- node-centos-70: Finished setting up <node-centos-70> (0m0.00s).
+I, [2014-09-25T17:24:40.940253 #27460]  INFO -- node-centos-70: -----> Verifying <node-centos-70>...
+I, [2014-09-25T17:24:40.941042 #27460]  INFO -- node-centos-70: Finished verifying <node-centos-70> (0m0.00s).
+I, [2014-09-25T17:24:40.941374 #27460]  INFO -- node-centos-70: -----> Destroying <node-centos-70>...
+I, [2014-09-25T17:24:42.709879 #27460]  INFO -- node-centos-70: ==> default: Forcing shutdown of VM...
+I, [2014-09-25T17:24:43.910272 #27460]  INFO -- node-centos-70: ==> default: Destroying VM and associated drives...
+I, [2014-09-25T17:24:44.241198 #27460]  INFO -- node-centos-70: Vagrant instance <node-centos-70> destroyed.
+I, [2014-09-25T17:24:44.241884 #27460]  INFO -- node-centos-70: Finished destroying <node-centos-70> (0m3.30s).
+I, [2014-09-25T17:24:44.242071 #27460]  INFO -- node-centos-70: Finished testing <node-centos-70> (1m44.04s).

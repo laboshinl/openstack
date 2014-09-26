@@ -2,20 +2,18 @@
 driver:
   name: vagrant
   customize:
-    memory: 2048
+    memory: 4096
+    cpus: 4
 
 provisioner:
-  name: chef_solo
-  require_chef_omnibus: false
+  name: chef_zero
+  require_chef_omnibus: true
 
 platforms:
-  - name: centos-7.0
-    driver:
-      box: lamudi/centos-7.0
-      box_url: https://vagrantcloud.com/lamudi/boxes/centos-7.0/versions/2/providers/virtualbox.box
+  - name: fedora-20
     attributes:
       ip:
-        controller: 172.28.128.4
+        controller: 172.28.128.12
       creds:
         admin_password: mySuperSecret 
     data_bags_path: "test/integration/data_bags"
@@ -25,15 +23,6 @@ suites:
     driver:
       vm_hostname: controller.testcloud.com
       network:
-        - ["private_network", {type: "dhcp"}]
+        - ["private_network", {ip: "172.28.128.12"}]
     run_list:
-      - recipe[openstack::default]
-    attributes:
-  - name: compute
-    driver:
-      vm_hostname: compute.testcloud.com
-      network:
-        - ["private_network", {type: "dhcp"}]
-    run_list:
-      - recipe[openstack::default]
-    attributes:
+      - recipe[centos_cloud::keystone]

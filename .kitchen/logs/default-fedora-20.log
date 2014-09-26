@@ -1,0 +1,204 @@
+I, [2014-09-25T13:31:09.366712 #5826]  INFO -- default-fedora-20: -----> Cleaning up any prior instances of <default-fedora-20>
+I, [2014-09-25T13:31:09.366830 #5826]  INFO -- default-fedora-20: -----> Destroying <default-fedora-20>...
+I, [2014-09-25T13:31:09.367861 #5826]  INFO -- default-fedora-20: Finished destroying <default-fedora-20> (0m0.00s).
+I, [2014-09-25T13:31:09.367998 #5826]  INFO -- default-fedora-20: -----> Testing <default-fedora-20>
+I, [2014-09-25T13:31:09.368067 #5826]  INFO -- default-fedora-20: -----> Creating <default-fedora-20>...
+I, [2014-09-25T13:31:10.248183 #5826]  INFO -- default-fedora-20: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-09-25T13:31:10.504776 #5826]  INFO -- default-fedora-20: ==> default: Importing base box 'opscode-fedora-20'...
+[KProgress: 30%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[KI, [2014-09-25T13:31:34.389811 #5826]  INFO -- default-fedora-20: ==> default: Matching MAC address for NAT networking...
+I, [2014-09-25T13:31:34.943627 #5826]  INFO -- default-fedora-20: ==> default: Setting the name of the VM: default-fedora-20_default_1411637494907_8404
+I, [2014-09-25T13:31:35.267771 #5826]  INFO -- default-fedora-20: ==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...I, [2014-09-25T13:31:35.365265 #5826]  INFO -- default-fedora-20:     default: Adapter 1: nat
+I, [2014-09-25T13:31:35.452843 #5826]  INFO -- default-fedora-20: ==> default: Forwarding ports...
+I, [2014-09-25T13:31:35.508508 #5826]  INFO -- default-fedora-20:     default: 22 => 2222 (adapter 1)
+I, [2014-09-25T13:31:35.763632 #5826]  INFO -- default-fedora-20: ==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...I, [2014-09-25T13:31:36.225134 #5826]  INFO -- default-fedora-20:     default: SSH address: 127.0.0.1:2222
+I, [2014-09-25T13:31:36.225249 #5826]  INFO -- default-fedora-20:     default: SSH username: vagrant
+I, [2014-09-25T13:31:36.225278 #5826]  INFO -- default-fedora-20:     default: SSH auth method: private key
+I, [2014-09-25T13:31:51.347725 #5826]  INFO -- default-fedora-20:     default: Warning: Connection timeout. Retrying...
+I, [2014-09-25T13:31:52.049467 #5826]  INFO -- default-fedora-20: ==> default: Machine booted and ready!
+I, [2014-09-25T13:31:52.049835 #5826]  INFO -- default-fedora-20: ==> default: Checking for guest additions in VM...
+I, [2014-09-25T13:31:52.089793 #5826]  INFO -- default-fedora-20: ==> default: Setting hostname...
+I, [2014-09-25T13:31:52.940908 #5826]  INFO -- default-fedora-20: ==> default: Machine not provisioning because `--no-provision` is specified.
+I, [2014-09-25T13:31:54.027385 #5826]  INFO -- default-fedora-20: Vagrant instance <default-fedora-20> created.
+I, [2014-09-25T13:31:54.028428 #5826]  INFO -- default-fedora-20: Finished creating <default-fedora-20> (0m44.66s).
+I, [2014-09-25T13:31:54.028514 #5826]  INFO -- default-fedora-20: -----> Converging <default-fedora-20>...
+I, [2014-09-25T13:31:54.029063 #5826]  INFO -- default-fedora-20: Preparing files for transfer
+I, [2014-09-25T13:31:54.029301 #5826]  INFO -- default-fedora-20: Resolving cookbook dependencies with Berkshelf 3.1.5...
+I, [2014-09-25T13:31:57.214807 #5826]  INFO -- default-fedora-20: Removing non-cookbook files before transfer
+-----> Installing Chef Omnibus (true)I, [2014-09-25T13:31:57.384179 #5826]  INFO -- default-fedora-20: 
+downloading https://www.getchef.com/chef/install.shI, [2014-09-25T13:31:57.384417 #5826]  INFO -- default-fedora-20: 
+  to file /tmp/install.shI, [2014-09-25T13:31:57.384618 #5826]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:31:57.384833 #5826]  INFO -- default-fedora-20: 
+Downloading Chef  for el...I, [2014-09-25T13:32:03.414581 #5826]  INFO -- default-fedora-20: 
+downloading https://www.getchef.com/chef/metadata?v=&prerelease=false&nightlies=false&p=el&pv=6&m=x86_64I, [2014-09-25T13:32:03.416321 #5826]  INFO -- default-fedora-20: 
+  to file /tmp/install.sh.741/metadata.txtI, [2014-09-25T13:32:03.416570 #5826]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:32:03.416946 #5826]  INFO -- default-fedora-20: 
+url	https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:32:09.132785 #5826]  INFO -- default-fedora-20: 
+md5	8731b6558009fc322f6469b415a759f8I, [2014-09-25T13:32:09.133432 #5826]  INFO -- default-fedora-20: 
+sha256	dc7bc9d6084d29ffec67664fdae455406c3e7657c4aebcbef19f5a9ba459db37I, [2014-09-25T13:32:09.133724 #5826]  INFO -- default-fedora-20: 
+downloaded metadata file looks valid...I, [2014-09-25T13:32:09.136369 #5826]  INFO -- default-fedora-20: 
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:32:09.146504 #5826]  INFO -- default-fedora-20: 
+  to file /tmp/install.sh.741/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:32:09.146778 #5826]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:32:09.146981 #5826]  INFO -- default-fedora-20: 
+Comparing checksum with sha256sum...I, [2014-09-25T13:37:22.451550 #5826]  INFO -- default-fedora-20: 
+Installing Chef I, [2014-09-25T13:37:22.608605 #5826]  INFO -- default-fedora-20: 
+installing with rpm...I, [2014-09-25T13:37:22.608840 #5826]  INFO -- default-fedora-20: 
+warning: /tmp/install.sh.741/chef-11.16.2-1.el6.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID 83ef826a: NOKEYI, [2014-09-25T13:37:22.642825 #5826]  INFO -- default-fedora-20: 
+Preparing...                                                            (100%)#                                 (100%)##                                (100%)###                               (100%)####                              (100%)#####                             (100%)######                            (100%)#######                           (100%)########                          (100%)#########                         (100%)##########                        (100%)###########                       (100%)############                      (100%)#############                     (100%)##############                    (100%)###############                   (100%)################                  (100%)#################                 (100%)##################                (100%)###################               (100%)####################              (100%)#####################             (100%)######################            (100%)#######################           (100%)########################          (100%)#########################         (100%)##########################        (100%)###########################       (100%)############################      (100%)#############################     (100%)##############################    (100%)###############################   (100%)################################  (100%)################################# (100%)################################# [100%]I, [2014-09-25T13:37:22.961665 #5826]  INFO -- default-fedora-20: 
+Updating / installing...I, [2014-09-25T13:37:22.976021 #5826]  INFO -- default-fedora-20: 
+   1:chef-11.16.2-1.el6                                                 (  1%)#                                 (  4%)##                                (  7%)###                               ( 10%)####                              ( 13%)#####                             ( 16%)######                            ( 19%)#######                           ( 22%)########                          ( 25%)#########                         ( 28%)##########                        ( 31%)###########                       ( 34%)############                      ( 37%)#############                     ( 40%)##############                    ( 43%)###############                   ( 46%)################                  ( 49%)#################                 ( 51%)##################                ( 54%)###################               ( 57%)####################              ( 60%)#####################             ( 63%)######################            ( 66%)#######################           ( 69%)########################          ( 72%)#########################         ( 75%)##########################        ( 78%)###########################       ( 81%)############################      ( 84%)#############################     ( 87%)##############################    ( 90%)###############################   ( 93%)################################  ( 96%)################################# ( 99%)################################# [100%]I, [2014-09-25T13:37:24.226767 #5826]  INFO -- default-fedora-20: 
+Thank you for installing Chef!I, [2014-09-25T13:37:24.524859 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:24.580171 #5826]  INFO -- default-fedora-20: Transfering files to <default-fedora-20>
+[2014-09-25T09:37:24+00:00] INFO: Forking chef instance to converge...I, [2014-09-25T13:37:26.048592 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:24+00:00] WARN: I, [2014-09-25T13:37:26.050090 #5826]  INFO -- default-fedora-20: 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *I, [2014-09-25T13:37:26.050336 #5826]  INFO -- default-fedora-20: 
+SSL validation of HTTPS requests is disabled. HTTPS connections are stillI, [2014-09-25T13:37:26.050528 #5826]  INFO -- default-fedora-20: 
+encrypted, but chef is not able to detect forged replies or man in the middleI, [2014-09-25T13:37:26.050707 #5826]  INFO -- default-fedora-20: 
+attacks.I, [2014-09-25T13:37:26.050892 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:26.050999 #5826]  INFO -- default-fedora-20: 
+To fix this issue add an entry like this to your configuration file:I, [2014-09-25T13:37:26.051176 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:26.051290 #5826]  INFO -- default-fedora-20: 
+```I, [2014-09-25T13:37:26.051583 #5826]  INFO -- default-fedora-20: 
+  # Verify all HTTPS connections (recommended)I, [2014-09-25T13:37:26.051817 #5826]  INFO -- default-fedora-20: 
+  ssl_verify_mode :verify_peerI, [2014-09-25T13:37:26.052020 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:26.052135 #5826]  INFO -- default-fedora-20: 
+  # OR, Verify only connections to chef-serverI, [2014-09-25T13:37:26.052323 #5826]  INFO -- default-fedora-20: 
+  verify_api_cert trueI, [2014-09-25T13:37:26.052510 #5826]  INFO -- default-fedora-20: 
+```I, [2014-09-25T13:37:26.052725 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:26.052838 #5826]  INFO -- default-fedora-20: 
+To check your SSL configuration, or troubleshoot errors, you can use theI, [2014-09-25T13:37:26.053023 #5826]  INFO -- default-fedora-20: 
+`knife ssl check` command like so:I, [2014-09-25T13:37:26.053206 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:26.053314 #5826]  INFO -- default-fedora-20: 
+```I, [2014-09-25T13:37:26.053500 #5826]  INFO -- default-fedora-20: 
+  knife ssl check -c /tmp/kitchen/solo.rbI, [2014-09-25T13:37:26.053691 #5826]  INFO -- default-fedora-20: 
+```I, [2014-09-25T13:37:26.053882 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:26.053994 #5826]  INFO -- default-fedora-20: 
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *I, [2014-09-25T13:37:26.054182 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:26.054290 #5826]  INFO -- default-fedora-20: 
+Starting Chef Client, version 11.16.2[0mI, [2014-09-25T13:37:26.097646 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:25+00:00] INFO: *** Chef 11.16.2 ***I, [2014-09-25T13:37:26.097903 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:25+00:00] INFO: Chef-client pid: 838I, [2014-09-25T13:37:26.098128 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:32.959834 #5826]  INFO -- default-fedora-20: [2014-09-25T09:37:31+00:00] INFO: Setting the run_list to [] from CLI options
+[2014-09-25T09:37:31+00:00] INFO: Run List is []I, [2014-09-25T13:37:32.960853 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:31+00:00] INFO: Run List expands to []I, [2014-09-25T13:37:32.961244 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:31+00:00] INFO: Starting Chef Run for default-fedora-20I, [2014-09-25T13:37:32.961627 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:31+00:00] INFO: Running start handlersI, [2014-09-25T13:37:32.961879 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:31+00:00] INFO: Start handlers complete.I, [2014-09-25T13:37:32.962273 #5826]  INFO -- default-fedora-20: 
+Compiling Cookbooks...[0mI, [2014-09-25T13:37:32.963928 #5826]  INFO -- default-fedora-20: 
+Converging 0 resources[0mI, [2014-09-25T13:37:32.964645 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:31+00:00] INFO: Chef Run complete in 0.003373777 secondsI, [2014-09-25T13:37:32.965182 #5826]  INFO -- default-fedora-20: 
+[0mI, [2014-09-25T13:37:32.965557 #5826]  INFO -- default-fedora-20: 
+Running handlers:[0mI, [2014-09-25T13:37:32.965878 #5826]  INFO -- default-fedora-20: 
+[2014-09-25T09:37:31+00:00] INFO: Running report handlersI, [2014-09-25T13:37:32.966236 #5826]  INFO -- default-fedora-20: 
+Running handlers completeI, [2014-09-25T13:37:32.966483 #5826]  INFO -- default-fedora-20: 
+[0m[2014-09-25T09:37:31+00:00] INFO: Report handlers completeI, [2014-09-25T13:37:32.966967 #5826]  INFO -- default-fedora-20: 
+Chef Client finished, 0/0 resources updated in 6.922117325 seconds[0mI, [2014-09-25T13:37:32.967286 #5826]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:37:33.028482 #5826]  INFO -- default-fedora-20: Finished converging <default-fedora-20> (5m39.00s).
+I, [2014-09-25T13:37:33.028642 #5826]  INFO -- default-fedora-20: -----> Setting up <default-fedora-20>...
+I, [2014-09-25T13:37:33.029550 #5826]  INFO -- default-fedora-20: Finished setting up <default-fedora-20> (0m0.00s).
+I, [2014-09-25T13:37:33.029636 #5826]  INFO -- default-fedora-20: -----> Verifying <default-fedora-20>...
+I, [2014-09-25T13:37:33.030456 #5826]  INFO -- default-fedora-20: Finished verifying <default-fedora-20> (0m0.00s).
+I, [2014-09-25T13:37:33.030802 #5826]  INFO -- default-fedora-20: -----> Destroying <default-fedora-20>...
+I, [2014-09-25T13:37:34.964119 #5826]  INFO -- default-fedora-20: ==> default: Forcing shutdown of VM...
+I, [2014-09-25T13:37:39.392166 #5826]  INFO -- default-fedora-20: ==> default: Destroying VM and associated drives...
+I, [2014-09-25T13:37:39.803608 #5826]  INFO -- default-fedora-20: Vagrant instance <default-fedora-20> destroyed.
+I, [2014-09-25T13:37:39.804375 #5826]  INFO -- default-fedora-20: Finished destroying <default-fedora-20> (0m6.77s).
+I, [2014-09-25T13:37:39.804595 #5826]  INFO -- default-fedora-20: Finished testing <default-fedora-20> (6m30.44s).
+I, [2014-09-25T13:44:07.252005 #9783]  INFO -- default-fedora-20: -----> Cleaning up any prior instances of <default-fedora-20>
+I, [2014-09-25T13:44:07.252121 #9783]  INFO -- default-fedora-20: -----> Destroying <default-fedora-20>...
+I, [2014-09-25T13:44:07.253239 #9783]  INFO -- default-fedora-20: Finished destroying <default-fedora-20> (0m0.00s).
+I, [2014-09-25T13:44:07.253384 #9783]  INFO -- default-fedora-20: -----> Testing <default-fedora-20>
+I, [2014-09-25T13:44:07.253458 #9783]  INFO -- default-fedora-20: -----> Creating <default-fedora-20>...
+I, [2014-09-25T13:44:08.129666 #9783]  INFO -- default-fedora-20: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-09-25T13:44:08.395938 #9783]  INFO -- default-fedora-20: ==> default: Importing base box 'opscode-fedora-20'...
+[KProgress: 30%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[KI, [2014-09-25T13:44:31.232787 #9783]  INFO -- default-fedora-20: ==> default: Matching MAC address for NAT networking...
+I, [2014-09-25T13:44:31.775662 #9783]  INFO -- default-fedora-20: ==> default: Setting the name of the VM: default-fedora-20_default_1411638271739_4802
+I, [2014-09-25T13:44:32.141243 #9783]  INFO -- default-fedora-20: ==> default: Clearing any previously set network interfaces...
+I, [2014-09-25T13:44:32.221847 #9783]  INFO -- default-fedora-20: ==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: natI, [2014-09-25T13:44:32.299619 #9783]  INFO -- default-fedora-20: ==> default: Forwarding ports...
+I, [2014-09-25T13:44:32.378814 #9783]  INFO -- default-fedora-20:     default: 22 => 2222 (adapter 1)
+I, [2014-09-25T13:44:32.611523 #9783]  INFO -- default-fedora-20: ==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...I, [2014-09-25T13:44:33.013500 #9783]  INFO -- default-fedora-20:     default: SSH address: 127.0.0.1:2222
+I, [2014-09-25T13:44:33.013689 #9783]  INFO -- default-fedora-20:     default: SSH username: vagrant
+I, [2014-09-25T13:44:33.013805 #9783]  INFO -- default-fedora-20:     default: SSH auth method: private key
+I, [2014-09-25T13:44:48.116149 #9783]  INFO -- default-fedora-20:     default: Warning: Connection timeout. Retrying...
+I, [2014-09-25T13:44:48.811086 #9783]  INFO -- default-fedora-20: ==> default: Machine booted and ready!
+I, [2014-09-25T13:44:48.811340 #9783]  INFO -- default-fedora-20: ==> default: Checking for guest additions in VM...
+I, [2014-09-25T13:44:48.841189 #9783]  INFO -- default-fedora-20: ==> default: Setting hostname...
+I, [2014-09-25T13:44:49.699976 #9783]  INFO -- default-fedora-20: ==> default: Machine not provisioning because `--no-provision` is specified.
+I, [2014-09-25T13:44:50.784503 #9783]  INFO -- default-fedora-20: Vagrant instance <default-fedora-20> created.
+I, [2014-09-25T13:44:50.785648 #9783]  INFO -- default-fedora-20: Finished creating <default-fedora-20> (0m43.53s).
+I, [2014-09-25T13:44:50.785755 #9783]  INFO -- default-fedora-20: -----> Converging <default-fedora-20>...
+I, [2014-09-25T13:44:50.786301 #9783]  INFO -- default-fedora-20: Preparing files for transfer
+I, [2014-09-25T13:44:50.786589 #9783]  INFO -- default-fedora-20: Resolving cookbook dependencies with Berkshelf 3.1.5...
+I, [2014-09-25T13:44:50.858395 #9783]  INFO -- default-fedora-20: Removing non-cookbook files before transfer
+-----> Installing Chef Omnibus (true)I, [2014-09-25T13:44:51.010117 #9783]  INFO -- default-fedora-20: 
+downloading https://www.getchef.com/chef/install.shI, [2014-09-25T13:44:51.010326 #9783]  INFO -- default-fedora-20: 
+  to file /tmp/install.shI, [2014-09-25T13:44:51.010482 #9783]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:44:51.010636 #9783]  INFO -- default-fedora-20: 
+Downloading Chef  for el...I, [2014-09-25T13:44:57.082901 #9783]  INFO -- default-fedora-20: 
+downloading https://www.getchef.com/chef/metadata?v=&prerelease=false&nightlies=false&p=el&pv=6&m=x86_64I, [2014-09-25T13:44:57.084538 #9783]  INFO -- default-fedora-20: 
+  to file /tmp/install.sh.738/metadata.txtI, [2014-09-25T13:44:57.084748 #9783]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:44:57.085062 #9783]  INFO -- default-fedora-20: 
+url	https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:45:02.893485 #9783]  INFO -- default-fedora-20: 
+md5	8731b6558009fc322f6469b415a759f8I, [2014-09-25T13:45:02.893927 #9783]  INFO -- default-fedora-20: 
+sha256	dc7bc9d6084d29ffec67664fdae455406c3e7657c4aebcbef19f5a9ba459db37I, [2014-09-25T13:45:02.894313 #9783]  INFO -- default-fedora-20: 
+downloaded metadata file looks valid...I, [2014-09-25T13:45:02.897609 #9783]  INFO -- default-fedora-20: 
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:45:02.909318 #9783]  INFO -- default-fedora-20: 
+  to file /tmp/install.sh.738/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:45:02.909604 #9783]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:45:02.909831 #9783]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:48:52.179075 #11174]  INFO -- default-fedora-20: -----> Destroying <default-fedora-20>...
+I, [2014-09-25T13:48:53.742482 #11174]  INFO -- default-fedora-20: ==> default: Forcing shutdown of VM...
+I, [2014-09-25T13:48:55.032005 #11174]  INFO -- default-fedora-20: ==> default: Destroying VM and associated drives...
+I, [2014-09-25T13:48:55.432916 #11174]  INFO -- default-fedora-20: Vagrant instance <default-fedora-20> destroyed.
+I, [2014-09-25T13:48:55.434620 #11174]  INFO -- default-fedora-20: Finished destroying <default-fedora-20> (0m3.25s).
+I, [2014-09-25T13:49:03.419997 #11525]  INFO -- default-fedora-20: -----> Cleaning up any prior instances of <default-fedora-20>
+I, [2014-09-25T13:49:03.420106 #11525]  INFO -- default-fedora-20: -----> Destroying <default-fedora-20>...
+I, [2014-09-25T13:49:03.421216 #11525]  INFO -- default-fedora-20: Finished destroying <default-fedora-20> (0m0.00s).
+I, [2014-09-25T13:49:03.421398 #11525]  INFO -- default-fedora-20: -----> Testing <default-fedora-20>
+I, [2014-09-25T13:49:03.421483 #11525]  INFO -- default-fedora-20: -----> Creating <default-fedora-20>...
+I, [2014-09-25T13:49:04.298798 #11525]  INFO -- default-fedora-20: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2014-09-25T13:49:04.570509 #11525]  INFO -- default-fedora-20: ==> default: Importing base box 'opscode-fedora-20'...
+[KProgress: 30%[KProgress: 40%[KProgress: 50%[KProgress: 60%[KProgress: 70%[KProgress: 80%[KProgress: 90%[KI, [2014-09-25T13:49:28.840575 #11525]  INFO -- default-fedora-20: ==> default: Matching MAC address for NAT networking...
+I, [2014-09-25T13:49:29.361364 #11525]  INFO -- default-fedora-20: ==> default: Setting the name of the VM: default-fedora-20_default_1411638569325_86102
+I, [2014-09-25T13:49:29.707786 #11525]  INFO -- default-fedora-20: ==> default: Clearing any previously set network interfaces...
+I, [2014-09-25T13:49:29.795398 #11525]  INFO -- default-fedora-20: ==> default: Preparing network interfaces based on configuration...
+I, [2014-09-25T13:49:29.795628 #11525]  INFO -- default-fedora-20:     default: Adapter 1: nat
+I, [2014-09-25T13:49:29.873777 #11525]  INFO -- default-fedora-20: ==> default: Forwarding ports...
+I, [2014-09-25T13:49:29.918609 #11525]  INFO -- default-fedora-20:     default: 22 => 2222 (adapter 1)
+I, [2014-09-25T13:49:30.184271 #11525]  INFO -- default-fedora-20: ==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...I, [2014-09-25T13:49:30.557812 #11525]  INFO -- default-fedora-20:     default: SSH address: 127.0.0.1:2222
+I, [2014-09-25T13:49:30.557922 #11525]  INFO -- default-fedora-20:     default: SSH username: vagrant
+I, [2014-09-25T13:49:30.557975 #11525]  INFO -- default-fedora-20:     default: SSH auth method: private key
+I, [2014-09-25T13:49:45.687214 #11525]  INFO -- default-fedora-20:     default: Warning: Connection timeout. Retrying...
+I, [2014-09-25T13:49:46.368847 #11525]  INFO -- default-fedora-20: ==> default: Machine booted and ready!
+I, [2014-09-25T13:49:46.369184 #11525]  INFO -- default-fedora-20: ==> default: Checking for guest additions in VM...
+I, [2014-09-25T13:49:46.410988 #11525]  INFO -- default-fedora-20: ==> default: Setting hostname...
+I, [2014-09-25T13:49:47.275197 #11525]  INFO -- default-fedora-20: ==> default: Machine not provisioning because `--no-provision` is specified.
+I, [2014-09-25T13:49:48.363212 #11525]  INFO -- default-fedora-20: Vagrant instance <default-fedora-20> created.
+I, [2014-09-25T13:49:48.364262 #11525]  INFO -- default-fedora-20: Finished creating <default-fedora-20> (0m44.94s).
+I, [2014-09-25T13:49:48.364351 #11525]  INFO -- default-fedora-20: -----> Converging <default-fedora-20>...
+I, [2014-09-25T13:49:48.364916 #11525]  INFO -- default-fedora-20: Preparing files for transfer
+I, [2014-09-25T13:49:48.365201 #11525]  INFO -- default-fedora-20: Resolving cookbook dependencies with Berkshelf 3.1.5...
+I, [2014-09-25T13:49:48.400876 #11525]  INFO -- default-fedora-20: Removing non-cookbook files before transfer
+-----> Installing Chef Omnibus (true)I, [2014-09-25T13:49:48.559143 #11525]  INFO -- default-fedora-20: 
+downloading https://www.getchef.com/chef/install.shI, [2014-09-25T13:49:48.559355 #11525]  INFO -- default-fedora-20: 
+  to file /tmp/install.shI, [2014-09-25T13:49:48.559516 #11525]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:49:48.559672 #11525]  INFO -- default-fedora-20: 
+Downloading Chef  for el...I, [2014-09-25T13:49:54.667914 #11525]  INFO -- default-fedora-20: 
+downloading https://www.getchef.com/chef/metadata?v=&prerelease=false&nightlies=false&p=el&pv=6&m=x86_64I, [2014-09-25T13:49:54.669883 #11525]  INFO -- default-fedora-20: 
+  to file /tmp/install.sh.741/metadata.txtI, [2014-09-25T13:49:54.670130 #11525]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:49:54.670495 #11525]  INFO -- default-fedora-20: 
+url	https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:50:00.483476 #11525]  INFO -- default-fedora-20: 
+md5	8731b6558009fc322f6469b415a759f8I, [2014-09-25T13:50:00.483813 #11525]  INFO -- default-fedora-20: 
+sha256	dc7bc9d6084d29ffec67664fdae455406c3e7657c4aebcbef19f5a9ba459db37I, [2014-09-25T13:50:00.484158 #11525]  INFO -- default-fedora-20: 
+downloaded metadata file looks valid...I, [2014-09-25T13:50:00.486725 #11525]  INFO -- default-fedora-20: 
+downloading https://opscode-omnibus-packages.s3.amazonaws.com/el/6/x86_64/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:50:00.496741 #11525]  INFO -- default-fedora-20: 
+  to file /tmp/install.sh.741/chef-11.16.2-1.el6.x86_64.rpmI, [2014-09-25T13:50:00.497039 #11525]  INFO -- default-fedora-20: 
+trying wget...I, [2014-09-25T13:50:00.497222 #11525]  INFO -- default-fedora-20: 
+I, [2014-09-25T13:52:45.625899 #12870]  INFO -- default-fedora-20: -----> Destroying <default-fedora-20>...
+I, [2014-09-25T13:52:47.154381 #12870]  INFO -- default-fedora-20: ==> default: Forcing shutdown of VM...
+I, [2014-09-25T13:52:48.308152 #12870]  INFO -- default-fedora-20: ==> default: Destroying VM and associated drives...
+I, [2014-09-25T13:52:48.698524 #12870]  INFO -- default-fedora-20: Vagrant instance <default-fedora-20> destroyed.
+I, [2014-09-25T13:52:48.700399 #12870]  INFO -- default-fedora-20: Finished destroying <default-fedora-20> (0m3.07s).

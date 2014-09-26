@@ -1,0 +1,747 @@
+I, [2014-09-25T18:16:26.915435 #9521]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+E, [2014-09-25T18:16:26.915728 #9521] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-25T18:16:26.915762 #9521] ERROR -- Kitchen: Class: Kitchen::UserError
+E, [2014-09-25T18:16:26.915784 #9521] ERROR -- Kitchen: Message: Kitchen YAML file /home/laboshinl/chef-repo/cookbooks/centos_cloud/.kitchen.yml does not exist.
+E, [2014-09-25T18:16:26.915803 #9521] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-25T18:16:26.915822 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/loader/yaml.rb:74:in `read'
+E, [2014-09-25T18:16:26.915840 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:78:in `data'
+E, [2014-09-25T18:16:26.915858 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:66:in `suites'
+E, [2014-09-25T18:16:26.915877 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:90:in `filter_instances'
+E, [2014-09-25T18:16:26.915895 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:72:in `build_instances'
+E, [2014-09-25T18:16:26.915914 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/config.rb:52:in `instances'
+E, [2014-09-25T18:16:26.915932 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:64:in `get_filtered_instances'
+E, [2014-09-25T18:16:26.915950 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:85:in `parse_subcommand'
+E, [2014-09-25T18:16:26.915968 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command/action.rb:37:in `block in call'
+E, [2014-09-25T18:16:26.915986 #9521] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-25T18:16:26.916004 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command/action.rb:36:in `call'
+E, [2014-09-25T18:16:26.916023 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:47:in `perform'
+E, [2014-09-25T18:16:26.916041 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:118:in `block (2 levels) in <class:CLI>'
+E, [2014-09-25T18:16:26.916058 #9521] ERROR -- Kitchen: /usr/local/share/gems/gems/thor-0.19.1/lib/thor/command.rb:27:in `run'
+E, [2014-09-25T18:16:26.916076 #9521] ERROR -- Kitchen: /usr/local/share/gems/gems/thor-0.19.1/lib/thor/invocation.rb:126:in `invoke_command'
+E, [2014-09-25T18:16:26.916094 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/cli.rb:233:in `invoke_task'
+E, [2014-09-25T18:16:26.916112 #9521] ERROR -- Kitchen: /usr/local/share/gems/gems/thor-0.19.1/lib/thor.rb:359:in `dispatch'
+E, [2014-09-25T18:16:26.916130 #9521] ERROR -- Kitchen: /usr/local/share/gems/gems/thor-0.19.1/lib/thor/base.rb:440:in `start'
+E, [2014-09-25T18:16:26.916147 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/bin/kitchen:13:in `block in <top (required)>'
+E, [2014-09-25T18:16:26.916165 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/errors.rb:81:in `with_friendly_errors'
+E, [2014-09-25T18:16:26.916183 #9521] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/bin/kitchen:13:in `<top (required)>'
+E, [2014-09-25T18:16:26.916201 #9521] ERROR -- Kitchen: /home/laboshinl/bin/kitchen:23:in `load'
+E, [2014-09-25T18:16:26.916219 #9521] ERROR -- Kitchen: /home/laboshinl/bin/kitchen:23:in `<main>'
+E, [2014-09-25T18:16:26.916236 #9521] ERROR -- Kitchen: ----------------------
+I, [2014-09-25T18:16:50.414508 #9544]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:16:50.845465 #9544]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-25T18:17:23.839024 #9746]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:17:24.277549 #9746]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-25T18:17:24.302236 #9746]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-25T18:17:24.302799 #9746]  INFO -- Kitchen: -----> Kitchen is finished. (0m0.46s)
+I, [2014-09-25T18:17:27.095476 #9782]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:17:27.526815 #9782]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-25T18:18:43.258207 #9782]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:19:17.780311 #9782] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:19:32.887555 #11594]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:19:33.362307 #11594]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:19:56.980927 #11594] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:26:20.929517 #11787]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:26:21.365556 #11787]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:26:44.871471 #11787] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:27:06.950794 #11848]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:27:07.412043 #11848]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-25T18:27:10.907085 #11848]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-25T18:27:10.907639 #11848]  INFO -- Kitchen: -----> Kitchen is finished. (0m3.96s)
+I, [2014-09-25T18:27:14.360375 #12195]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:27:14.789931 #12195]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-25T18:28:33.982469 #12195]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:29:05.380972 #12195] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:30:39.326049 #14054]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:30:39.757912 #14054]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:31:04.310995 #14054] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:31:32.119858 #14097]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:31:32.557008 #14097]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-25T18:31:36.686862 #14097]  INFO -- Kitchen: -----> Creating <compute-centos-70>...
+I, [2014-09-25T18:31:56.700493 #14641]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:31:57.144383 #14641]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-25T18:32:17.600701 #14641]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-25T18:32:17.601443 #14641]  INFO -- Kitchen: -----> Kitchen is finished. (0m20.90s)
+I, [2014-09-25T18:32:24.049719 #15030]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:32:24.485720 #15030]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-25T18:32:24.487141 #15030]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-25T18:32:24.487517 #15030]  INFO -- Kitchen: -----> Kitchen is finished. (0m0.44s)
+I, [2014-09-25T18:32:46.068888 #15086]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:32:46.502189 #15086]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-25T18:34:04.137974 #15086]  INFO -- Kitchen: -----> Creating <compute-centos-70>...
+I, [2014-09-25T18:35:56.024149 #15086]  INFO -- Kitchen: -----> Kitchen is finished. (3m9.96s)
+I, [2014-09-25T18:36:40.226806 #18538]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:36:40.658681 #18538]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:37:12.404859 #18538] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:38:12.952564 #18607]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:38:13.388704 #18607]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:38:37.814548 #18607] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:40:18.645921 #18717]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:40:19.080937 #18717]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:40:43.575569 #18717] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+E, [2014-09-25T18:42:28.895086 #18799] ERROR -- Kitchen: 
+Argument `' returned multiple results:
+  * controller-centos-70
+  * compute-centos-70
+
+
+I, [2014-09-25T18:44:28.565815 #18879]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:44:29.000846 #18879]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:44:53.483660 #18879] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:50:34.580508 #19051]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:50:35.013959 #19051]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:50:59.567566 #19051] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:55:35.661577 #19132]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:55:36.093834 #19132]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:56:00.569863 #19132] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:57:07.414117 #19177]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:57:07.851751 #19177]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:57:32.373877 #19177] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T18:59:00.467654 #19232]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T18:59:00.903342 #19232]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T18:59:25.446272 #19232] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:01:14.911110 #19614]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:01:15.344219 #19614]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:01:39.849169 #19614] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:01:58.069266 #19663]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:01:58.519979 #19663]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:02:23.084849 #19663] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:05:20.997613 #19731]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:05:21.443101 #19731]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:05:46.111621 #19731] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:07:22.742047 #19800]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:07:23.177338 #19800]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:13:47.801889 #19800] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:24:20.319923 #20165]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:24:20.763741 #20165]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+I, [2014-09-25T19:25:20.297636 #20223]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:25:20.832333 #20223]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-25T19:25:25.670826 #20223]  INFO -- Kitchen: -----> Creating <compute-centos-70>...
+I, [2014-09-25T19:25:29.673479 #20223]  INFO -- Kitchen: -----> Kitchen is finished. (0m9.38s)
+I, [2014-09-25T19:25:54.538973 #20778]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:25:54.977029 #20778]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:26:29.979748 #20778] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:28:51.198249 #20842]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:28:51.637124 #20842]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:29:26.737889 #20842] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:36:32.108161 #21034]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:36:32.548182 #21034]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:37:12.845335 #21034] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:44:03.932616 #21238]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:44:04.367406 #21238]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:44:39.552304 #21238] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:48:33.157861 #21330]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:48:33.606195 #21330]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:48:58.286666 #21330] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:51:00.841192 #21456]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:51:01.296220 #21456]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T19:51:36.358478 #21456] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T19:57:38.991856 #21588]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:57:39.424821 #21588]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-25T19:57:42.804043 #21588]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-25T19:57:46.281688 #21588]  INFO -- Kitchen: -----> Kitchen is finished. (0m7.29s)
+I, [2014-09-25T19:58:01.531731 #22254]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T19:58:01.963029 #22254]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-25T19:59:25.407991 #22254]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T20:05:14.999769 #22254] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-25T20:08:35.647212 #24271]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-25T20:08:36.080262 #24271]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-25T20:28:01.971318 #24271] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T12:48:01.617318 #11505]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T12:48:04.201223 #11505]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T12:48:04.983987 #11505] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-26T12:48:04.984051 #11505] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-09-26T12:48:04.984075 #11505] ERROR -- Kitchen: Message: Failed to complete #converge action: [undefined method `+' for nil:NilClass]
+E, [2014-09-26T12:48:04.984097 #11505] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-09-26T12:48:04.984116 #11505] ERROR -- Kitchen: Class: NoMethodError
+E, [2014-09-26T12:48:04.984136 #11505] ERROR -- Kitchen: Message: undefined method `+' for nil:NilClass
+E, [2014-09-26T12:48:04.984336 #11505] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-26T12:48:04.984358 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-openstack-1.6.0/lib/kitchen/driver/openstack.rb:44:in `block in <class:Openstack>'
+E, [2014-09-26T12:48:04.984378 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/lazy_hash.rb:38:in `call'
+E, [2014-09-26T12:48:04.984398 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/lazy_hash.rb:38:in `[]'
+E, [2014-09-26T12:48:04.984417 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/lazy_hash.rb:46:in `block in to_hash'
+E, [2014-09-26T12:48:04.984444 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/lazy_hash.rb:46:in `each'
+E, [2014-09-26T12:48:04.984466 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/lazy_hash.rb:46:in `to_hash'
+E, [2014-09-26T12:48:04.984486 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:84:in `build_ssh_args'
+E, [2014-09-26T12:48:04.984505 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:43:in `converge'
+E, [2014-09-26T12:48:04.984524 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-26T12:48:04.984543 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-26T12:48:04.984562 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `call'
+E, [2014-09-26T12:48:04.984582 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `synchronize_or_call'
+E, [2014-09-26T12:48:04.984601 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-26T12:48:04.984620 #11505] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-26T12:48:04.984654 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-26T12:48:04.984683 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-26T12:48:04.984713 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:256:in `converge_action'
+E, [2014-09-26T12:48:04.984750 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-26T12:48:04.984770 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-26T12:48:04.984789 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-26T12:48:04.984808 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-09-26T12:48:04.984827 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-26T12:48:04.984848 #11505] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-26T12:48:04.984882 #11505] ERROR -- Kitchen: ----------------------
+I, [2014-09-26T12:55:08.277160 #11684]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+E, [2014-09-26T12:55:08.278637 #11684] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+I, [2014-09-26T12:55:17.328830 #11686]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+E, [2014-09-26T12:55:17.330801 #11686] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+I, [2014-09-26T12:55:40.998312 #11710]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+E, [2014-09-26T12:55:41.000283 #11710] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+I, [2014-09-26T12:55:52.787069 #11716]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+E, [2014-09-26T12:55:52.789052 #11716] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+E, [2014-09-26T12:56:00.914885 #11721] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+E, [2014-09-26T12:57:21.070403 #11756] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+E, [2014-09-26T12:57:42.365354 #11770] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+E, [2014-09-26T12:58:57.616221 #11784] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+E, [2014-09-26T12:59:05.070461 #11787] ERROR -- Kitchen: 
+No instances for regex `', try running `kitchen list'
+
+
+E, [2014-09-26T12:59:09.126709 #11791] ERROR -- Kitchen: 
+No instances defined
+
+
+E, [2014-09-26T12:59:21.542096 #11794] ERROR -- Kitchen: 
+No instances for regex `ubuntu-14.04', try running `kitchen list'
+
+
+I, [2014-09-26T13:06:10.904769 #15186]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T13:06:14.459976 #15186]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+E, [2014-09-26T13:06:17.635206 #15186] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-26T13:06:17.635252 #15186] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-09-26T13:06:17.635273 #15186] ERROR -- Kitchen: Message: Failed to complete #destroy action: [Expected process to exit with [0], but received '1'
+---- Begin output of vagrant destroy -f ----
+STDOUT: 
+STDERR: The provider 'virtualbox' that was requested to back the machine
+'default' is reporting that it isn't usable on this system. The
+reason is shown below:
+
+VirtualBox is complaining that the kernel module is not loaded. Please
+run `VBoxManage --version` or open the VirtualBox GUI to see the error
+message which should contain instructions on how to fix this error.
+---- End output of vagrant destroy -f ----
+Ran vagrant destroy -f returned 1]
+E, [2014-09-26T13:06:17.635295 #15186] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-09-26T13:06:17.635316 #15186] ERROR -- Kitchen: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2014-09-26T13:06:17.635334 #15186] ERROR -- Kitchen: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant destroy -f ----
+STDOUT: 
+STDERR: The provider 'virtualbox' that was requested to back the machine
+'default' is reporting that it isn't usable on this system. The
+reason is shown below:
+
+VirtualBox is complaining that the kernel module is not loaded. Please
+run `VBoxManage --version` or open the VirtualBox GUI to see the error
+message which should contain instructions on how to fix this error.
+---- End output of vagrant destroy -f ----
+Ran vagrant destroy -f returned 1
+E, [2014-09-26T13:06:17.635353 #15186] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-26T13:06:17.635370 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
+E, [2014-09-26T13:06:17.635388 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/shell_out.rb:59:in `run_command'
+E, [2014-09-26T13:06:17.635405 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/base.rb:158:in `run_command'
+E, [2014-09-26T13:06:17.635423 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:123:in `run'
+E, [2014-09-26T13:06:17.635440 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:93:in `destroy'
+E, [2014-09-26T13:06:17.635457 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-26T13:06:17.635474 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-26T13:06:17.635492 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:305:in `call'
+E, [2014-09-26T13:06:17.635509 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:305:in `block in synchronize_or_call'
+E, [2014-09-26T13:06:17.635527 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:303:in `synchronize'
+E, [2014-09-26T13:06:17.635546 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:303:in `synchronize_or_call'
+E, [2014-09-26T13:06:17.635569 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-26T13:06:17.635588 #15186] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-26T13:06:17.635605 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-26T13:06:17.635624 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-26T13:06:17.635644 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:268:in `destroy_action'
+E, [2014-09-26T13:06:17.635663 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-26T13:06:17.635680 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-26T13:06:17.635697 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-26T13:06:17.635718 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:152:in `destroy'
+E, [2014-09-26T13:06:17.635735 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-26T13:06:17.635752 #15186] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-26T13:06:17.635770 #15186] ERROR -- Kitchen: ----------------------
+I, [2014-09-26T13:12:45.335308 #18795]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T13:12:45.775654 #18795]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T13:12:50.339459 #18795]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-26T13:12:50.340484 #18795]  INFO -- Kitchen: -----> Kitchen is finished. (0m5.01s)
+I, [2014-09-26T14:12:39.619259 #22627]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T14:12:40.062887 #22627]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-26T14:14:18.525589 #22627]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T14:15:06.143830 #24667] ERROR -- Kitchen: 
+Argument `' returned multiple results:
+  * controller-centos-70
+  * compute-centos-70
+
+
+E, [2014-09-26T14:15:54.765758 #22627] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T14:27:40.950938 #24941]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T14:27:41.403444 #24941]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T14:28:06.239126 #24941] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T14:28:43.235396 #24978]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T14:28:43.684025 #24978]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T14:29:44.596445 #24978] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T14:30:10.725285 #25069]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T14:30:11.175172 #25069]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T14:31:05.296678 #25069] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T14:41:32.074394 #25281]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T14:41:32.524217 #25281]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T14:52:36.590569 #25281] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T14:59:46.654481 #25678]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T14:59:47.112514 #25678]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:00:19.812298 #25678] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:04:50.789861 #25895]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:04:51.243942 #25895]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:05:19.644641 #25895] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:06:15.715283 #25931]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:06:16.173487 #25931]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:06:51.534126 #25931] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:09:05.895218 #25998]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:09:06.354385 #25998]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:09:35.957824 #25998] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:09:48.772666 #26036]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:09:49.231779 #26036]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T15:09:52.601084 #26036]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-26T15:09:52.601625 #26036]  INFO -- Kitchen: -----> Kitchen is finished. (0m3.83s)
+I, [2014-09-26T15:09:58.339607 #26398]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:09:58.792040 #26398]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-26T15:11:20.202593 #26398]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:22:47.919099 #26398] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:25:54.314581 #28439]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:25:55.565451 #28439]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:26:35.868085 #28439] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:28:32.720529 #28508]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:28:33.181803 #28508]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:29:12.424955 #28508] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+E, [2014-09-26T15:32:39.553148 #28674] ERROR -- Kitchen: 
+Argument `' returned multiple results:
+  * controller-centos-70
+  * compute-centos-70
+
+
+I, [2014-09-26T15:36:33.487730 #28752]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:36:33.932034 #28752]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:37:01.800664 #28752] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:39:35.492994 #28850]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:39:35.946201 #28850]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:40:16.162251 #28850] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:40:36.071730 #28942]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:40:36.522621 #28942]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T15:41:17.198452 #28942] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T15:44:28.215951 #29004]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:44:28.658484 #29004]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T15:44:34.771713 #29004]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-26T15:44:34.851468 #29004]  INFO -- Kitchen: -----> Kitchen is finished. (0m6.64s)
+I, [2014-09-26T15:44:37.253030 #29376]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:44:37.698647 #29376]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-26T15:46:00.320928 #29376]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+I, [2014-09-26T15:55:31.189823 #31243]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T15:55:31.634023 #31243]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T16:08:59.125749 #31243] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T16:10:49.356976 #31655]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T16:10:49.844059 #31655]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T16:11:47.100845 #31655] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T16:18:56.225067 #31795]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T16:18:56.673435 #31795]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T16:19:35.702919 #31795] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T16:29:13.356390 #32045]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T16:29:13.811647 #32045]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+E, [2014-09-26T16:29:57.786878 #32045] ERROR -- Kitchen: Converge failed on instance <controller-centos-70>.
+I, [2014-09-26T16:30:52.196011 #32123]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T16:30:52.643499 #32123]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+I, [2014-09-26T16:41:28.769532 #32123]  INFO -- Kitchen: -----> Setting up <controller-centos-70>...
+I, [2014-09-26T16:41:28.821590 #32123]  INFO -- Kitchen: -----> Verifying <controller-centos-70>...
+I, [2014-09-26T16:41:29.036178 #32123]  INFO -- Kitchen: -----> Creating <compute-centos-70>...
+I, [2014-09-26T16:46:42.764619 #32123]  INFO -- Kitchen: -----> Converging <compute-centos-70>...
+I, [2014-09-26T16:51:28.002288 #3636]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T16:51:28.526337 #3636]  INFO -- Kitchen: -----> Cleaning up any prior instances of <controller-centos-70>
+I, [2014-09-26T16:51:28.526770 #3636]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T16:51:38.348902 #3636]  INFO -- Kitchen: -----> Testing <controller-centos-70>
+I, [2014-09-26T16:51:38.349042 #3636]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+I, [2014-09-26T16:53:29.142489 #3636]  INFO -- Kitchen: -----> Converging <controller-centos-70>...
+I, [2014-09-26T17:20:19.901729 #3636]  INFO -- Kitchen: -----> Setting up <controller-centos-70>...
+I, [2014-09-26T17:20:20.363782 #3636]  INFO -- Kitchen: -----> Verifying <controller-centos-70>...
+I, [2014-09-26T17:20:20.602220 #3636]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T17:20:44.117902 #3636]  INFO -- Kitchen: -----> Cleaning up any prior instances of <compute-centos-70>
+I, [2014-09-26T17:20:44.170192 #3636]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-26T17:21:04.757469 #6912]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:21:06.211401 #6912]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T17:21:06.228973 #6912]  INFO -- Kitchen: -----> Destroying <compute-centos-70>...
+I, [2014-09-26T17:21:09.234058 #6912]  INFO -- Kitchen: -----> Kitchen is finished. (0m4.48s)
+I, [2014-09-26T17:29:01.942367 #7595]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:29:02.393061 #7595]  INFO -- Kitchen: -----> Creating <controller-fedora-20>...
+I, [2014-09-26T17:29:59.026742 #7595]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T17:31:51.487640 #8872] ERROR -- Kitchen: 
+No instances for regex `controller-centos-70', try running `kitchen list'
+
+
+E, [2014-09-26T17:32:17.940253 #7595] ERROR -- Kitchen: Converge failed on instance <controller-fedora-20>.
+I, [2014-09-26T17:37:34.226956 #8974]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:37:34.685493 #8974]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T17:37:57.245849 #8974] ERROR -- Kitchen: Converge failed on instance <controller-fedora-20>.
+I, [2014-09-26T17:38:33.442779 #9011]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:38:33.888472 #9011]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T17:38:57.291913 #9011] ERROR -- Kitchen: Converge failed on instance <controller-fedora-20>.
+I, [2014-09-26T17:40:28.775959 #9115]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:40:29.230125 #9115]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T17:40:29.275527 #9115] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-26T17:40:29.275576 #9115] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-09-26T17:40:29.275597 #9115] ERROR -- Kitchen: Message: Failed to complete #converge action: [Berkshelf::OutdatedDependency]
+E, [2014-09-26T17:40:29.275712 #9115] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-09-26T17:40:29.275730 #9115] ERROR -- Kitchen: Class: Berkshelf::OutdatedDependency
+E, [2014-09-26T17:40:29.275747 #9115] ERROR -- Kitchen: Message: Berkshelf::OutdatedDependency
+E, [2014-09-26T17:40:29.275764 #9115] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-26T17:40:29.275781 #9115] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/lockfile.rb:384:in `block in reduce!'
+E, [2014-09-26T17:40:29.275798 #9115] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/lockfile.rb:372:in `each'
+E, [2014-09-26T17:40:29.275816 #9115] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/lockfile.rb:372:in `reduce!'
+E, [2014-09-26T17:40:29.275833 #9115] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/installer.rb:32:in `run'
+E, [2014-09-26T17:40:29.275850 #9115] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/berksfile.rb:371:in `install'
+E, [2014-09-26T17:40:29.275868 #9115] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/berksfile.rb:590:in `vendor'
+E, [2014-09-26T17:40:29.275885 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:55:in `block in resolve'
+E, [2014-09-26T17:40:29.275903 #9115] ERROR -- Kitchen: /usr/local/share/gems/gems/thor-0.19.1/lib/thor/shell/basic.rb:20:in `mute'
+E, [2014-09-26T17:40:29.275920 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:51:in `resolve'
+E, [2014-09-26T17:40:29.275937 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:394:in `block in resolve_with_berkshelf'
+E, [2014-09-26T17:40:29.275954 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `synchronize'
+E, [2014-09-26T17:40:29.275980 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `resolve_with_berkshelf'
+E, [2014-09-26T17:40:29.276000 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:259:in `prepare_cookbooks'
+E, [2014-09-26T17:40:29.276017 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:120:in `create_sandbox'
+E, [2014-09-26T17:40:29.276034 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_zero.rb:35:in `create_sandbox'
+E, [2014-09-26T17:40:29.276052 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:40:in `converge'
+E, [2014-09-26T17:40:29.276069 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-09-26T17:40:29.276086 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-26T17:40:29.276103 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-26T17:40:29.276137 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `call'
+E, [2014-09-26T17:40:29.276158 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `synchronize_or_call'
+E, [2014-09-26T17:40:29.276176 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-26T17:40:29.276193 #9115] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-26T17:40:29.276210 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-26T17:40:29.276228 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-26T17:40:29.276245 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:256:in `converge_action'
+E, [2014-09-26T17:40:29.276262 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-26T17:40:29.276279 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-26T17:40:29.276296 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-26T17:40:29.276314 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-09-26T17:40:29.276331 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-26T17:40:29.276348 #9115] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-26T17:40:29.276366 #9115] ERROR -- Kitchen: ----------------------
+I, [2014-09-26T17:40:52.182375 #9146]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:40:52.638040 #9146]  INFO -- Kitchen: -----> Destroying <controller-fedora-20>...
+I, [2014-09-26T17:40:56.061143 #9146]  INFO -- Kitchen: -----> Kitchen is finished. (0m3.88s)
+I, [2014-09-26T17:40:58.748383 #9462]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:40:59.210258 #9462]  INFO -- Kitchen: -----> Creating <controller-fedora-20>...
+I, [2014-09-26T17:41:49.439038 #9462]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T17:41:49.484665 #9462] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-26T17:41:49.484708 #9462] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-09-26T17:41:49.484731 #9462] ERROR -- Kitchen: Message: Failed to complete #converge action: [Berkshelf::OutdatedDependency]
+E, [2014-09-26T17:41:49.484752 #9462] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-09-26T17:41:49.484904 #9462] ERROR -- Kitchen: Class: Berkshelf::OutdatedDependency
+E, [2014-09-26T17:41:49.484925 #9462] ERROR -- Kitchen: Message: Berkshelf::OutdatedDependency
+E, [2014-09-26T17:41:49.484944 #9462] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-26T17:41:49.484963 #9462] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/lockfile.rb:384:in `block in reduce!'
+E, [2014-09-26T17:41:49.485004 #9462] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/lockfile.rb:372:in `each'
+E, [2014-09-26T17:41:49.485026 #9462] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/lockfile.rb:372:in `reduce!'
+E, [2014-09-26T17:41:49.485047 #9462] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/installer.rb:32:in `run'
+E, [2014-09-26T17:41:49.485068 #9462] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/berksfile.rb:371:in `install'
+E, [2014-09-26T17:41:49.485087 #9462] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/berksfile.rb:590:in `vendor'
+E, [2014-09-26T17:41:49.485115 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:55:in `block in resolve'
+E, [2014-09-26T17:41:49.485138 #9462] ERROR -- Kitchen: /usr/local/share/gems/gems/thor-0.19.1/lib/thor/shell/basic.rb:20:in `mute'
+E, [2014-09-26T17:41:49.485158 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:51:in `resolve'
+E, [2014-09-26T17:41:49.485179 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:394:in `block in resolve_with_berkshelf'
+E, [2014-09-26T17:41:49.485198 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `synchronize'
+E, [2014-09-26T17:41:49.485220 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `resolve_with_berkshelf'
+E, [2014-09-26T17:41:49.485241 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:259:in `prepare_cookbooks'
+E, [2014-09-26T17:41:49.485261 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:120:in `create_sandbox'
+E, [2014-09-26T17:41:49.485283 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_zero.rb:35:in `create_sandbox'
+E, [2014-09-26T17:41:49.485304 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:40:in `converge'
+E, [2014-09-26T17:41:49.485325 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-09-26T17:41:49.485346 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-26T17:41:49.485368 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-26T17:41:49.485388 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `call'
+E, [2014-09-26T17:41:49.485409 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `synchronize_or_call'
+E, [2014-09-26T17:41:49.485444 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-26T17:41:49.485465 #9462] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-26T17:41:49.485485 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-26T17:41:49.485507 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-26T17:41:49.485526 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:256:in `converge_action'
+E, [2014-09-26T17:41:49.485547 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-26T17:41:49.485567 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-26T17:41:49.485589 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-26T17:41:49.485610 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-09-26T17:41:49.485631 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-26T17:41:49.485652 #9462] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-26T17:41:49.485677 #9462] ERROR -- Kitchen: ----------------------
+I, [2014-09-26T17:43:00.139518 #10677]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:43:00.621025 #10677]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T17:43:54.523833 #10677] ERROR -- Kitchen: Converge failed on instance <controller-fedora-20>.
+I, [2014-09-26T17:47:00.260163 #10826]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:47:00.709535 #10826]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+I, [2014-09-26T17:52:57.932640 #11089]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:52:58.386244 #11089]  INFO -- Kitchen: -----> Destroying <controller-fedora-20>...
+I, [2014-09-26T17:53:01.684746 #11089]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T17:53:01.685308 #11089]  INFO -- Kitchen: -----> Kitchen is finished. (0m3.75s)
+I, [2014-09-26T17:53:06.556222 #11405]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:53:07.006530 #11405]  INFO -- Kitchen: -----> Creating <controller-fedora-20>...
+I, [2014-09-26T17:53:59.482648 #11405]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T17:56:32.846726 #11405] ERROR -- Kitchen: Converge failed on instance <controller-fedora-20>.
+I, [2014-09-26T17:57:10.097734 #12757]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T17:57:10.542850 #12757]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T17:57:46.410232 #12757] ERROR -- Kitchen: Converge failed on instance <controller-fedora-20>.
+E, [2014-09-26T17:58:09.811254 #12802] ERROR -- Kitchen: 
+Argument `' returned multiple results:
+  * controller-fedora-20
+  * controller-centos-70
+
+
+E, [2014-09-26T18:02:11.622896 #13015] ERROR -- Kitchen: 
+Argument `' returned multiple results:
+  * controller-fedora-20
+  * controller-centos-70
+
+
+E, [2014-09-26T18:03:44.991677 #13127] ERROR -- Kitchen: 
+Argument `' returned multiple results:
+  * controller-fedora-20
+  * controller-centos-70
+
+
+I, [2014-09-26T18:13:46.031551 #13335]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T18:13:46.477521 #13335]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+I, [2014-09-26T18:14:24.280326 #13394]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T18:14:24.757320 #13394]  INFO -- Kitchen: -----> Destroying <controller-fedora-20>...
+I, [2014-09-26T18:14:28.482932 #13394]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T18:14:28.483475 #13394]  INFO -- Kitchen: -----> Kitchen is finished. (0m4.20s)
+I, [2014-09-26T18:14:30.870949 #13711]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T18:14:31.317915 #13711]  INFO -- Kitchen: -----> Creating <controller-fedora-20>...
+I, [2014-09-26T18:15:20.238135 #13711]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+I, [2014-09-26T18:36:05.223688 #13711]  INFO -- Kitchen: -----> Setting up <controller-fedora-20>...
+I, [2014-09-26T18:36:05.309215 #13711]  INFO -- Kitchen: -----> Verifying <controller-fedora-20>...
+I, [2014-09-26T18:36:05.347557 #13711]  INFO -- Kitchen: -----> Creating <controller-centos-70>...
+E, [2014-09-26T18:37:39.878508 #13711] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-26T18:37:39.907463 #13711] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-09-26T18:37:39.907557 #13711] ERROR -- Kitchen: Message: Failed to complete #create action: [Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider=virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'opscode-centos-7.0'...
+[KProgress: 20%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+==> default: Setting the name of the VM: controller-centos-70_default_1411742212716_26140
+==> default: Fixed port collision for 22 => 2222. Now on port 2200.
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 22 => 2200 (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2200
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...
+    default: Warning: Connection timeout. Retrying...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...
+STDERR: The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+/sbin/ifup enp0s8
+
+Stdout from the command:
+
+ERROR    : [/etc/sysconfig/network-scripts/ifup-eth] Error, some other host already uses address 172.28.128.12.
+
+
+Stderr from the command:
+---- End output of vagrant up --no-provision --provider=virtualbox ----
+Ran vagrant up --no-provision --provider=virtualbox returned 1]
+E, [2014-09-26T18:37:39.907603 #13711] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-09-26T18:37:39.907630 #13711] ERROR -- Kitchen: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2014-09-26T18:37:39.907653 #13711] ERROR -- Kitchen: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider=virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Importing base box 'opscode-centos-7.0'...
+[KProgress: 20%[KProgress: 50%[KProgress: 70%[KProgress: 90%[K==> default: Matching MAC address for NAT networking...
+==> default: Setting the name of the VM: controller-centos-70_default_1411742212716_26140
+==> default: Fixed port collision for 22 => 2222. Now on port 2200.
+==> default: Clearing any previously set network interfaces...
+==> default: Preparing network interfaces based on configuration...
+    default: Adapter 1: nat
+    default: Adapter 2: hostonly
+==> default: Forwarding ports...
+    default: 22 => 2200 (adapter 1)
+==> default: Running 'pre-boot' VM customizations...
+==> default: Booting VM...
+==> default: Waiting for machine to boot. This may take a few minutes...
+    default: SSH address: 127.0.0.1:2200
+    default: SSH username: vagrant
+    default: SSH auth method: private key
+    default: Warning: Connection timeout. Retrying...
+    default: Warning: Connection timeout. Retrying...
+==> default: Machine booted and ready!
+==> default: Checking for guest additions in VM...
+==> default: Setting hostname...
+==> default: Configuring and enabling network interfaces...
+STDERR: The following SSH command responded with a non-zero exit status.
+Vagrant assumes that this means the command failed!
+
+/sbin/ifup enp0s8
+
+Stdout from the command:
+
+ERROR    : [/etc/sysconfig/network-scripts/ifup-eth] Error, some other host already uses address 172.28.128.12.
+
+
+Stderr from the command:
+---- End output of vagrant up --no-provision --provider=virtualbox ----
+Ran vagrant up --no-provision --provider=virtualbox returned 1
+E, [2014-09-26T18:37:39.907677 #13711] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-26T18:37:39.907699 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/shell_out.rb:70:in `rescue in run_command'
+E, [2014-09-26T18:37:39.907723 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/shell_out.rb:59:in `run_command'
+E, [2014-09-26T18:37:39.907747 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/base.rb:158:in `run_command'
+E, [2014-09-26T18:37:39.907770 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:123:in `run'
+E, [2014-09-26T18:37:39.907794 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:68:in `create'
+E, [2014-09-26T18:37:39.907822 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-26T18:37:39.907848 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-26T18:37:39.907872 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:305:in `call'
+E, [2014-09-26T18:37:39.907896 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:305:in `block in synchronize_or_call'
+E, [2014-09-26T18:37:39.907920 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:303:in `synchronize'
+E, [2014-09-26T18:37:39.907944 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:303:in `synchronize_or_call'
+E, [2014-09-26T18:37:39.907972 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-26T18:37:39.908001 #13711] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-26T18:37:39.908026 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-26T18:37:39.908049 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-26T18:37:39.908073 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:252:in `create_action'
+E, [2014-09-26T18:37:39.908096 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-26T18:37:39.908120 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-26T18:37:39.908142 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-26T18:37:39.908166 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-09-26T18:37:39.908189 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-26T18:37:39.908212 #13711] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-26T18:37:39.908235 #13711] ERROR -- Kitchen: ----------------------
+I, [2014-09-26T18:40:25.108451 #17137]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T18:40:27.806542 #17137]  INFO -- Kitchen: -----> Destroying <controller-fedora-20>...
+I, [2014-09-26T18:40:32.969447 #17137]  INFO -- Kitchen: -----> Destroying <controller-centos-70>...
+I, [2014-09-26T18:40:32.970142 #17137]  INFO -- Kitchen: -----> Kitchen is finished. (0m7.86s)
+I, [2014-09-26T18:43:14.631037 #17582]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T18:43:15.102814 #17582]  INFO -- Kitchen: -----> Creating <controller-fedora-20>...
+I, [2014-09-26T18:44:12.174491 #17582]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T18:44:18.631492 #17582] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-26T18:44:18.631566 #17582] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-09-26T18:44:18.631592 #17582] ERROR -- Kitchen: Message: Failed to complete #converge action: [Berkshelf::NoSolutionError]
+E, [2014-09-26T18:44:18.631615 #17582] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-09-26T18:44:18.631635 #17582] ERROR -- Kitchen: Class: Berkshelf::NoSolutionError
+E, [2014-09-26T18:44:18.631656 #17582] ERROR -- Kitchen: Message: Berkshelf::NoSolutionError
+E, [2014-09-26T18:44:18.631675 #17582] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-26T18:44:18.631703 #17582] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/resolver.rb:83:in `rescue in resolve'
+E, [2014-09-26T18:44:18.631727 #17582] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/resolver.rb:73:in `resolve'
+E, [2014-09-26T18:44:18.631748 #17582] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/installer.rb:174:in `install_from_universe'
+E, [2014-09-26T18:44:18.631768 #17582] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/installer.rb:39:in `run'
+E, [2014-09-26T18:44:18.631789 #17582] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/berksfile.rb:371:in `install'
+E, [2014-09-26T18:44:18.631810 #17582] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/berksfile.rb:590:in `vendor'
+E, [2014-09-26T18:44:18.631831 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:55:in `block in resolve'
+E, [2014-09-26T18:44:18.631853 #17582] ERROR -- Kitchen: /usr/local/share/gems/gems/thor-0.19.1/lib/thor/shell/basic.rb:20:in `mute'
+E, [2014-09-26T18:44:18.631874 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:51:in `resolve'
+E, [2014-09-26T18:44:18.631896 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:394:in `block in resolve_with_berkshelf'
+E, [2014-09-26T18:44:18.631917 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `synchronize'
+E, [2014-09-26T18:44:18.631938 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `resolve_with_berkshelf'
+E, [2014-09-26T18:44:18.631971 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:259:in `prepare_cookbooks'
+E, [2014-09-26T18:44:18.632007 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:120:in `create_sandbox'
+E, [2014-09-26T18:44:18.632039 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_zero.rb:35:in `create_sandbox'
+E, [2014-09-26T18:44:18.632063 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:40:in `converge'
+E, [2014-09-26T18:44:18.632085 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-09-26T18:44:18.632108 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-26T18:44:18.632131 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-26T18:44:18.632155 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `call'
+E, [2014-09-26T18:44:18.632178 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `synchronize_or_call'
+E, [2014-09-26T18:44:18.632200 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-26T18:44:18.632223 #17582] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-26T18:44:18.632244 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-26T18:44:18.632266 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-26T18:44:18.632289 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:256:in `converge_action'
+E, [2014-09-26T18:44:18.632311 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-26T18:44:18.632340 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-26T18:44:18.632364 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-26T18:44:18.632385 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-09-26T18:44:18.632408 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-26T18:44:18.632430 #17582] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-26T18:44:18.632453 #17582] ERROR -- Kitchen: ----------------------
+I, [2014-09-26T18:47:08.963367 #18894]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T18:47:09.411110 #18894]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T18:47:14.000071 #18894] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-26T18:47:14.000112 #18894] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-09-26T18:47:14.000136 #18894] ERROR -- Kitchen: Message: Failed to complete #converge action: [Berkshelf::NoSolutionError]
+E, [2014-09-26T18:47:14.000157 #18894] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-09-26T18:47:14.000176 #18894] ERROR -- Kitchen: Class: Berkshelf::NoSolutionError
+E, [2014-09-26T18:47:14.000195 #18894] ERROR -- Kitchen: Message: Berkshelf::NoSolutionError
+E, [2014-09-26T18:47:14.000213 #18894] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-26T18:47:14.000232 #18894] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/resolver.rb:83:in `rescue in resolve'
+E, [2014-09-26T18:47:14.000256 #18894] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/resolver.rb:73:in `resolve'
+E, [2014-09-26T18:47:14.000276 #18894] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/installer.rb:174:in `install_from_universe'
+E, [2014-09-26T18:47:14.000296 #18894] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/installer.rb:39:in `run'
+E, [2014-09-26T18:47:14.000325 #18894] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/berksfile.rb:371:in `install'
+E, [2014-09-26T18:47:14.000344 #18894] ERROR -- Kitchen: /usr/local/share/gems/gems/berkshelf-3.1.5/lib/berkshelf/berksfile.rb:590:in `vendor'
+E, [2014-09-26T18:47:14.000365 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:55:in `block in resolve'
+E, [2014-09-26T18:47:14.000403 #18894] ERROR -- Kitchen: /usr/local/share/gems/gems/thor-0.19.1/lib/thor/shell/basic.rb:20:in `mute'
+E, [2014-09-26T18:47:14.000424 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef/berkshelf.rb:51:in `resolve'
+E, [2014-09-26T18:47:14.000452 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:394:in `block in resolve_with_berkshelf'
+E, [2014-09-26T18:47:14.000471 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `synchronize'
+E, [2014-09-26T18:47:14.000500 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:393:in `resolve_with_berkshelf'
+E, [2014-09-26T18:47:14.000529 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:259:in `prepare_cookbooks'
+E, [2014-09-26T18:47:14.000559 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_base.rb:120:in `create_sandbox'
+E, [2014-09-26T18:47:14.000588 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/provisioner/chef_zero.rb:35:in `create_sandbox'
+E, [2014-09-26T18:47:14.000623 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:40:in `converge'
+E, [2014-09-26T18:47:14.000652 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:75:in `converge'
+E, [2014-09-26T18:47:14.000672 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-26T18:47:14.000691 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-26T18:47:14.000711 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `call'
+E, [2014-09-26T18:47:14.000731 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `synchronize_or_call'
+E, [2014-09-26T18:47:14.000751 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-26T18:47:14.000769 #18894] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-26T18:47:14.000788 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-26T18:47:14.000808 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-26T18:47:14.000835 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:256:in `converge_action'
+E, [2014-09-26T18:47:14.000856 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-26T18:47:14.000875 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-26T18:47:14.000895 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-26T18:47:14.000916 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-09-26T18:47:14.000935 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-26T18:47:14.000955 #18894] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-26T18:47:14.000982 #18894] ERROR -- Kitchen: ----------------------
+I, [2014-09-26T18:58:48.561698 #19636]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T18:58:49.008521 #19636]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+I, [2014-09-26T19:01:03.406952 #19848]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T19:01:03.858045 #19848]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+I, [2014-09-26T19:04:02.222676 #19848]  INFO -- Kitchen: -----> Setting up <controller-fedora-20>...
+E, [2014-09-26T19:05:04.561536 #19848] ERROR -- Kitchen: Setup failed on instance <controller-fedora-20>.
+I, [2014-09-26T19:11:31.563748 #20116]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T19:11:32.415843 #20116]  INFO -- Kitchen: -----> Setting up <controller-fedora-20>...
+I, [2014-09-26T19:12:17.545701 #20116]  INFO -- Kitchen: -----> Verifying <controller-fedora-20>...
+E, [2014-09-26T19:12:18.387725 #20116] ERROR -- Kitchen: Verify failed on instance <controller-fedora-20>.
+I, [2014-09-26T19:14:54.556217 #20297]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T19:14:55.004700 #20297]  INFO -- Kitchen: -----> Verifying <controller-fedora-20>...
+E, [2014-09-26T19:14:56.325037 #20297] ERROR -- Kitchen: Verify failed on instance <controller-fedora-20>.
+I, [2014-09-26T19:15:49.700961 #20328]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T19:15:50.159039 #20328]  INFO -- Kitchen: -----> Verifying <controller-fedora-20>...
+I, [2014-09-26T19:15:51.746850 #20328]  INFO -- Kitchen: -----> Kitchen is finished. (0m2.05s)
