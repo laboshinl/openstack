@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<org.limepepper.chefclipse:CookbookVersion xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:org.limepepper.chefclipse="http://limepepper.org/v1/chefclipse/cookbook" name="openstack">
+  <recipes name="default.rb" ID="org.limepepper.chefclipse.common.cookbook.recipe-default.rb-null" checksum="6adb87bc6a25150fb88be697b3ec79de" cookbook="/"/>
+  <metadata/>
+  <root_files name=".gitignore" ID="org.limepepper.chefclipse.common.cookbook.root_file-.gitignore-null" checksum="b0c1dde28bbf04f6557e3b8af5885924" cookbook="/"/>
+  <root_files name=".kitchen.yml" ID="org.limepepper.chefclipse.common.cookbook.root_file-.kitchen.yml-null" checksum="e6c33817da717e2cf22d5e50aa400c2b" cookbook="/"/>
+  <root_files name="Berksfile" ID="org.limepepper.chefclipse.common.cookbook.root_file-Berksfile-null" checksum="5917bb8dc5baf4eb59194f06678390ae" cookbook="/"/>
+  <root_files name="Berksfile.lock" ID="org.limepepper.chefclipse.common.cookbook.root_file-Berksfile.lock-null" checksum="3107324824d9bab8dd56fe094cab69e9" cookbook="/"/>
+  <root_files name="CHANGELOG.md" ID="org.limepepper.chefclipse.common.cookbook.root_file-CHANGELOG.md-null" checksum="83b1fb490e1a9f2875f7b0318ae2cb9b" cookbook="/"/>
+  <root_files name="Gemfile" ID="org.limepepper.chefclipse.common.cookbook.root_file-Gemfile-null" checksum="b3b35bd8ac89442b65c4eda0392f1f5d" cookbook="/"/>
+  <root_files name="Gemfile.lock" ID="org.limepepper.chefclipse.common.cookbook.root_file-Gemfile.lock-null" checksum="46661fb2964a5fc124bceea38366d358" cookbook="/"/>
+  <root_files name="Guardfile" ID="org.limepepper.chefclipse.common.cookbook.root_file-Guardfile-null" checksum="83ecb3512c6297d49722953766f0f73a" cookbook="/"/>
+  <root_files name="LICENSE" ID="org.limepepper.chefclipse.common.cookbook.root_file-LICENSE-null" checksum="6cadeb051d65950fa78e87061cc73f59" cookbook="/"/>
+  <root_files name="README.md" ID="org.limepepper.chefclipse.common.cookbook.root_file-README.md-null" checksum="1105fe44cc97b3f5b97b6db9aa02d702" cookbook="/"/>
+  <root_files name="Thorfile" ID="org.limepepper.chefclipse.common.cookbook.root_file-Thorfile-null" checksum="e086e1b7927591877ffdd2e048538702" cookbook="/"/>
+  <root_files name="Vagrantfile" ID="org.limepepper.chefclipse.common.cookbook.root_file-Vagrantfile-null" checksum="05da95b76463f40ae072be95f540b9cd" cookbook="/"/>
+  <root_files name="chefignore" ID="org.limepepper.chefclipse.common.cookbook.root_file-chefignore-null" checksum="40ce1201e6149b93ebae89eb4acbba0d" cookbook="/"/>
+  <root_files name="metadata.rb" ID="org.limepepper.chefclipse.common.cookbook.root_file-metadata.rb-null" checksum="73d5a85bf7025b2cb8e35c7a254c18f0" cookbook="/"/>
+</org.limepepper.chefclipse:CookbookVersion>

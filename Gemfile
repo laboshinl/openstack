@@ -23,4 +23,7 @@ group :development do
   gem 'foodcritic'
   gem 'chef'
   gem 'chef-zero'
+  gem 'knife-solo_data_bag'
+  gem 'serverspec'
+  gem 'json'
 end  

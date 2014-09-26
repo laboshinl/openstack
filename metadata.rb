@@ -1,8 +1,14 @@
-name             'openstack'
-maintainer       'Leonid Laboshin'
+name             'centos_cloud'
+maintainer       'cloudtechlab'
 maintainer_email 'laboshinl@gmail.com'
-license          'All rights reserved'
-description      'Installs/Configures openstack'
-long_description 'Installs/Configures openstack'
+license          'Do What The Fuck You Want To Public License, Version 2'
+description      'Installs/Configures openstack cloudstructure based on CentOS 7.0'
+long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          '0.9.0'
 
+depends  "firewalld", ">=0.2.3"
+depends  "libcloud",">=0.1.0"
+depends  "lvm",">=1.2.2"
+
+supports "centos", ">= 7.0"
+supports "fedora", ">= 20"
