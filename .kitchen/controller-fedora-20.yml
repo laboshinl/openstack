@@ -3,4 +3,4 @@ hostname: 127.0.0.1
 username: vagrant
 ssh_key: /home/laboshinl/.vagrant.d/insecure_private_key
 port: '2222'
-last_action: verify
+last_action: create

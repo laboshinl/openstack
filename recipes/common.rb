@@ -11,6 +11,7 @@ include_recipe "centos_cloud::selinux"
 include_recipe "centos_cloud::repos"
 include_recipe "firewalld"
 include_recipe "libcloud::ssh_key"
+include_recipe "centos_cloud::ntp"
 
 %w[bash-completion].each do |pkg|
   package pkg do

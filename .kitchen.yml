@@ -25,4 +25,4 @@ suites:
       network:
         - ["private_network", {ip: "172.28.128.12"}]
     run_list:
-      - recipe[centos_cloud::keystone]
+      - recipe[centos_cloud]

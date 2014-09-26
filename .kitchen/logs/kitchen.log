@@ -745,3 +745,61 @@ E, [2014-09-26T19:14:56.325037 #20297] ERROR -- Kitchen: Verify failed on instan
 I, [2014-09-26T19:15:49.700961 #20328]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
 I, [2014-09-26T19:15:50.159039 #20328]  INFO -- Kitchen: -----> Verifying <controller-fedora-20>...
 I, [2014-09-26T19:15:51.746850 #20328]  INFO -- Kitchen: -----> Kitchen is finished. (0m2.05s)
+I, [2014-09-26T20:05:28.202926 #22155]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T20:05:28.652544 #22155]  INFO -- Kitchen: -----> Verifying <controller-fedora-20>...
+E, [2014-09-26T20:05:28.658677 #22155] ERROR -- Kitchen: ------Exception-------
+E, [2014-09-26T20:05:28.658717 #22155] ERROR -- Kitchen: Class: Kitchen::ActionFailed
+E, [2014-09-26T20:05:28.658740 #22155] ERROR -- Kitchen: Message: Failed to complete #verify action: [Connection refused - connect(2)]
+E, [2014-09-26T20:05:28.658762 #22155] ERROR -- Kitchen: ---Nested Exception---
+E, [2014-09-26T20:05:28.658781 #22155] ERROR -- Kitchen: Class: Errno::ECONNREFUSED
+E, [2014-09-26T20:05:28.658801 #22155] ERROR -- Kitchen: Message: Connection refused - connect(2)
+E, [2014-09-26T20:05:28.658820 #22155] ERROR -- Kitchen: ------Backtrace-------
+E, [2014-09-26T20:05:28.658840 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/net-ssh-2.9.1/lib/net/ssh/transport/session.rb:70:in `initialize'
+E, [2014-09-26T20:05:28.658860 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/net-ssh-2.9.1/lib/net/ssh/transport/session.rb:70:in `open'
+E, [2014-09-26T20:05:28.658880 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/net-ssh-2.9.1/lib/net/ssh/transport/session.rb:70:in `block in initialize'
+E, [2014-09-26T20:05:28.658900 #22155] ERROR -- Kitchen: /usr/share/ruby/timeout.rb:52:in `timeout'
+E, [2014-09-26T20:05:28.658919 #22155] ERROR -- Kitchen: /usr/share/ruby/timeout.rb:97:in `timeout'
+E, [2014-09-26T20:05:28.658938 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/net-ssh-2.9.1/lib/net/ssh/transport/session.rb:67:in `initialize'
+E, [2014-09-26T20:05:28.658958 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/net-ssh-2.9.1/lib/net/ssh.rb:202:in `new'
+E, [2014-09-26T20:05:28.658986 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/net-ssh-2.9.1/lib/net/ssh.rb:202:in `start'
+E, [2014-09-26T20:05:28.659007 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/ssh.rb:123:in `establish_connection'
+E, [2014-09-26T20:05:28.659027 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/ssh.rb:110:in `session'
+E, [2014-09-26T20:05:28.659047 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/ssh.rb:145:in `exec_with_exit'
+E, [2014-09-26T20:05:28.659066 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/ssh.rb:54:in `exec'
+E, [2014-09-26T20:05:28.659086 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:110:in `run_remote'
+E, [2014-09-26T20:05:28.659106 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:62:in `block in verify'
+E, [2014-09-26T20:05:28.659125 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/ssh.rb:47:in `initialize'
+E, [2014-09-26T20:05:28.659145 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:61:in `new'
+E, [2014-09-26T20:05:28.659165 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/driver/ssh_base.rb:61:in `verify'
+E, [2014-09-26T20:05:28.659185 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/kitchen-vagrant-0.15.0/lib/kitchen/driver/vagrant.rb:85:in `verify'
+E, [2014-09-26T20:05:28.659205 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `public_send'
+E, [2014-09-26T20:05:28.659224 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `block in perform_action'
+E, [2014-09-26T20:05:28.659244 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `call'
+E, [2014-09-26T20:05:28.659271 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:308:in `synchronize_or_call'
+E, [2014-09-26T20:05:28.659293 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:283:in `block in action'
+E, [2014-09-26T20:05:28.659320 #22155] ERROR -- Kitchen: /usr/share/ruby/benchmark.rb:281:in `measure'
+E, [2014-09-26T20:05:28.659339 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:282:in `action'
+E, [2014-09-26T20:05:28.659357 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:273:in `perform_action'
+E, [2014-09-26T20:05:28.659376 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:264:in `verify_action'
+E, [2014-09-26T20:05:28.659395 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:246:in `block in transition_to'
+E, [2014-09-26T20:05:28.659414 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `each'
+E, [2014-09-26T20:05:28.659432 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:245:in `transition_to'
+E, [2014-09-26T20:05:28.659451 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/instance.rb:141:in `verify'
+E, [2014-09-26T20:05:28.659471 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `public_send'
+E, [2014-09-26T20:05:28.659490 #22155] ERROR -- Kitchen: /home/laboshinl/.gem/ruby/gems/test-kitchen-1.2.1/lib/kitchen/command.rb:109:in `block (2 levels) in run_action'
+E, [2014-09-26T20:05:28.659509 #22155] ERROR -- Kitchen: ----------------------
+I, [2014-09-26T20:05:42.281081 #22173]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T20:05:42.731815 #22173]  INFO -- Kitchen: -----> Destroying <controller-fedora-20>...
+I, [2014-09-26T20:05:43.872755 #22173]  INFO -- Kitchen: -----> Kitchen is finished. (0m1.59s)
+I, [2014-09-26T20:05:46.186571 #22312]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T20:05:46.636936 #22312]  INFO -- Kitchen: -----> Creating <controller-fedora-20>...
+I, [2014-09-26T20:06:38.647440 #22312]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+I, [2014-09-26T20:15:33.904737 #23753]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T20:15:34.389216 #23753]  INFO -- Kitchen: -----> Destroying <controller-fedora-20>...
+I, [2014-09-26T20:15:38.823468 #23753]  INFO -- Kitchen: -----> Kitchen is finished. (0m4.92s)
+I, [2014-09-26T20:16:17.630924 #24088]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T20:16:18.078380 #24088]  INFO -- Kitchen: -----> Creating <controller-fedora-20>...
+I, [2014-09-26T20:17:09.602397 #24088]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
+E, [2014-09-26T20:17:56.402449 #24088] ERROR -- Kitchen: Converge failed on instance <controller-fedora-20>.
+I, [2014-09-26T20:22:01.572238 #25394]  INFO -- Kitchen: -----> Starting Kitchen (v1.2.1)
+I, [2014-09-26T20:22:02.020735 #25394]  INFO -- Kitchen: -----> Converging <controller-fedora-20>...
