@@ -15,6 +15,13 @@ if platform?("redhat", "centos")
     group  "root"
     action :create_if_missing
   end
+  cookbook_file "/etc/yum.repos.d/gluster.repo" do
+    source "gluster.repo"
+    mode   "0644"
+    owner  "root"
+    group  "root"
+    action :create_if_missing
+  end
 end
 
 template "/etc/yum.repos.d/openstack-icehouse.repo" do

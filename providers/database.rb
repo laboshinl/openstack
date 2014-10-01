@@ -1,5 +1,5 @@
 action :create do
-  bash "create new_resource.name database" do
+  bash "create #{new_resource.name} database" do
     code <<-CODE
 mysql -uroot -p#{new_resource.password} << EOF
 CREATE DATABASE IF NOT EXISTS #{new_resource.name};

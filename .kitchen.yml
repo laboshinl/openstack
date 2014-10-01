@@ -1,9 +1,12 @@
 ---
 driver:
   name: vagrant
+  vagrantfile_erb: Vagrantfile.erb
   customize:
     memory: 512
     cpus: 1
+  attached_disks:
+    - ["sdb.vmdk", "1024", "0", "1", "hdd"]
 
 provisioner:
   name: chef_zero
@@ -45,10 +48,13 @@ suites:
       - recipe[centos_cloud::keystone]
   - name: glance
     driver:
+      attached_disks:
+        - ["sdb.vmdk", "1024", "0", "1", "hdd"]
       vm_hostname: glance.testcloud.com
       network:
         - ["private_network", {ip: "172.28.128.14"}]
     run_list:
+      - recipe[centos_cloud::add_disk]
       - recipe[centos_cloud::glance]
   - name: cinder
     driver:
@@ -73,6 +79,8 @@ suites:
       - recipe[centos_cloud::neutron]
   - name: swift
     driver:
+      attached_disks:
+        - ["sdb.vmdk", "1024", "0", "1", "hdd"]
       vm_hostname: swift.testcloud.com
       network:
         - ["private_network", {ip: "172.28.128.18"}]
@@ -99,4 +107,3 @@ suites:
         - ["private_network", {ip: "172.28.128.21"}]
     run_list:
       - recipe[centos_cloud::sahara]
-

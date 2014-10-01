@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# 1. Move deleted instances to another table that you MUST not backup,
+# unless you have data retention policies.
+
+MAX_ROWS=100
+
+logger -t deleted-rows-archiver "Starting archiving deleted rows"
+/usr/bin/nova-manage db archive_deleted_rows --max_rows $MAX_ROWS
+logger -t deleted-rows-archiver "Ending archiving deleted rows"
+
+exit 0

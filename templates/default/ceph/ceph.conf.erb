@@ -1,0 +1,30 @@
+[global]
+  fsid = 9065206f-4b4e-47d8-bc94-380feea73131
+  auth cluster required = none
+  auth service required = none
+  auth client required = none
+  log file = /var/log/ceph/$name.log
+  pid file = /var/run/ceph/$name.pid
+  
+[osd]
+  osd journal size = 1000
+  filestore xattr use omap = true
+  osd mkfs type = xfs
+  osd mount options xfs = rw,noatime,user,auto
+  osd crush chooseleaf type = 1
+	
+[osd.0]
+  host = <%= node[:hostname] %>
+  devs = /dev/sdb1
+
+[mon]
+  mon data = /var/lib/ceph/mon/ceph-$name
+        
+[mon.0]
+  host = <%= node[:hostname] %>
+  mon addr = <%= node[:auto][:internal_ip]%>:6789
+
+[mds]
+
+[mds.0]
+  host = <%= node[:hostname] %>
