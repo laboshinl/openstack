@@ -6,3 +6,4 @@ destroy/*
 .workstation
 *.lock
 *.swp
+.cookbook
