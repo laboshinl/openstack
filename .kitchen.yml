@@ -5,8 +5,6 @@ driver:
   customize:
     memory: 512
     cpus: 1
-  attached_disks:
-    - ["sdb.vmdk", "1024", "0", "1", "hdd"]
 
 provisioner:
   name: chef_zero
@@ -85,6 +83,7 @@ suites:
       network:
         - ["private_network", {ip: "172.28.128.18"}]
     run_list:
+      - recipe[centos_cloud::add_disk]
       - recipe[centos_cloud::swift-proxy]
   - name: heat
     driver:
