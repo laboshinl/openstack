@@ -16,6 +16,7 @@ end
 
 firewalld_rule "rabbit" do
   action :set
+  zone "internal"
   protocol "tcp"
   port "5672"
 end

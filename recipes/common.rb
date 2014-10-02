@@ -13,6 +13,12 @@ include_recipe "firewalld"
 include_recipe "libcloud::ssh_key"
 include_recipe "centos_cloud::ntp"
 
+node[:auto].each do |attribute|
+  log attribute do
+    level :debug
+  end
+end
+
 %w[bash-completion].each do |pkg|
   package pkg do
     action :install
@@ -28,8 +34,10 @@ service "NetworkManager" do
   action [:stop, :disable]
 end
 
-execute "firewall-cmd --permanent --zone=internal --change-interface=#{node[:auto][:internal_nic]}"
-#execute "firewall-cmd --permanent --zone=public --change-interface=#{node[:auto][:external_nic]}"
+execute "add internal interface to internal zone" do 
+  command "firewall-cmd --permanent --zone=internal --change-interface=#{node[:auto][:internal_nic]}"
+  action :run
+end
 
 #disable IPv6
 libcloud_file_append "/etc/sysctl.conf" do

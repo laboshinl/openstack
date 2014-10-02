@@ -20,18 +20,19 @@ def largest_vg
   return vg.stdout[0..-2]
 end
 
+
 def get_iface(address)
-  node[:network][:interfaces].each do |iface|
-    if !iface[1]["addresses"][address].nil?
-       return iface[0]
+  for iface in node[:network][:interfaces].keys.sort 
+    if node[:network][:interfaces][iface]["addresses"].has_key?(address)
+       iface[1]
     end
   end
 end
 
 def get_netmask(address)
-  node[:network][:interfaces].each do |iface|
-    if !iface[1]["addresses"][address].nil?
-       return iface[1]["addresses"][address]["netmask"]
+  for key in node[:network][:interfaces].keys.sort
+    if node[:network][:interfaces][key][:addresses].has_key?(address)
+       node[:network][:interfaces][key][:addresses][address][:netmask]
     end
   end
 end
@@ -54,7 +55,7 @@ default[:auto][:external_nic] = get_iface(node[:auto][:external_ip])
 default[:auto][:internal_nic] = get_iface(node[:auto][:internal_ip])
 default[:auto][:gateway] = node[:network][:default_gateway]
 default[:auto][:netmask] = get_netmask(node[:auto][:external_ip])
-  
+
 #Credentials
 default[:creds][:admin_password]    = "cl0udAdmin"
 default[:creds][:mysql_password]    = node[:creds][:admin_password]

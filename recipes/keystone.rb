@@ -14,7 +14,14 @@ include_recipe "centos_cloud::mysql"
 firewalld_rule "keystone" do
   action :set
   protocol "tcp"
-  port %w[5000 35357]
+  zone "internal"
+  port %w[35357]
+end
+
+firewalld_rule "keystone" do
+  action :set
+  protocol "tcp"
+  port %w[5000]
 end
 
 # Install MySQL, create database
