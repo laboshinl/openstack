@@ -20,10 +20,18 @@ def largest_vg
   return vg.stdout[0..-2]
 end
 
-def internal_iface
+def get_iface(address)
   node[:network][:interfaces].each do |iface|
-    if !iface[1]["addresses"][internal_ipv4].nil?
+    if !iface[1]["addresses"][address].nil?
        return iface[0]
+    end
+  end
+end
+
+def get_netmask(address)
+  node[:network][:interfaces].each do |iface|
+    if !iface[1]["addresses"][address].nil?
+       return iface[1]["addresses"][address]["netmask"]
     end
   end
 end
@@ -38,19 +46,15 @@ else
   default[:libvirt][:type] = "kvm"
 end
 
-puts node[:libvirt][:type]
-
 #Automatic attributes 
 default[:auto][:volume_group] = largest_vg
 default[:auto][:external_ip]  = node[:ipaddress]
 default[:auto][:internal_ip]  = internal_ipv4
-default[:auto][:external_nic] = node[:network][:default_interface]
-default[:auto][:internal_nic] = internal_iface
+default[:auto][:external_nic] = get_iface(node[:auto][:external_ip])
+default[:auto][:internal_nic] = get_iface(node[:auto][:internal_ip])
 default[:auto][:gateway] = node[:network][:default_gateway]
-default[:auto][:netmask] = node[:network][:interfaces]\
-                             [node[:network][:default_interface]][:addresses]\
-                             [node[:ipaddress]][:netmask]
-
+default[:auto][:netmask] = get_netmask[:external_ip]
+  
 #Credentials
 default[:creds][:admin_password]    = "cl0udAdmin"
 default[:creds][:mysql_password]    = node[:creds][:admin_password]

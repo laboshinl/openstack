@@ -55,7 +55,7 @@ paste.filter_factory = cinder.api.middleware.auth:CinderKeystoneContext.factory
 paste.filter_factory = keystoneclient.middleware.auth_token:filter_factory
 service_host = <%=node[:ip][:keystone]%>
 auth_host = <%=node[:ip][:keystone]%>
-auth_urihttp://<%=node[:ip][:keystone]%>:35357/v2.0 = 
+auth_uri = http://<%=node[:ip][:keystone]%>:5000/v2.0  
 admin_tenant_name = admin
 admin_user = admin
 admin_password = <%=node[:creds][:admin_password]%>
