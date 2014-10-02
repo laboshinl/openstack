@@ -23,8 +23,8 @@ end
 
 def get_iface(address)
   for iface in node[:network][:interfaces].keys.sort 
-    if node[:network][:interfaces][iface]["addresses"].has_key?(address)
-       iface[1]
+    if node[:network][:interfaces][iface][:addresses].has_key?(address)
+       iface
     end
   end
 end
