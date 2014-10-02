@@ -15,27 +15,27 @@ platforms:
   - name: centos-7.0
     attributes:
       ip:
-        rabbitmq: 198.18.0.12
-        keystone: 198.18.0.2
-        cinder: 198.18.0.3
-        glance: 198.18.0.4
-        nova: 198.18.0.5
-        neutron: 198.18.0.6
-        swift-proxy: 198.18.0.7
-        heat: 198.18.0.8
-        ceilometer: 198.18.0.9
-        sahara: 198.18.0.10
+        rabbitmq: 198.18.0.2
+        keystone: 198.18.0.3
+        cinder: 198.18.0.4
+        glance: 198.18.0.5
+        nova: 198.18.0.6
+        neutron: 198.18.0.7
+        swift-proxy: 198.18.0.8
+        heat: 198.18.0.9
+        ceilometer: 198.18.0.10
+        sahara: 198.18.0.11
       ip_ex:
-        rabbitmq: 240.18.0.12
-        keystone: 240.18.0.2
-        cinder: 240.18.0.3
-        glance: 240.18.0.4
-        nova: 240.18.0.5
-        neutron: 240.18.0.6
-        swift-proxy: 240.18.0.7
-        heat: 240.18.0.8
-        ceilometer: 240.18.0.9
-        sahara: 240.18.0.10
+        rabbitmq: 240.18.0.2
+        keystone: 240.18.0.3
+        cinder: 240.18.0.4
+        glance: 240.18.0.5
+        nova: 240.18.0.6
+        neutron: 240.18.0.7
+        swift-proxy: 240.18.0.8
+        heat: 240.18.0.9
+        ceilometer: 240.18.0.10
+        sahara: 240.18.0.11
       creds:
         admin_password: mySuperSecret 
       libvirt:
@@ -47,18 +47,6 @@ suites:
     driver:
       vm_hostname: rabbit.testcloud.com
       network:
-        - ["private_network", {ip: "240.18.0.12"}]
-        - ["private_network", {ip: "198.18.0.12"}]
-    attributes:
-      auto:
-        external_ip: "240.18.0.1"
-        internal_ip: "198.18.0.1"
-    run_list:
-      - recipe[centos_cloud::rabbitmq-server]
-  - name: keystone
-    driver:
-      vm_hostname: keystone.testcloud.com
-      network:
         - ["private_network", {ip: "240.18.0.2"}]
         - ["private_network", {ip: "198.18.0.2"}]
     attributes:
@@ -66,12 +54,10 @@ suites:
         external_ip: "240.18.0.2"
         internal_ip: "198.18.0.2"
     run_list:
-      - recipe[centos_cloud::keystone]
-  - name: cinder
+      - recipe[centos_cloud::rabbitmq-server]
+  - name: keystone
     driver:
-      attached_disks:
-        - ["sdb.vmdk", "2048", "0", "1", "hdd"]
-      vm_hostname: cinder.testcloud.com
+      vm_hostname: keystone.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.3"}]
         - ["private_network", {ip: "198.18.0.3"}]
@@ -80,11 +66,12 @@ suites:
         external_ip: "240.18.0.3"
         internal_ip: "198.18.0.3"
     run_list:
-      - recipe[centos_cloud::add_disk]
-      - recipe[centos_cloud::cinder]
-  - name: glance
+      - recipe[centos_cloud::keystone]
+  - name: cinder
     driver:
-      vm_hostname: glance.testcloud.com
+      attached_disks:
+        - ["sdb.vmdk", "2048", "0", "1", "hdd"]
+      vm_hostname: cinder.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.4"}]
         - ["private_network", {ip: "198.18.0.4"}]
@@ -93,10 +80,11 @@ suites:
         external_ip: "240.18.0.4"
         internal_ip: "198.18.0.4"
     run_list:
-      - recipe[centos_cloud::glance]
-  - name: nova
+      - recipe[centos_cloud::add_disk]
+      - recipe[centos_cloud::cinder]
+  - name: glance
     driver:
-      vm_hostname: nova.testcloud.com
+      vm_hostname: glance.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.5"}]
         - ["private_network", {ip: "198.18.0.5"}]
@@ -105,10 +93,10 @@ suites:
         external_ip: "240.18.0.5"
         internal_ip: "198.18.0.5"
     run_list:
-      - recipe[centos_cloud::nova]
-  - name: neutron
+      - recipe[centos_cloud::glance]
+  - name: nova
     driver:
-      vm_hostname: neutron.testcloud.com
+      vm_hostname: nova.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.6"}]
         - ["private_network", {ip: "198.18.0.6"}]
@@ -117,10 +105,10 @@ suites:
         external_ip: "240.18.0.6"
         internal_ip: "198.18.0.6"
     run_list:
-      - recipe[centos_cloud::neutron]
-  - name: swift
+      - recipe[centos_cloud::nova]
+  - name: neutron
     driver:
-      vm_hostname: swift.testcloud.com
+      vm_hostname: neutron.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.7"}]
         - ["private_network", {ip: "198.18.0.7"}]
@@ -129,10 +117,10 @@ suites:
         external_ip: "240.18.0.7"
         internal_ip: "198.18.0.7"
     run_list:
-      - recipe[centos_cloud::swift-proxy]
-  - name: heat
+      - recipe[centos_cloud::neutron]
+  - name: swift
     driver:
-      vm_hostname: heat.testcloud.com
+      vm_hostname: swift.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.8"}]
         - ["private_network", {ip: "198.18.0.8"}]
@@ -141,10 +129,10 @@ suites:
         external_ip: "240.18.0.8"
         internal_ip: "198.18.0.8"
     run_list:
-      - recipe[centos_cloud::heat]
-  - name: ceilometer
+      - recipe[centos_cloud::swift-proxy]
+  - name: heat
     driver:
-      vm_hostname: ceilometer.testcloud.com
+      vm_hostname: heat.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.9"}]
         - ["private_network", {ip: "198.18.0.9"}]
@@ -153,10 +141,10 @@ suites:
         external_ip: "240.18.0.9"
         internal_ip: "198.18.0.9"
     run_list:
-      - recipe[centos_cloud::ceilometer]
-  - name: savana
+      - recipe[centos_cloud::heat]
+  - name: ceilometer
     driver:
-      vm_hostname: sahara.testcloud.com
+      vm_hostname: ceilometer.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.10"}]
         - ["private_network", {ip: "198.18.0.10"}]
@@ -165,12 +153,10 @@ suites:
         external_ip: "240.18.0.10"
         internal_ip: "198.18.0.10"
     run_list:
-      - recipe[centos_cloud::sahara]
-  - name: compute
+      - recipe[centos_cloud::ceilometer]
+  - name: savana
     driver:
-      attached_disks:
-        - ["sdb.vmdk", "2048", "0", "1", "hdd"]
-      vm_hostname: compute.testcloud.com
+      vm_hostname: sahara.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.11"}]
         - ["private_network", {ip: "198.18.0.11"}]
@@ -178,6 +164,20 @@ suites:
       auto:
         external_ip: "240.18.0.11"
         internal_ip: "198.18.0.11"
+    run_list:
+      - recipe[centos_cloud::sahara]
+  - name: compute
+    driver:
+      attached_disks:
+        - ["sdb.vmdk", "2048", "0", "1", "hdd"]
+      vm_hostname: compute.testcloud.com
+      network:
+        - ["private_network", {ip: "240.18.0.12"}]
+        - ["private_network", {ip: "198.18.0.12"}]
+    attributes:
+      auto:
+        external_ip: "240.18.0.12"
+        internal_ip: "198.18.0.12"
     run_list:
       - recipe[centos_cloud::add_disk]  
       - recipe[centos_cloud::nova-compute]

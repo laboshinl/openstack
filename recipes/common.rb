@@ -28,7 +28,7 @@ service "NetworkManager" do
   action [:stop, :disable]
 end
 
-#execute "firewall-cmd --permanent --zone=internal --change-interface=#{node[:auto][:internal_nic]}"
+execute "firewall-cmd --permanent --zone=internal --change-interface=#{node[:auto][:internal_nic]}"
 #execute "firewall-cmd --permanent --zone=public --change-interface=#{node[:auto][:external_nic]}"
 
 #disable IPv6
