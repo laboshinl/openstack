@@ -11,7 +11,6 @@ provisioner:
   require_chef_omnibus: true
 
 platforms:
-  - name: fedora-20
   - name: centos-7.0
     attributes:
       ip:
@@ -46,23 +45,23 @@ suites:
         - ["private_network", {ip: "172.28.128.13"}]
     run_list:
       - recipe[centos_cloud::keystone]
-  - name: glance
-    driver:
-      attached_disks:
-        - ["sdb.vmdk", "1024", "0", "1", "hdd"]
-      vm_hostname: glance.testcloud.com
-      network:
-        - ["private_network", {ip: "172.28.128.14"}]
-    run_list:
-      - recipe[centos_cloud::add_disk]
-      - recipe[centos_cloud::glance]
   - name: cinder
     driver:
+      attached_disks:
+        - ["sdb.vmdk", "2048", "0", "1", "hdd"]
       vm_hostname: cinder.testcloud.com
       network:
         - ["private_network", {ip: "172.28.128.15"}]
     run_list:
+      - recipe[centos_cloud::add_disk]
       - recipe[centos_cloud::cinder]
+  - name: glance
+    driver:
+      vm_hostname: glance.testcloud.com
+      network:
+        - ["private_network", {ip: "172.28.128.14"}]
+    run_list:
+      - recipe[centos_cloud::glance]
   - name: nova
     driver:
       vm_hostname: nova.testcloud.com
@@ -79,13 +78,10 @@ suites:
       - recipe[centos_cloud::neutron]
   - name: swift
     driver:
-      attached_disks:
-        - ["sdb.vmdk", "1024", "0", "1", "hdd"]
       vm_hostname: swift.testcloud.com
       network:
         - ["private_network", {ip: "172.28.128.18"}]
     run_list:
-      - recipe[centos_cloud::add_disk]
       - recipe[centos_cloud::swift-proxy]
   - name: heat
     driver:
@@ -108,3 +104,14 @@ suites:
         - ["private_network", {ip: "172.28.128.21"}]
     run_list:
       - recipe[centos_cloud::sahara]
+  - name: compute
+    driver:
+      attached_disks:
+        - ["sdb.vmdk", "2048", "0", "1", "hdd"]
+      vm_hostname: compute.testcloud.com
+      network:
+        - ["private_network", {ip: "172.28.128.22"}]
+    run_list:
+      - recipe[centos_cloud::add_disk]  
+      - recipe[centos_cloud::nova-compute]
+      - recipe[centos_cloud::swift-node]

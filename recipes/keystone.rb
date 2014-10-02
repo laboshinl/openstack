@@ -69,6 +69,14 @@ directory "/etc/keystone/ssl" do
   action :create
 end
 
+template "/etc/cron.daily/keystone.cron" do
+  owner "root"
+  group "root"
+  mode "0755"
+  source "keystone/keystone.cron.erb"
+  action :create
+end
+
 # Populate keystone database
 execute "su keystone -s /bin/sh -c 'keystone-manage db_sync'" do
   action :run
