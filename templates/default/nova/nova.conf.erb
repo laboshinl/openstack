@@ -35,7 +35,7 @@ instance_usage_audit_period = hour
 notify_on_state_change = vm_and_task_state
 notification_driver = ceilometer.compute.nova_notifier
 neutron_metadata_proxy_shared_secret = <%=node[:creds][:neutron_secret]%>
-libvirt_type = qemu
+libvirt_type = <%= node[:libvirt][:type] %>
 glance_api_servers = <%=node[:ip][:glance]%>:9292
 vif_plugging_is_fatal = false
 vif_plugging_timeout = 0

@@ -14,7 +14,7 @@ package "rabbitmq-server" do
   notifies :run, "execute[Fix rabbit first start]", :immediately
 end
 
-firewalld_rule "keystone" do
+firewalld_rule "rabbit" do
   action :set
   protocol "tcp"
   port "5672"

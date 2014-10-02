@@ -16,10 +16,11 @@ restrict 95.213.132.254 nomodify
 restrict 95.213.132.250 nomodify
 
 restrict -4 default nomodify nopeer noquery notrap
-restrict -6 default nomodify nopeer noquery notrap
-
 restrict 127.0.0.1
-restrict ::1
+
+#Uncomment for IPv6
+#restrict -6 default nomodify nopeer noquery notrap
+#restrict ::1
 
 interface ignore wildcard
 interface listen <%=node[:auto][:external_nic]%>

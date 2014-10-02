@@ -20,13 +20,32 @@ def largest_vg
   return vg.stdout[0..-2]
 end
 
+def internal_iface
+  node[:network][:interfaces].each do |iface|
+    if !iface[1]["addresses"][internal_ipv4].nil?
+       return iface[0]
+    end
+  end
+end
+
 default[:openstack_release] = "icehouse"
+
+#Switch to 'qemu' when testing on VM's
+if (node[:virtualization].attribute?(:role) and
+     node[:virtualization][:role]=="guest")
+  default[:libvirt][:type] = "qemu"
+else 
+  default[:libvirt][:type] = "kvm"
+end
+
+puts node[:libvirt][:type]
 
 #Automatic attributes 
 default[:auto][:volume_group] = largest_vg
 default[:auto][:external_ip]  = node[:ipaddress]
 default[:auto][:internal_ip]  = internal_ipv4
 default[:auto][:external_nic] = node[:network][:default_interface]
+default[:auto][:internal_nic] = internal_iface
 default[:auto][:gateway] = node[:network][:default_gateway]
 default[:auto][:netmask] = node[:network][:interfaces]\
                              [node[:network][:default_interface]][:addresses]\

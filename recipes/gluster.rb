@@ -14,6 +14,7 @@ firewalld_rule "gluster" do
   port %w[2049 111 24007-24047 38465-38467]
 end
 
+#execute "gluster peer probe node[:nova][:ip]"
 =begin
 firewalld_rule "glance" do
   action :set

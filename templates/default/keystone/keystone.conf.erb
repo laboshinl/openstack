@@ -1,5 +1,7 @@
 [DEFAULT]
 admin_token = <%= node[:creds][:keystone_token] %>
+public_bind_host = <%= node[:auto][:external_ip] %>
+admin_bind_host = <%= node[:auto][:internal_ip] %>
 [sql] 
 connection =  mysql://keystone:<%=node[:creds][:mysql_password]%>@<%=node[:ip][:keystone]%>/keystone
 [catalog] 

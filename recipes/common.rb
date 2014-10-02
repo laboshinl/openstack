@@ -28,13 +28,17 @@ service "NetworkManager" do
   action [:stop, :disable]
 end
 
-#libcloud_file_append "/etc/sysctl.conf" do
-#  line [
-#    "net.ipv6.conf.all.disable_ipv6=1",
-#    "net.ipv6.conf.default.disable_ipv6=1"]
-#end
+#execute "firewall-cmd --permanent --zone=internal --change-interface=#{node[:auto][:internal_nic]}"
+#execute "firewall-cmd --permanent --zone=public --change-interface=#{node[:auto][:external_nic]}"
 
-#execute "sysctl -p"
+#disable IPv6
+libcloud_file_append "/etc/sysctl.conf" do
+  line [
+    "net.ipv6.conf.all.disable_ipv6=1",
+    "net.ipv6.conf.default.disable_ipv6=1"]
+end
+
+execute "sysctl -p"
 
 libcloud_file_append "/root/.bashrc" do
   line [

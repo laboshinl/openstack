@@ -27,6 +27,8 @@ platforms:
         sahara: 172.28.128.21
       creds:
         admin_password: mySuperSecret 
+      libvirt:
+        type: qemu
     data_bags_path: "test/integration/data_bags"
 
 suites:
