@@ -57,12 +57,6 @@ default[:auto][:volume_group] = largest_vg
 default[:auto][:external_ip]  = node[:ipaddress]
 default[:auto][:internal_ip]  = internal_ipv4
 default[:auto][:external_nic] = get_iface(node[:auto][:external_ip])
-puts "====================================="
-puts get_iface(node[:auto][:external_ip])
-puts "====================================="
-puts "====================================="
-puts get_iface(node[:auto][:internal_ip])
-puts "=====================================" 
 default[:auto][:internal_nic] = get_iface(node[:auto][:internal_ip])
 default[:auto][:gateway] = node[:network][:default_gateway]
 default[:auto][:netmask] = get_netmask(node[:auto][:external_ip])

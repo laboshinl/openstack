@@ -13,11 +13,14 @@ include_recipe "firewalld"
 include_recipe "libcloud::ssh_key"
 include_recipe "centos_cloud::ntp"
 
-node[:auto].each do |attribute|
-  log attribute do
-    level :debug
-  end
-end
+#service "network" do
+#  action :restart
+#end
+#node[:auto].each do |attribute|
+#  log attribute do
+#    level :debug
+#  end
+#end
 
 %w[bash-completion].each do |pkg|
   package pkg do
@@ -30,9 +33,9 @@ libcloud_ssh_keys "openstack" do
   action [:create, :add]
 end
 
-service "NetworkManager" do 
-  action [:stop, :disable]
-end
+#service "NetworkManager" do 
+#  action [:stop, :disable]
+#end
 
 execute "add internal interface to internal zone" do 
   command "firewall-cmd --permanent --zone=internal --change-interface=#{node[:auto][:internal_nic]}"

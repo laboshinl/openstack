@@ -39,7 +39,7 @@ template "/etc/yum.repos.d/openstack-icehouse.repo" do
       :dist => node[:platform]
     }) 
   end
-  notifies :run, "execute[yum makecache]", :immediately
+#  notifies :run, "execute[yum makecache]", :immediately
 end
 
 execute "yum makecache" do
