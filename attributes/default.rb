@@ -20,21 +20,26 @@ def largest_vg
   return vg.stdout[0..-2]
 end
 
-
 def get_iface(address)
+  result = nil
   for iface in node[:network][:interfaces].keys.sort 
-    if node[:network][:interfaces][iface][:addresses].has_key?(address)
-       iface
+    if node[:network][:interfaces][iface.to_sym][:addresses].has_key?(address.to_sym)
+       result = iface
+       break
     end
   end
+  result
 end
 
 def get_netmask(address)
+  result = nil
   for key in node[:network][:interfaces].keys.sort
-    if node[:network][:interfaces][key][:addresses].has_key?(address)
-       node[:network][:interfaces][key][:addresses][address][:netmask]
+    if node[:network][:interfaces][key.to_sym][:addresses].has_key?(address.to_sym)
+       result = node[:network][:interfaces][key][:addresses][address][:netmask]
+       break
     end
   end
+  result
 end
 
 default[:openstack_release] = "icehouse"
@@ -52,6 +57,12 @@ default[:auto][:volume_group] = largest_vg
 default[:auto][:external_ip]  = node[:ipaddress]
 default[:auto][:internal_ip]  = internal_ipv4
 default[:auto][:external_nic] = get_iface(node[:auto][:external_ip])
+puts "====================================="
+puts get_iface(node[:auto][:external_ip])
+puts "====================================="
+puts "====================================="
+puts get_iface(node[:auto][:internal_ip])
+puts "=====================================" 
 default[:auto][:internal_nic] = get_iface(node[:auto][:internal_ip])
 default[:auto][:gateway] = node[:network][:default_gateway]
 default[:auto][:netmask] = get_netmask(node[:auto][:external_ip])

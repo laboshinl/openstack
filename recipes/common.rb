@@ -40,13 +40,13 @@ execute "add internal interface to internal zone" do
 end
 
 #disable IPv6
-libcloud_file_append "/etc/sysctl.conf" do
-  line [
-    "net.ipv6.conf.all.disable_ipv6=1",
-    "net.ipv6.conf.default.disable_ipv6=1"]
-end
+#libcloud_file_append "/etc/sysctl.conf" do
+#  line [
+#    "net.ipv6.conf.all.disable_ipv6=1",
+#    "net.ipv6.conf.default.disable_ipv6=1"]
+#end
 
-execute "sysctl -p"
+#execute "sysctl -p"
 
 libcloud_file_append "/root/.bashrc" do
   line [
