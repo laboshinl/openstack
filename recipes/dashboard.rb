@@ -29,9 +29,13 @@ end
 service "httpd" do
   action [:enable,:start]
 end
+service "memcached" do
+  action [:enable,:start]
+end
 
 firewalld_rule "dashboard" do
   action :set
+  zone "public"
   protocol "tcp"
   port %w[443 80]
 end

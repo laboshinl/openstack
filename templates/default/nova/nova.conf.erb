@@ -5,7 +5,7 @@ rabbit_host = <%=node[:ip][:rabbitmq]%>
 rabbit_password = <%=node[:creds][:rabbitmq_password]%>
 network_api_class = nova.network.neutronv2.api.API
 neutron_auth_strategy = keystone
-neutron_url = http://<%=node[:ip][:neutron]%>:9696/
+neutron_url = http://<%=node[:ip_ex][:neutron]%>:9696/
 neutron_admin_tenant_name = admin
 neutron_admin_username = admin
 neutron_admin_password = <%=node[:creds][:admin_password]%>
@@ -36,7 +36,7 @@ notify_on_state_change = vm_and_task_state
 notification_driver = ceilometer.compute.nova_notifier
 neutron_metadata_proxy_shared_secret = <%=node[:creds][:neutron_secret]%>
 libvirt_type = <%= node[:libvirt][:type] %>
-glance_api_servers = <%=node[:ip][:glance]%>:9292
+glance_api_servers = <%=node[:ip_ex][:glance]%>:9292
 vif_plugging_is_fatal = false
 vif_plugging_timeout = 0
 max_io_ops_per_host = <%=node[:cpu][:real]%>
@@ -59,6 +59,6 @@ server_proxyclient_address = 127.0.0.1
 admin_tenant_name = admin
 admin_user = admin
 admin_password = <%=node[:creds][:admin_password]%>
-auth_host = <%=node[:ip][:keystone]%>
+#auth_host = <%=node[:ip][:keystone]%>
 identity_uri = http://<%=node[:ip][:keystone]%>:35357
-auth_uri = http://<%=node[:ip][:keystone]%>:5000/v2.0
+auth_uri = http://<%=node[:ip_ex][:keystone]%>:5000/v2.0

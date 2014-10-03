@@ -68,6 +68,7 @@ libcloud_file_append "/root/.bashrc" do
     "export OS_USERNAME=admin",
     "export OS_TENANT_NAME=admin",
     "export OS_PASSWORD=#{node[:creds][:admin_password]}",
-    "export OS_AUTH_URL=http://#{node[:ip][:keystone]}:35357/v2.0/"]
+    "export OS_AUTH_URL=http://#{node[:ip_ex][:keystone]}:5000/v2.0/",
+    "export OS_IMAGE_URL=http://#{node[:ip_ex][:glance]}:9292"]
 end
 

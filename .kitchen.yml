@@ -3,7 +3,7 @@ driver:
   name: vagrant
   vagrantfile_erb: Vagrantfile.erb
   customize:
-    memory: 512
+    memory: 256
     cpus: 1
 
 provisioner:
@@ -43,7 +43,7 @@ platforms:
     data_bags_path: "test/integration/data_bags"
 
 suites:
-  - name: rabbit
+  - name: main-rabbit
     driver:
       vm_hostname: rabbit.testcloud.com
       network:
@@ -55,7 +55,7 @@ suites:
         internal_ip: "198.18.0.12"
     run_list:
       - recipe[centos_cloud::rabbitmq-server]
-  - name: keystone
+  - name: main-keystone
     driver:
       vm_hostname: keystone.testcloud.com
       network:
@@ -82,7 +82,7 @@ suites:
     run_list:
       - recipe[centos_cloud::add_disk]
       - recipe[centos_cloud::cinder]
-  - name: glance
+  - name: main-glance
     driver:
       vm_hostname: glance.testcloud.com
       network:
@@ -94,8 +94,10 @@ suites:
         internal_ip: "198.18.0.15"
     run_list:
       - recipe[centos_cloud::glance]
-  - name: nova
+  - name: main-nova
     driver:
+      customize:
+        memory: 512
       vm_hostname: nova.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.16"}]
@@ -106,8 +108,10 @@ suites:
         internal_ip: "198.18.0.16"
     run_list:
       - recipe[centos_cloud::nova]
-  - name: neutron
+  - name: main-neutron
     driver:
+      customize:
+        memory: 512
       vm_hostname: neutron.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.17"}]
@@ -166,8 +170,10 @@ suites:
         internal_ip: "198.18.0.21"
     run_list:
       - recipe[centos_cloud::sahara]
-  - name: compute
+  - name: main-compute
     driver:
+      customize:
+        memory: 1024
       attached_disks:
         - ["sdb.vmdk", "2048", "0", "1", "hdd"]
       vm_hostname: compute.testcloud.com
@@ -181,4 +187,3 @@ suites:
     run_list:
       - recipe[centos_cloud::add_disk]  
       - recipe[centos_cloud::nova-compute]
-      - recipe[centos_cloud::swift-node]

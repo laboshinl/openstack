@@ -51,8 +51,16 @@ end
 firewalld_rule "glance" do
   action :set
   protocol "tcp"
-  port %w[9292 9191]
+  port %w[9292]
 end
+
+#We don't use it cause glance-registry is on a localhost
+#firewalld_rule "glance-registry" do
+#  action :set
+#  zone "internal" 
+#  protocol "tcp"
+#  port %w[9191]
+#end
 
 execute "Populate glance database" do
   command %Q[su glance -s /bin/sh -c ] <<

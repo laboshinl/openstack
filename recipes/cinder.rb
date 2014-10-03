@@ -51,7 +51,13 @@ end
 
 # Accept incoming connections on glance ports
 firewalld_rule "cinder" do
-  port %w[3260 8776]
+  port %w[8776]
+  zone "public"
+end
+
+firewalld_rule "cinder" do
+  port %w[3260]
+  zone "internal"
 end
 
 # Populate database

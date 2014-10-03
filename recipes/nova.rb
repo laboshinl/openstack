@@ -56,7 +56,7 @@ template "/etc/nova/nova.conf" do
   notifies :restart, "service[openstack-nova-consoleauth]"
 end
 
-firewalld_rule "nova-compute" do
+firewalld_rule "nova" do
   action :set
   protocol "tcp"
   port %w[8773 8774 8775 6082]
