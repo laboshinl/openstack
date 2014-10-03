@@ -37,9 +37,20 @@ end
 #  action [:stop, :disable]
 #end
 
+service "firewalld" do
+  action :nothing
+end
+
 execute "add internal interface to internal zone" do 
-  command "firewall-cmd --permanent --zone=internal --change-interface=#{node[:auto][:internal_nic]}"
+  command "firewall-cmd --permanent --zone=internal --add-interface=#{node[:auto][:internal_nic]}"
   action :run
+  notifies :restart, "service[firewalld]"
+end
+
+execute "add external interface to public zone" do
+  command "firewall-cmd --permanent --zone=public --add-interface=#{node[:auto][:external_nic]}"
+  action :run
+  notifies :restart, "service[firewalld]"
 end
 
 #disable IPv6

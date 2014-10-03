@@ -21,8 +21,11 @@ volume_backend_name = LVM_iSCSI
 
 
 [keystone_authtoken]
-auth_host = <%=node[:ip][:keystone]%>
+#auth_host = <%=node[:ip][:keystone]%>
+#Admin Endpoint
 identity_uri = <%=node[:ip][:keystone]%>:35357
+#Public Endpoint
+auth_uri = http://<%=node[:ip][:keystone]%>:5000/v2.0 
 admin_tenant_name = admin
 admin_user = admin
 admin_password = <%= node[:creds][:admin_password]%>

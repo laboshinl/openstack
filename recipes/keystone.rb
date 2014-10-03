@@ -21,6 +21,7 @@ end
 firewalld_rule "keystone" do
   action :set
   protocol "tcp"
+  zone "public"
   port %w[5000]
 end
 
