@@ -1,18 +1,19 @@
 #!/usr/bin/env bats
+UUID=00000000-0000-0000-0000-000000000000
 
 upload_image(){
   source /root/.bashrc
-  glance image-create --name cirros-0.3.3-x86_64 --copy-from http://cdn.download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img --disk-format qcow2 --container-format bare --is-public True --id 4ffba29b-03b7-4505-800c-dd8d1c8dc1a4
+  glance image-create --name cirros-0.3.3-x86_64 --copy-from http://cdn.download.cirros-cloud.net/0.3.3/cirros-0.3.3-x86_64-disk.img --disk-format qcow2 --container-format bare --is-public True --id $UUID
 }
 
 get_image(){
   source /root/.bashrc
-  glance image-show 4ffba29b-03b7-4505-800c-dd8d1c8dc1a4 | grep status | grep $1
+  glance image-show $UUID | grep status | grep $1
 }
 
-destroy_image()
+destroy_image(){
   source /root/.bashrc
-  glance image-delete 4ffba29b-03b7-4505-800c-dd8d1c8dc1a4
+  glance image-delete $UUID
 }
 
 @test "upload test image" {
@@ -21,7 +22,7 @@ destroy_image()
 }
 
 @test "verify image" {
-  run get_image created
+  run sleep 10 && get_image active
   [ "$status" -eq 0 ]
 }
 
