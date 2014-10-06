@@ -22,12 +22,9 @@ end
   openstack-nova-console
   openstack-nova-cert 
   openstack-nova-novncproxy
-].each do |srv|
-  package srv do
+].each do |pkg|
+  package pkg do
     action :install
-  end
-  service srv do
-    action [:enable,:start]
   end
 end
 
@@ -38,8 +35,18 @@ template "/etc/init.d/openstack-nova-consoleauth" do
   source "nova/openstack-nova-consoleauth.erb"
 end
 
-service "openstack-nova-consoleauth" do
-  action [:enable,:start]
+%w[
+  openstack-nova-api 
+  openstack-nova-scheduler
+  openstack-nova-conductor 
+  openstack-nova-console
+  openstack-nova-cert 
+  openstack-nova-novncproxy
+  openstack-nova-consoleauth
+].each do |srv|
+  service srv do
+    action [:enable]
+  end
 end
 
 template "/etc/nova/nova.conf" do
@@ -47,13 +54,20 @@ template "/etc/nova/nova.conf" do
   owner  "root"
   group  "root"
   source "nova/nova.conf.erb"
-  notifies :restart, "service[openstack-nova-api]"
+  notifies :run, "execute[Populate nova database]"
+end
+
+execute "Populate nova database" do 
+  command %Q[su nova -s /bin/sh -c "/usr/bin/nova-manage db sync"]
+  action :nothing
   notifies :restart, "service[openstack-nova-scheduler]"
   notifies :restart, "service[openstack-nova-conductor]"
+  notifies :restart, "service[openstack-nova-cert]"
   notifies :restart, "service[openstack-nova-console]"
+  notifies :restart, "service[openstack-nova-consoleauth]"
+  notifies :restart, "service[openstack-nova-api]"
   notifies :restart, "service[openstack-nova-cert]"
   notifies :restart, "service[openstack-nova-novncproxy]"
-  notifies :restart, "service[openstack-nova-consoleauth]"
 end
 
 firewalld_rule "nova" do
@@ -61,9 +75,3 @@ firewalld_rule "nova" do
   protocol "tcp"
   port %w[8773 8774 8775 6082]
 end
-
-execute "Populate nova database" do 
-  command %Q[su nova -s /bin/sh -c "/usr/bin/nova-manage db sync"]
-  action :run
-end
-

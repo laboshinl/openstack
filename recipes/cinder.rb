@@ -25,28 +25,38 @@ end
   end
 end
 
+service "target" do
+  action [:enable, :start] 
+end
+
 %w[
-  target
   openstack-cinder-volume
   openstack-cinder-scheduler 
   openstack-cinder-api
 ].each do |srv|
   service srv do
-    action [:enable, :start]
+    action [:enable]
   end
 end 
 
 # Configure service
 template "/etc/cinder/cinder.conf" do
  source "cinder/cinder.conf.erb"
- notifies :restart, "service[openstack-cinder-volume]"
- notifies :restart, "service[openstack-cinder-scheduler]"
- notifies :restart, "service[openstack-cinder-api]"
+ notifies :run, "execute[Populate cinder database]"
 end
 
 template "/etc/cinder/api-paste.ini" do
  source "cinder/api-paste.ini.erb"
  notifies :restart, "service[openstack-cinder-api]"
+end
+
+# Populate database
+execute "Populate cinder database" do 
+  command "cinder-manage db sync"
+  notifies :restart, "service[openstack-cinder-volume]"
+  notifies :restart, "service[openstack-cinder-scheduler]"
+  notifies :restart, "service[openstack-cinder-api]"
+  action :nothing
 end
 
 # Accept incoming connections on glance ports
@@ -58,10 +68,4 @@ end
 firewalld_rule "cinder" do
   port %w[3260]
   zone "internal"
-end
-
-# Populate database
-execute "Populate cinder database" do 
-  command "cinder-manage db sync"
-  action :run
 end

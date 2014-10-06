@@ -41,24 +41,7 @@ end
 end
 
 service "openstack-keystone" do
-  action [:enable, :start]
-end
-
-# Configure service
-template "/etc/keystone/keystone.conf" do
-  mode "0640"
-  owner "root"
-  group "keystone"
-  source "keystone/keystone.conf.erb"
-  notifies :restart, "service[openstack-keystone]", :immediately 
-end
-
-# Template for creating services and endpoints
-template "/etc/keystone/default_catalog.templates" do
-  source "keystone/default_catalog.templates.erb"
-  owner "root"
-  group "keystone"
-  mode "0640"
+  action [:enable]
 end
 
 # BUG_FIX: This file is nessesary for starting service
@@ -69,12 +52,40 @@ file "/var/log/keystone/keystone.log" do
   mode "0644"
 end
 
+# Template for creating services and endpoints
+template "/etc/keystone/default_catalog.templates" do
+  source "keystone/default_catalog.templates.erb"
+  owner "root"
+  group "keystone"
+  mode "0640"
+  notifies :restart, "service[openstack-keystone]"
+end
+
+template "/etc/keystone/keystone-paste.ini" do
+  source "keystone/keystone-paste.ini.erb"
+  owner "root"
+  group "keystone"
+  mode "0640"
+  notifies :restart, "service[openstack-keystone]"
+end  
+
+# Configure service
+template "/etc/keystone/keystone.conf" do
+  mode "0640"
+  owner "root"
+  group "keystone"
+  source "keystone/keystone.conf.erb"
+  notifies :run, "execute[Populate keystone database]", :immediately
+  notifies :restart, "service[openstack-keystone]", :immediately 
+end
+
 # Create dir for certs
 directory "/etc/keystone/ssl" do
   owner "keystone"
   group "keystone"
   mode "0755"
   action :create
+  notifies :run, "execute[Generate keystone certs]", :immediately
 end
 
 template "/etc/cron.daily/keystone.cron" do
@@ -85,14 +96,14 @@ template "/etc/cron.daily/keystone.cron" do
   action :create
 end
 
-# Populate keystone database
-execute "su keystone -s /bin/sh -c 'keystone-manage db_sync'" do
-  action :run
+execute "Populate keystone database" do
+  command "su keystone -s /bin/sh -c 'keystone-manage db_sync'"
+  action :nothing
 end
 
-# Generate certs
-execute "su keystone -s /bin/sh -c 'keystone-manage pki_setup'" do
-  action :run
+execute "Generate keystone certs" do
+  command "su keystone -s /bin/sh -c 'keystone-manage pki_setup'"
+  action :nothing
 end
 
 # Wait for keystone to start

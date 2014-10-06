@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from openstack_dashboard import exceptions
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # Required for Django 1.5.
@@ -12,7 +12,7 @@ TEMPLATE_DEBUG = DEBUG
 # with the list of host/domain names that the application can serve.
 # For more information see:
 # https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = ['horizon.example.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 # Set SSL proxy settings:
 # For Django 1.4+ pass this header from the proxy after terminating the SSL,
@@ -46,7 +46,7 @@ ALLOWED_HOSTS = ['horizon.example.com', 'localhost']
 
 # Set Console type:
 # valid options would be "AUTO", "VNC", "SPICE" or "RDP"
-# CONSOLE_TYPE = "AUTO"
+CONSOLE_TYPE = "VNC"
 
 # Default OpenStack Dashboard configuration.
 HORIZON_CONFIG = {
@@ -152,7 +152,7 @@ OPENSTACK_KEYSTONE_BACKEND = {
 
 #Setting this to True, will add a new "Retrieve Password" action on instance,
 #allowing Admin session password retrieval/decryption.
-#OPENSTACK_ENABLE_PASSWORD_RETRIEVE = False
+OPENSTACK_ENABLE_PASSWORD_RETRIEVE = True
 
 # The Xen Hypervisor has the ability to set the mount point for volumes
 # attached to instances (other Hypervisors currently do not). Setting

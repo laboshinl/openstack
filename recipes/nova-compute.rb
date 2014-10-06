@@ -10,19 +10,21 @@
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::openvswitch"
 
-%w[openstack-nova-compute 
-   openstack-ceilometer-compute
-].each do |srv|
-  package srv do
+%w[openstack-nova-compute
+openstack-ceilometer-compute
+].each do |pkg|
+  package pkg do
     action :install
-  end
-  service srv do 
-    action [:enable, :start]
   end
 end
 
-service "libvirtd" do
- action [:enable, :start]
+%w[openstack-nova-compute
+openstack-ceilometer-compute
+libvirtd
+].each do |srv|
+  service srv do
+    action [:enable]
+  end
 end
 
 template "/etc/libvirt/libvirtd.conf" do

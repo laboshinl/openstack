@@ -1,14 +1,22 @@
 [DEFAULT]
 default_store = file
-swift_store_auth_address = http://<%=node[:ip][:keystone]%>:5000/v2.0/
+swift_store_auth_address = http://<%=node[:ip_ex][:keystone]%>:5000/v2.0/
 swift_store_user = admin:admin
-notifier_strategy = rabbit
+notification_driver = rabbit
 rabbit_password = <%=node[:creds][:rabbitmq_password]%>
 rabbit_host = <%=node[:ip][:rabbitmq]%>
 swift_store_create_container_on_put = True
 swift_store_key = <%=node[:creds][:admin_password]%>
-db_enforce_mysql_charset = False
+#db_enforce_mysql_charset = False
 registry_host = 127.0.0.1
+known_stores = glance.store.filesystem.Store,
+#	glance.store.http.Store,
+#	glance.store.rbd.Store,
+#	glance.store.s3.Store,
+#	glance.store.swift.Store,
+#	glance.store.cinder.Store,
+#	glance.store.gridfs.Store,
+        
 [database]
 connection = mysql://glance:<%=node[:creds][:mysql_password]%>@localhost/glance
 

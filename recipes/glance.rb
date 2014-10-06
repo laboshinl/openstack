@@ -18,7 +18,8 @@ end
 # Install packages
 %w[
   openstack-glance 
-  python-glanceclient
+  python-openstackclient
+  python-pymongo-gridfs
 ].each do |pkg|
  package pkg
 end
@@ -28,44 +29,8 @@ end
   openstack-glance-registry
 ].each do |srv|
   service srv do
-    action [:enable, :start]
+    action [:enable]
   end
-end
-
-template "/etc/glance/glance-api.conf" do
-  source "glance/glance-api.conf.erb"
-  mode "0640"
-  owner "root"
-  group "glance"
-  notifies :restart, "service[openstack-glance-api]"
-end
-
-template "/etc/glance/glance-registry.conf" do
-  source "glance/glance-registry.conf.erb"
-  mode "0640"
-  owner "root"
-  group "glance"
-  notifies :restart, "service[openstack-glance-registry]"
-end
-
-firewalld_rule "glance" do
-  action :set
-  protocol "tcp"
-  port %w[9292]
-end
-
-#We don't use it cause glance-registry is on a localhost
-#firewalld_rule "glance-registry" do
-#  action :set
-#  zone "internal" 
-#  protocol "tcp"
-#  port %w[9191]
-#end
-
-execute "Populate glance database" do
-  command %Q[su glance -s /bin/sh -c ] <<
-          %Q["/usr/bin/glance-manage db_sync"]
-  action :run
 end
 
 file "/var/log/glance/registry.log" do
@@ -75,3 +40,32 @@ file "/var/log/glance/registry.log" do
   mode "0644"
 end
 
+template "/etc/glance/glance-api.conf" do
+  source "glance/glance-api.conf.erb"
+  mode "0640"
+  owner "root"
+  group "glance"
+  notifies :run, "execute[Populate glance database]"
+end
+
+template "/etc/glance/glance-registry.conf" do
+  source "glance/glance-registry.conf.erb"
+  mode "0640"
+  owner "root"
+  group "glance"
+  notifies :run, "execute[Populate glance database]"
+end
+
+execute "Populate glance database" do
+  command %Q[su glance -s /bin/sh -c ] <<
+          %Q["/usr/bin/glance-manage db_sync"]
+  action :nothing
+  notifies :restart, "service[openstack-glance-registry]"
+  notifies :restart, "service[openstack-glance-api]"
+end
+
+firewalld_rule "glance" do
+  action :set
+  protocol "tcp"
+  port %w[9292]
+end

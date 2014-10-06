@@ -16,10 +16,13 @@ nova_admin_password = <%=node[:creds][:admin_password]%>
 nova_admin_auth_url = http://<%=node[:ip][:keystone]%>:35357/v2.0
 
 [keystone_authtoken]
-auth_host = <%=node[:ip][:keystone]%>
+#Admin Endpoint
+identity_uri = http://<%=node[:ip][:keystone]%>:35357
+#Public Endpoint
+auth_uri = http://<%=node[:ip_ex][:keystone]%>:5000/v2.0 
 admin_tenant_name = admin
 admin_user = admin
-admin_password = <%=node[:creds][:admin_password]%>
+admin_password = <%= node[:creds][:admin_password]%>
 
 [database]
 connection = mysql://neutron:<%=node[:creds][:mysql_password]%>@<%=node[:ip][:neutron]%>/neutron

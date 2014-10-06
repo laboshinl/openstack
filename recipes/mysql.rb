@@ -19,14 +19,14 @@ MySQL-python
 end
 
 service "mariadb" do
-  action [:enable,:start]
+  action [:enable]
 end
 
 template "/etc/my.cnf.d/server.cnf" do
   source "mariadb/server.cnf.erb"
   notifies :delete, "file[ib_logfile0]", :immediately 
   notifies :delete, "file[ib_logfile1]", :immediately
-  notifies :restart, "service[mariadb]"
+  notifies :restart, "service[mariadb]", :immediately
 end
 
 file "ib_logfile0" do
