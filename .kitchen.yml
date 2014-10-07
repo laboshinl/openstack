@@ -9,10 +9,13 @@ driver:
 provisioner:
   name: chef_zero
   chef_omnibus_url: http://xenlet.stu.neva.ru/install.sh
-  require_chef_omnibus: true
+  require_chef_omnibus: false
 
 platforms:
   - name: centos-7.0
+    driver:
+      box:  laboshinl/centos-7.0
+      box_url: https://vagrantcloud.com/laboshinl/boxes/centos-7.0/versions/1/providers/virtualbox.box
     attributes:
       ip:
         rabbitmq: 198.18.0.12

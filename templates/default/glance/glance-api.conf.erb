@@ -16,7 +16,9 @@ known_stores = glance.store.filesystem.Store,
 #	glance.store.swift.Store,
 #	glance.store.cinder.Store,
 #	glance.store.gridfs.Store,
-        
+[glance_store]
+default_store = file 
+stores = ['file']  
 [database]
 connection = mysql://glance:<%=node[:creds][:mysql_password]%>@localhost/glance
 
@@ -24,7 +26,6 @@ connection = mysql://glance:<%=node[:creds][:mysql_password]%>@localhost/glance
 flavor = keystone
 
 [keystone_authtoken]
-#auth_host = <%=node[:ip][:keystone]%>
 #Admin Endpoint
 identity_uri = http://<%=node[:ip][:keystone]%>:35357
 #Public Endpoint
