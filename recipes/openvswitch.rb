@@ -9,22 +9,9 @@
 
 include_recipe "centos_cloud::common"
 
-=begin
-%w[
-  iproute 
-  kernel
-].each do |pkg|
-  package pkg do
-    action :upgrade
-  end
-end
-=end
-
 %w[
   openstack-neutron-openvswitch
   openstack-neutron-ml2 
-  python-neutronclient
-  python-keystoneclient
   ].each do |pkg|
   package pkg do
     action :install
@@ -44,16 +31,20 @@ service "openvswitch" do
     action [:enable, :start]
 end 
 
-execute 'set openvswitch local_ip' do
-  command %Q[ovs-vsctl set Open_vSwitch ]<<
-    %Q[$(ovs-vsctl get Open_vSwitch . _uuid) ]<<
-    %Q[other_config={'local_ip'='#{node[:auto][:internal_ip]}'}]
+service "network" do
+  action :nothing
+end
+
+execute "ovs-vsctl --may-exist add-br br-int" do
   action :run
 end
 
-execute 'set openvswitch manager' do
-  command "ovs-vsctl set-manager tcp:#{node[:ip][:neutron]}:6640"
-  action :run
+template "/etc/sysconfig/network-scripts/ifcfg-br-int" do
+  owner "root"
+  group "root"
+  mode  "0644"
+  source "neutron/ifcfg-br-int.erb"
+  notifies :restart, "service[network]"
 end
   
 link "/etc/neutron/plugin.ini" do

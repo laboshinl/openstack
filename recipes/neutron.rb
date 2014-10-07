@@ -1,16 +1,15 @@
 #
-# Cookbook Name:: centos-cloud
+# Cookbook Name:: centos_cloud
 # Recipe:: neutron
 #
-# Copyright 2013, cloudtechlab
-#
-# All rights reserved - Do Not Redistribute
-#
-#require "socket"
+# Copyright © 2014 Leonid Laboshin <laboshinl@gmail.com>
+# This work is free. You can redistribute it and/or modify it under the
+# terms of the Do What The Fuck You Want To Public License, Version 2,
+# as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
+
 
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
-include_recipe "centos_cloud::opendaylight"
 include_recipe "centos_cloud::openvswitch"
 
 centos_cloud_database "neutron" do
@@ -18,47 +17,41 @@ centos_cloud_database "neutron" do
 end
 
 %w[
-neutron-dhcp-agent 
+neutron-dhcp-agent
 neutron-l3-agent
 neutron-metadata-agent
 neutron-lbaas-agent
 neutron-server
 ].each do |srv|
   service srv do
-    action [:enable,:start]
+    action [:enable]
   end
 end
 
-execute "ovs-vsctl add-br br-ex" do
-  not_if("ovs-vsctl list-br | grep br-ex")
+execute "ovs-vsctl --may-exist add-br br-ex" do
   action :run
 end
 
-=begin
-template "/etc/sysconfig/network-scripts/ifcfg-" + node[:auto][:external_nic]  do
-  not_if do
-    File.exists?("/etc/sysconfig/network-scripts/ifcfg-br-ex")
-  end
+template "/etc/sysconfig/network-scripts/ifcfg-#{node[:auto][:external_nic]}"  do
   owner "root"
   group "root"
   mode  "0644"
   source "neutron/ifcfg-ethX.erb"
+  notifies :restart, "service[network]"
 end
-=end
+
 template "/etc/sysconfig/network-scripts/ifcfg-br-ex" do
-  not_if do
-    File.exists?("/etc/sysconfig/network-scripts/ifcfg-br-ex")
-  end
   owner "root"
   group "root"
   mode  "0644"
-  source "neutron/ifcfg-br-ex-2.erb"
+  source "neutron/ifcfg-br-ex.erb"
+  notifies :restart, "service[network]"
 end
-=begin
+
 service "network" do
-  action :restart
+  action :nothing
 end
-=end
+
 
 template "/etc/neutron/metadata_agent.ini" do
   source "neutron/metadata_agent.ini.erb"
@@ -92,4 +85,6 @@ template "/root/floating-pool.sh" do
   mode "0744"
 end
 
-
+service "neutron-server" do
+  action [:restart]
+end

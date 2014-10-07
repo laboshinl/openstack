@@ -22,7 +22,7 @@ include_recipe "centos_cloud::ntp"
 #  end
 #end
 
-%w[bash-completion].each do |pkg|
+%w[bash-completion python-openstackclient].each do |pkg|
   package pkg do
     action :install
   end
