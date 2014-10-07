@@ -71,12 +71,10 @@ template "/etc/ceilometer/ceilometer.conf" do
   notifies :restart, "service[openstack-ceilometer-compute]"
 end
 
-execute "virsh net-destroy default" do
-  only_if("virsh net-list | grep default")
+execute "virsh net-destroy default ||:" do
   action :run
-end
+end 
 
-execute "virsh net-undefine default" do
-  only_if("virsh net-list --all| grep default")
+execute "virsh net-undefine default ||:" do
   action :run
 end

@@ -60,7 +60,7 @@ end
 execute "sed -i 's/data_processing/data-processing/' /usr/lib/python2.7/site-packages/saharadashboard/api/client.py" do
 action :run
 end
-
+=begin
 #Redirect to /dashboard
 cookbook_file "/var/www/html/index.html" do
   source "index.html"
@@ -70,7 +70,7 @@ cookbook_file "/var/www/html/index.html" do
   action :create_if_missing
   notifies :restart, "service[httpd]"
 end
-
+=end
 #Enforce https
 template "/etc/httpd/conf.d/https.conf" do
   source "dashboard/https.conf.erb"

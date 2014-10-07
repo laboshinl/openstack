@@ -79,9 +79,3 @@ template "/etc/neutron/neutron.conf" do
   notifies :restart, "service[neutron-openvswitch-agent]"
 end
 
-firewalld_rule "nova-compute" do
-  action :set
-  protocol "tcp"
-  port %w[9696]
-end
-

@@ -7,10 +7,9 @@
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
-
-include_recipe "centos_cloud::common"
-include_recipe "centos_cloud::mysql"
 include_recipe "centos_cloud::openvswitch"
+include_recipe "centos_cloud::mysql"
+
 
 centos_cloud_database "neutron" do
   password node[:creds][:mysql_password]
@@ -22,6 +21,7 @@ neutron-l3-agent
 neutron-metadata-agent
 neutron-lbaas-agent
 neutron-server
+network
 ].each do |srv|
   service srv do
     action [:enable]
@@ -48,23 +48,21 @@ template "/etc/sysconfig/network-scripts/ifcfg-br-ex" do
   notifies :restart, "service[network]"
 end
 
-service "network" do
-  action :nothing
-end
-
-
 template "/etc/neutron/metadata_agent.ini" do
   source "neutron/metadata_agent.ini.erb"
+  notifies :restart, "service[neutron-server]"
   notifies :restart, "service[neutron-metadata-agent]"
 end
 
 template "/etc/neutron/dhcp_agent.ini" do
   source "neutron/dhcp_agent.ini.erb"
+  notifies :restart, "service[neutron-server]"
   notifies :restart, "service[neutron-dhcp-agent]"
 end
 
 template "/etc/neutron/lbaas_agent.ini" do
   source "neutron/lbaas_agent.ini.erb"
+  notifies :restart, "service[neutron-server]"
   notifies :restart, "service[neutron-lbaas-agent]"
 end
 
@@ -74,6 +72,7 @@ end
 
 template "/etc/neutron/l3_agent.ini" do
   source "neutron/l3_agent.ini.erb"
+  notifies :restart, "service[neutron-server]"
   notifies :restart, "service[neutron-l3-agent]"
 end
 
@@ -85,6 +84,16 @@ template "/root/floating-pool.sh" do
   mode "0744"
 end
 
-service "neutron-server" do
-  action [:restart]
+firewalld_rule "neutron" do
+  action :set
+  zone "internal"
+  protocol "tcp"
+  port %w[9696]
+end
+
+firewalld_rule "neutron" do
+  action :set
+  zone "public"
+  protocol "tcp"
+  port %w[9696]
 end

@@ -39,7 +39,7 @@ catalog.RegionOne.network.internalURL = http://<%= node[:ip][:neutron] %>:9696
 catalog.RegionOne.network.name = neutron
 
 catalog.RegionOne.orchestration.publicURL = http://<%= node[:ip_ex][:heat] %>:8004/v1/$(tenant_id)s
-catalog.RegionOne.orchestration.adminURL = http://<%= node[:ip][:heat] %>/v1/$(tenant_id)s
+catalog.RegionOne.orchestration.adminURL = http://<%= node[:ip][:heat] %>:8004/v1/$(tenant_id)s
 catalog.RegionOne.orchestration.internalURL = http://<%= node[:ip][:heat] %>:8004/v1/$(tenant_id)s
 catalog.RegionOne.orchestration.name = heat
 

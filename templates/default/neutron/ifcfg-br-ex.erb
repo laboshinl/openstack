@@ -1,9 +1,13 @@
 DEVICE="br-ex"
 BOOTPROTO="none"
-DNS1="8.8.8.8"
+<% if node[:network][:interfaces][node[:auto][:external_nic]][:routes][0][:destination] == "default" %> 
+DNS1="194.85.4.53"
+DNS2="194.85.96.53"
 GATEWAY=<%= node[:auto][:gateway] %>
+<% end %>
 IPADDR=<%= node[:auto][:external_ip] %>
 NETMASK=<%= node[:auto][:netmask] %>
 ONBOOT="yes"
 TYPE="OVSBridge"
 DEVICETYPE="ovs"
+NM_CONTROLLED="no"
