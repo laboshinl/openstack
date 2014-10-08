@@ -91,11 +91,11 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 
 This recipe produces some common for all nodes initial configuration.
 
-Install usefull tools
-Copy private ssh key to id_rsa and add public key to authorized_keys
+Install some usefull tools;
+Copy private ssh key to id_rsa and add public key to authorized_keys;
 Disable NetworkManager
-Disable IPv6
-Write openstack credential to root's .bashrc
+Disable IPv6;
+Write openstack credential to root's .bashrc;
 
 ## centos_cloud::firewall
 
