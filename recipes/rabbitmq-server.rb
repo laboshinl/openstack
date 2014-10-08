@@ -14,11 +14,10 @@ package "rabbitmq-server" do
   notifies :run, "execute[Fix rabbit first start]", :immediately
 end
 
-firewalld_rule "rabbit" do
+firewalld_rule "rabbitmq" do
   action :set
   zone "internal"
-  protocol "tcp"
-  port "5672"
+  service "rabbitmq"
 end
 
 service "rabbitmq-server" do

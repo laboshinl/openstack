@@ -19,8 +19,8 @@ end
 
 firewalld_rule "ntp" do
   action :set
-  protocol "udp"
-  port %w[123]
+  zone "public"
+  service "ntp"
 end
 
 template "/etc/ntp.conf" do
