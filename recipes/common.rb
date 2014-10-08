@@ -13,20 +13,20 @@ This recipe produces some common for all nodes initial configuration.
 #>
 =end
 
-#<> - Call selinux recipe to disable selinux;
+#<>  Call selinux recipe to disable selinux;
 include_recipe "centos_cloud::selinux"
-#<> - Call repos recipe to configure repositories;
+#<> > Call repos recipe to configure repositories;
 include_recipe "centos_cloud::repos"
 # Include firewalld lwrp; 
 include_recipe "firewalld"
-#<> Call firewalld resipe to define additional services;
+#<> ..* Call firewalld resipe to define additional services;
 include_recipe "centos_cloud::firewall"
 # Include ssh keys lwrp;
 include_recipe "libcloud::ssh_key"
-#<> Call ntp recipe to setup time synchronisation;
+#<> ..* Call ntp recipe to setup time synchronisation;
 include_recipe "centos_cloud::ntp"
 
-#<> Install some usefull tools;
+#<> ..* Install some usefull tools;
 %w[bash-completion python-openstackclient].each do |pkg|
   package pkg do
     action :install
