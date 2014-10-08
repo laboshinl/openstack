@@ -28,8 +28,25 @@ network
   end
 end
 
+libcloud_file_append "/etc/sysctl.conf" do
+  line [
+    "net.ipv4.ip_forward=1",
+    "net.ipv4.conf.all.rp_filter=0",
+    "net.ipv4.conf.default.rp_filter=0"]
+end
+
+execute "sysctl -p"
+
 execute "ovs-vsctl --may-exist add-br br-ex" do
   action :run
+end
+
+#Fixes bug http://blog.oddbit.com/2014/05/20/fedora-and-ovs-bridge-interfac/
+template "/etc/sysconfig/network-scripts/ifup-ovs" do
+  owner "root"
+  group "root"
+  mode "0755"
+  source "neutron/ifup-ovs.erb"
 end
 
 template "/etc/sysconfig/network-scripts/ifcfg-#{node[:auto][:external_nic]}"  do

@@ -10,26 +10,36 @@
 include_recipe "centos_cloud::common"
 
 %w[
-  openstack-neutron-openvswitch
-  openstack-neutron-ml2 
-  ].each do |pkg|
+openstack-neutron-openvswitch
+openstack-neutron-ml2
+].each do |pkg|
   package pkg do
     action :install
   end
 end
 
 %w[
-  neutron-openvswitch-agent
-  neutron-ovs-cleanup
-].each do |srv| 
+neutron-openvswitch-agent
+neutron-ovs-cleanup
+].each do |srv|
   service srv do
     action :enable
   end
 end
 
+#Due to a packaging bug, the Open vSwitch agent initialization script
+#explicitly looks for the wrong Open vSwitch plug-in configuration
+template "/usr/lib/systemd/system/neutron-openvswitch-agent.service" do
+  owner "root"
+  group "root"
+  mode "0644"
+  source "neutron/neutron-openvswitch-agent.service.erb"
+  notifies :restart, "service[neutron-openvswitch-agent]"
+end
+
 service "openvswitch" do
-    action [:enable, :start]
-end 
+  action [:enable, :start]
+end
 
 service "network" do
   action :nothing
@@ -46,27 +56,27 @@ template "/etc/sysconfig/network-scripts/ifcfg-br-int" do
   source "neutron/ifcfg-br-int.erb"
   notifies :restart, "service[network]"
 end
-  
+
 link "/etc/neutron/plugin.ini" do
   to "/etc/neutron/plugins/ml2/ml2_conf.ini"
   link_type :symbolic
 end
 
-uuid = Mixlib::ShellOut.new(%Q[/usr/bin/keystone ]<<
-  %Q[--os-token #{node[:creds][:keystone_token]} ]<<
-  %Q[--os-endpoint http://#{node[:ip][:keystone]}:35357/v2.0 ]<<
-  %Q[tenant-list | grep admin | awk '{print $2}'])
-uuid.run_command
-uuid.error!
-admin_id  = uuid.stdout[0..-2]
-
 template "/etc/neutron/plugins/ml2/ml2_conf.ini" do
   mode "0640"
   owner "root"
   group "neutron"
-  source "neutron/ml2_conf.ini.erb"  
+  source "neutron/ml2_conf.ini.erb"
   notifies :restart, "service[neutron-openvswitch-agent]"
 end
+
+uuid = Mixlib::ShellOut.new(%Q[/usr/bin/keystone ]<<
+%Q[--os-token #{node[:creds][:keystone_token]} ]<<
+%Q[--os-endpoint http://#{node[:ip][:keystone]}:35357/v2.0 ]<<
+%Q[tenant-list | grep admin | awk '{print $2}'])
+uuid.run_command
+uuid.error!
+admin_id  = uuid.stdout[0..-2]
 
 template "/etc/neutron/neutron.conf" do
   mode "0640"

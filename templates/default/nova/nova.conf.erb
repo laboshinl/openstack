@@ -5,11 +5,14 @@ rabbit_host = <%=node[:ip][:rabbitmq]%>
 rabbit_password = <%=node[:creds][:rabbitmq_password]%>
 network_api_class = nova.network.neutronv2.api.API
 neutron_auth_strategy = keystone
-neutron_url = http://<%=node[:ip_ex][:neutron]%>:9696/
+neutron_region_name = RegionOne
+neutron_url_timeout = 30
+neutron_ovs_bridge = br-int
+neutron_url = http://<%=node[:ip_ex][:neutron]%>:9696
 neutron_admin_tenant_name = admin
 neutron_admin_username = admin
 neutron_admin_password = <%=node[:creds][:admin_password]%>
-neutron_admin_auth_url = http://<%=node[:ip][:neutron]%>:35357/v2.0
+neutron_admin_auth_url = http://<%=node[:ip][:keystone]%>:35357/v2.0
 security_group_api = neutron
 firewall_driver = nova.virt.firewall.NoopFirewallDriver
 libvirt_vif_driver = nova.virt.libvirt.vif.LibvirtGenericVIFDriver

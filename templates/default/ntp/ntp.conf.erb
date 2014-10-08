@@ -5,21 +5,24 @@ filegen loopstats file loopstats type day enable
 filegen peerstats file peerstats type day enable
 filegen clockstats file clockstats type day enable
 
-server 0.pool.ntp.org
-server 1.pool.ntp.org
-server 2.pool.ntp.org
-server 3.pool.ntp.org
+server 46.8.40.31     #0.pool.ntp.org
+server 78.140.251.2   #1.pool.ntp.org
+server 95.213.132.254 #2.pool.ntp.org
+server 95.213.132.250 #3.pool.ntp.org
 
-restrict 46.8.40.31 nomodify
-restrict 78.140.251.2 nomodify
-restrict 95.213.132.254 nomodify
-restrict 95.213.132.250 nomodify
+#restrict default ignore
+
+restrict 46.8.40.31 mask 255.255.255.255 nomodify notrap noquery
+restrict 78.140.251.2 mask 255.255.255.255 nomodify notrap noquery
+restrict 95.213.132.254 mask 255.255.255.255 nomodify notrap noquery
+restrict 95.213.132.250 mask 255.255.255.255 nomodify notrap noquery
 
 restrict -4 default nomodify nopeer noquery notrap
 restrict 127.0.0.1
 
+Uncomment for IPv6
 restrict -6 default nomodify nopeer noquery notrap
 restrict ::1
 
-interface ignore wildcard
-interface listen <%=node[:auto][:external_nic]%>
+#interface ignore wildcard
+#interface listen <%=node[:auto][:external_nic]%>
