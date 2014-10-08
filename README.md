@@ -77,7 +77,7 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::node
 * centos_cloud::nova-compute
 * centos_cloud::nova
-* centos_cloud::ntp
+* [centos_cloud::ntp](#centos_cloudntp) - This recipe configures secured ntp client.
 * centos_cloud::opendaylight
 * centos_cloud::openvswitch
 * centos_cloud::rabbitmq-server
@@ -92,8 +92,8 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 This recipe produces some common for all nodes initial configuration.
 
 - Call [selinux recipe](#centos_cloudselinux) to disable selinux;
-- Call repos recipe to configure repositories;
-- Call firewalld resipe to define additional services;
+- Call [repos recipe](#centos_cloudrepos) recipe to configure repositories;
+- Call [firewall resipe](#centos_cloudfirewall) to define additional services;
 - Call ntp recipe to setup time synchronisation;
 - Install some usefull tools;
 - Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
@@ -104,6 +104,10 @@ This recipe produces some common for all nodes initial configuration.
 ## centos_cloud::firewall
 
 The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
+
+## centos_cloud::ntp
+
+This recipe configures secured ntp client.
 
 ## centos_cloud::selinux
 

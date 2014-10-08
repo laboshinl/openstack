@@ -15,11 +15,11 @@ This recipe produces some common for all nodes initial configuration.
 
 #<> - Call [selinux recipe](#centos_cloudselinux) to disable selinux;
 include_recipe "centos_cloud::selinux"
-#<> - Call repos recipe to configure repositories;
+#<> - Call [repos recipe](#centos_cloudrepos) recipe to configure repositories;
 include_recipe "centos_cloud::repos"
 # Include firewalld lwrp; 
 include_recipe "firewalld"
-#<> - Call firewalld resipe to define additional services;
+#<> - Call [firewall resipe](#centos_cloudfirewall) to define additional services;
 include_recipe "centos_cloud::firewall"
 # Include ssh keys lwrp;
 include_recipe "libcloud::ssh_key"
