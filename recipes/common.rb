@@ -13,11 +13,18 @@ This recipe produces some common for all nodes initial configuration.
 #>
 =end
 
+#<> Call selinux recipe to disable selinux;
+#<>
 include_recipe "centos_cloud::selinux"
+#<> Call repos recipe to configure repositories;
 include_recipe "centos_cloud::repos"
+# Include firewalld lwrp; 
 include_recipe "firewalld"
+#<> Call firewalld resipe to define additional services;
 include_recipe "centos_cloud::firewall"
+# Include ssh keys lwrp;
 include_recipe "libcloud::ssh_key"
+#<> Call ntp recipe to setup time synchronisation;
 include_recipe "centos_cloud::ntp"
 
 #<> Install some usefull tools;
@@ -27,7 +34,7 @@ include_recipe "centos_cloud::ntp"
   end
 end
 
-#<> Copy private ssh key to id_rsa and add public key to authorized_keys;
+#<> Copy private ssh key to id_rsa & add public key to authorized_keys;
 libcloud_ssh_keys "openstack" do
   data_bag "ssh_keypairs"
   action [:create, :add]
