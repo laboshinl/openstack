@@ -91,10 +91,10 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 
 This recipe produces some common for all nodes initial configuration.
 
-- Call [selinux recipe](#centos_cloudselinux) to disable selinux;
-- Call [repos recipe](#centos_cloudrepos) recipe to configure repositories;
-- Call [firewall resipe](#centos_cloudfirewall) to define additional services;
-- Call ntp recipe to setup time synchronisation;
+- Call [selinux](#centos_cloudselinux) recipe to disable selinux;
+- Call [repos](#centos_cloudrepos) recipe recipe to configure repositories;
+- Call [firewall](#centos_cloudfirewall) recipe to define additional services;
+- Call [ntp](#centos_cloudfirewall) recipe to setup time synchronisation;
 - Install some usefull tools;
 - Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
 - Disable NetworkManager

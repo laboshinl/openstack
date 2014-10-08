@@ -13,17 +13,17 @@ This recipe produces some common for all nodes initial configuration.
 #>
 =end
 
-#<> - Call [selinux recipe](#centos_cloudselinux) to disable selinux;
+#<> - Call [selinux](#centos_cloudselinux) recipe to disable selinux;
 include_recipe "centos_cloud::selinux"
-#<> - Call [repos recipe](#centos_cloudrepos) recipe to configure repositories;
+#<> - Call [repos](#centos_cloudrepos) recipe recipe to configure repositories;
 include_recipe "centos_cloud::repos"
 # Include firewalld lwrp; 
 include_recipe "firewalld"
-#<> - Call [firewall resipe](#centos_cloudfirewall) to define additional services;
+#<> - Call [firewall](#centos_cloudfirewall) recipe to define additional services;
 include_recipe "centos_cloud::firewall"
 # Include ssh keys lwrp;
 include_recipe "libcloud::ssh_key"
-#<> - Call ntp recipe to setup time synchronisation;
+#<> - Call [ntp](#centos_cloudfirewall) recipe to setup time synchronisation;
 include_recipe "centos_cloud::ntp"
 
 #<> - Install some usefull tools;
