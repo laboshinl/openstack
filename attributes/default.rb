@@ -52,24 +52,36 @@ else
   default[:libvirt][:type] = "kvm"
 end
 
-#Automatic attributes 
 #<> Volume group will be used by cinder 
 default[:auto][:volume_group] = largest_vg
+#<> IP address in external network 
 default[:auto][:external_ip]  = node[:ipaddress]
+#<> IP address in external network 
 default[:auto][:internal_ip]  = internal_ipv4
+#<> External network interface
 default[:auto][:external_nic] = get_iface(node[:auto][:external_ip])
+#<> Internal network interface
 default[:auto][:internal_nic] = get_iface(node[:auto][:internal_ip])
+#<> Default gateway
 default[:auto][:gateway] = node[:network][:default_gateway]
+#<> External subnet's netmask
 default[:auto][:netmask] = get_netmask(node[:auto][:external_ip])
 
-#Credentials
+#<> Cloud administrator's password
 default[:creds][:admin_password]    = "cl0udAdmin"
+#<> Database admin's password
 default[:creds][:mysql_password]    = node[:creds][:admin_password]
+#<> Rabbutmq guest's password
 default[:creds][:rabbitmq_password] = node[:creds][:admin_password]
+#<> Keystone auth token
 default[:creds][:keystone_token]    = node[:creds][:admin_password]
+#<> Swift shared secret
 default[:creds][:swift_hash]        = node[:creds][:admin_password]
+#<> Neutron shared secret
 default[:creds][:neutron_secret]    = node[:creds][:admin_password]
+#<> Ceilometer shared secret
 default[:creds][:metering_secret]   = node[:creds][:admin_password]
+#<> ssh keypair to use
 default[:creds][:ssh_keypair]       = node[:creds][:admin_password]
 
 #IP addresses
@@ -94,9 +106,5 @@ default[:ip][:ceilometer]     = node[:ip][:controller]
 default[:ip_ex][:ceilometer]  = node[:ip_ex][:controller]
 default[:ip][:sahara]         = node[:ip][:controller]
 default[:ip_ex][:sahara]      = node[:ip_ex][:controller]
-default[:ip][:monitoring]     = node[:ip][:controller]
-
-#Opendaylight RAM
-default[:odl][:ram]="1G"
   
 

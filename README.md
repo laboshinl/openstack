@@ -19,20 +19,20 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * `node[:openstack_release]` -  Defaults to `"icehouse"`.
 * `node[:libvirt][:type]` -  Defaults to `"kvm"`.
 * `node[:auto][:volume_group]` - Volume group will be used by cinder. Defaults to `"largest_vg"`.
-* `node[:auto][:external_ip]` -  Defaults to `"node[:ipaddress]"`.
-* `node[:auto][:internal_ip]` -  Defaults to `"internal_ipv4"`.
-* `node[:auto][:external_nic]` -  Defaults to `"get_iface(node[:auto][:external_ip])"`.
-* `node[:auto][:internal_nic]` -  Defaults to `"get_iface(node[:auto][:internal_ip])"`.
-* `node[:auto][:gateway]` -  Defaults to `"node[:network][:default_gateway]"`.
-* `node[:auto][:netmask]` -  Defaults to `"get_netmask(node[:auto][:external_ip])"`.
-* `node[:creds][:admin_password]` -  Defaults to `"cl0udAdmin"`.
-* `node[:creds][:mysql_password]` -  Defaults to `"node[:creds][:admin_password]"`.
-* `node[:creds][:rabbitmq_password]` -  Defaults to `"node[:creds][:admin_password]"`.
-* `node[:creds][:keystone_token]` -  Defaults to `"node[:creds][:admin_password]"`.
-* `node[:creds][:swift_hash]` -  Defaults to `"node[:creds][:admin_password]"`.
-* `node[:creds][:neutron_secret]` -  Defaults to `"node[:creds][:admin_password]"`.
-* `node[:creds][:metering_secret]` -  Defaults to `"node[:creds][:admin_password]"`.
-* `node[:creds][:ssh_keypair]` -  Defaults to `"node[:creds][:admin_password]"`.
+* `node[:auto][:external_ip]` - IP address in external network. Defaults to `"node[:ipaddress]"`.
+* `node[:auto][:internal_ip]` - IP address in external network. Defaults to `"internal_ipv4"`.
+* `node[:auto][:external_nic]` - External network interface. Defaults to `"get_iface(node[:auto][:external_ip])"`.
+* `node[:auto][:internal_nic]` - Internal network interface. Defaults to `"get_iface(node[:auto][:internal_ip])"`.
+* `node[:auto][:gateway]` - Default gateway. Defaults to `"node[:network][:default_gateway]"`.
+* `node[:auto][:netmask]` - External subnet's netmask. Defaults to `"get_netmask(node[:auto][:external_ip])"`.
+* `node[:creds][:admin_password]` - Cloud administrator's password. Defaults to `"cl0udAdmin"`.
+* `node[:creds][:mysql_password]` - Database admin's password. Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:rabbitmq_password]` - Rabbutmq guest's password. Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:keystone_token]` - Keystone auth token. Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:swift_hash]` - Swift shared secret. Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:neutron_secret]` - Neutron shared secret. Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:metering_secret]` - Ceilometer shared secret. Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:ssh_keypair]` - ssh keypair to use. Defaults to `"node[:creds][:admin_password]"`.
 * `node[:ip][:controller]` -  Defaults to `"node[:auto][:internal_ip]"`.
 * `node[:ip_ex][:controller]` -  Defaults to `"node[:auto][:external_ip]"`.
 * `node[:ip][:rabbitmq]` -  Defaults to `"node[:ip][:controller]"`.
@@ -54,8 +54,6 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * `node[:ip_ex][:ceilometer]` -  Defaults to `"node[:ip_ex][:controller]"`.
 * `node[:ip][:sahara]` -  Defaults to `"node[:ip][:controller]"`.
 * `node[:ip_ex][:sahara]` -  Defaults to `"node[:ip_ex][:controller]"`.
-* `node[:ip][:monitoring]` -  Defaults to `"node[:ip][:controller]"`.
-* `node[:odl][:ram]` -  Defaults to `"1G"`.
 
 # Recipes
 
