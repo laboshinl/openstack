@@ -7,6 +7,12 @@
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
+=begin
+#<
+The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
+#>
+=end
+
 include_recipe "centos_cloud::selinux"
 include_recipe "centos_cloud::repos"
 include_recipe "firewalld"
@@ -14,14 +20,11 @@ include_recipe "centos_cloud::firewall"
 include_recipe "libcloud::ssh_key"
 include_recipe "centos_cloud::ntp"
 
-#service "network" do
-#  action :restart
-#end
-#node[:auto].each do |attribute|
-#  log attribute do
-#    level :debug
-#  end
-#end
+=begin
+#<
+This recipe does some configuration common for all nodes.
+#>
+=end
 
 %w[bash-completion python-openstackclient].each do |pkg|
   package pkg do
@@ -29,6 +32,7 @@ include_recipe "centos_cloud::ntp"
   end
 end
 
+#<> 1. Adds private ssh key to id_rsa and punlic key to authorized_keys 
 libcloud_ssh_keys "openstack" do
   data_bag "ssh_keypairs"
   action [:create, :add]
@@ -54,6 +58,5 @@ libcloud_file_append "/root/.bashrc" do
     "export OS_TENANT_NAME=admin",
     "export OS_PASSWORD=#{node[:creds][:admin_password]}",
     "export OS_AUTH_URL=http://#{node[:ip_ex][:keystone]}:5000/v2.0/"]
- #   "export OS_IMAGE_URL=http://#{node[:ip_ex][:glance]}:9292"]
 end
 
