@@ -67,7 +67,7 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::controller
 * centos_cloud::dashboard
 * centos_cloud::default
-* centos_cloud::firewall
+* [centos_cloud::firewall](#centos_cloudfirewall) - The recipe defines openstack-related firewalld services.
 * centos_cloud::glance
 * centos_cloud::gluster
 * centos_cloud::heat
@@ -87,6 +87,10 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::swift-node
 * centos_cloud::swift-proxy
 * centos_cloud::test
+
+## centos_cloud::firewall
+
+The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
 
 # Resources
 

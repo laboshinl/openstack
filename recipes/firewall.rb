@@ -7,6 +7,12 @@
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
+=begin
+#<
+The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
+#>
+=end
+
 %w[
 iscsi.xml                      openstack-heat-api.xml         openstack-nova-api.xml
 ntp.xml                        openstack-heat-cfn-api.xml     openstack-novncproxy.xml
