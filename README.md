@@ -63,7 +63,7 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::ceilometer
 * centos_cloud::ceph
 * centos_cloud::cinder
-* [centos_cloud::common](#centos_cloudcommon) - The recipe defines openstack-related firewalld services.
+* [centos_cloud::common](#centos_cloudcommon) - This recipe produces some common for all nodes initial configuration.
 * centos_cloud::controller
 * centos_cloud::dashboard
 * centos_cloud::default
@@ -89,10 +89,9 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 
 ## centos_cloud::common
 
-The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
-
 This recipe produces some common for all nodes initial configuration.
 
+Install usefull tools
 Copy private ssh key to id_rsa and add public key to authorized_keys
 Disable NetworkManager
 Disable IPv6

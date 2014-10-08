@@ -9,7 +9,7 @@
 
 =begin
 #<
-The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
+This recipe produces some common for all nodes initial configuration.
 #>
 =end
 
@@ -20,12 +20,7 @@ include_recipe "centos_cloud::firewall"
 include_recipe "libcloud::ssh_key"
 include_recipe "centos_cloud::ntp"
 
-=begin
-#<
-This recipe produces some common for all nodes initial configuration.
-#>
-=end
-
+#<> Install usefull tools
 %w[bash-completion python-openstackclient].each do |pkg|
   package pkg do
     action :install
@@ -44,13 +39,16 @@ end
 #end
 
 #<> Disable IPv6
-#libcloud_file_append "/etc/sysctl.conf" do
-#  line [
-#    "net.ipv6.conf.all.disable_ipv6=1",
-#    "net.ipv6.conf.default.disable_ipv6=1"]
-#end
+libcloud_file_append "/etc/sysctl.conf" do
+  line [
+    "net.ipv6.conf.all.disable_ipv6=1",
+    "net.ipv6.conf.default.disable_ipv6=1"]
+  notifies :run, "execute[sysctl -p]"
+end
 
-#execute "sysctl -p"
+execute "sysctl -p" do
+  action :nothing
+end
 
 #<> Write openstack credential to root's .bashrc
 libcloud_file_append "/root/.bashrc" do
