@@ -7,6 +7,12 @@
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
+=begin
+#<
+The recipe disables selinux. It disables selinux in config and executes 'setenforce 0'.
+#>
+=end
+
 template "/etc/selinux/config" do
   source "selinux/selinux.erb"
 end

@@ -83,7 +83,7 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::rabbitmq-server
 * centos_cloud::repos
 * centos_cloud::sahara
-* centos_cloud::selinux
+* [centos_cloud::selinux](#centos_cloudselinux) - The recipe disables selinux.
 * centos_cloud::swift-node
 * centos_cloud::swift-proxy
 * centos_cloud::test
@@ -91,6 +91,10 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 ## centos_cloud::firewall
 
 The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
+
+## centos_cloud::selinux
+
+The recipe disables selinux. It disables selinux in config and executes 'setenforce 0'.
 
 # Resources
 
