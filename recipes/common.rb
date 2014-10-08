@@ -13,10 +13,9 @@ This recipe produces some common for all nodes initial configuration.
 #>
 =end
 
-#<> Call selinux recipe to disable selinux;
-#<>
+#<> - Call selinux recipe to disable selinux;
 include_recipe "centos_cloud::selinux"
-#<> Call repos recipe to configure repositories;
+#<> - Call repos recipe to configure repositories;
 include_recipe "centos_cloud::repos"
 # Include firewalld lwrp; 
 include_recipe "firewalld"
