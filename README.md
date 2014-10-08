@@ -1,235 +1,158 @@
-Jumpstart
-==========
-Bootstrap script installs knife-solo, downloads necessary cookbooks from git and starts All-in-one installation process 
+# Description
 
-1. Install CentOS 6.4 minimal http://mirror.yandex.ru/centos/6.4/isos/x86_64/CentOS-6.4-x86_64-minimal.iso
-   
-   **Note.** LVM volume group is required for cinder. Use logical volumes during installation or create your own VG before processing
-  
+Installs/Configures openstack cloudstructure based on CentOS 7.0
 
-2. Execute as root user
+# Requirements
 
-  ``` console
-  curl -s https://raw.github.com/laboshinl/openstack-havana-cookbook/master/bootstrap.sh | bash
-  ```
+## Platform:
 
-3. Reboot
-4. Change addreses in /root/floating-pool.sh and run it to create neutron external network
-5. All done! Go to http://ipaddress/dashboard  login: **admin** password: **mySuperSecret**
+* Centos (>= 7.0)
 
-  **Note.** Swift will not work until you mount any disk at /srv/node/device. 
-  ```
-  mount /dev/your_disk /srv/node/device
+## Cookbooks:
 
-  chown swift.swift /srv/node/device
-  
-  swift-init main restart
-  ```
-  Don't forget to mount it in fstab.
+* firewalld (>= 0.2.4)
+* libcloud (>= 0.1.0)
+* lvm (>= 1.2.2)
 
-centos_cloud Cookbook
-=====================
+# Attributes
 
-This cookbook installs openstack "havana".
+* `node[:openstack_release]` -  Defaults to `"icehouse"`.
+* `node[:libvirt][:type]` -  Defaults to `"kvm"`.
+* `node[:auto][:volume_group]` - Volume group will be used by cinder. Defaults to `"largest_vg"`.
+* `node[:auto][:external_ip]` -  Defaults to `"node[:ipaddress]"`.
+* `node[:auto][:internal_ip]` -  Defaults to `"internal_ipv4"`.
+* `node[:auto][:external_nic]` -  Defaults to `"get_iface(node[:auto][:external_ip])"`.
+* `node[:auto][:internal_nic]` -  Defaults to `"get_iface(node[:auto][:internal_ip])"`.
+* `node[:auto][:gateway]` -  Defaults to `"node[:network][:default_gateway]"`.
+* `node[:auto][:netmask]` -  Defaults to `"get_netmask(node[:auto][:external_ip])"`.
+* `node[:creds][:admin_password]` -  Defaults to `"cl0udAdmin"`.
+* `node[:creds][:mysql_password]` -  Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:rabbitmq_password]` -  Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:keystone_token]` -  Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:swift_hash]` -  Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:neutron_secret]` -  Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:metering_secret]` -  Defaults to `"node[:creds][:admin_password]"`.
+* `node[:creds][:ssh_keypair]` -  Defaults to `"node[:creds][:admin_password]"`.
+* `node[:ip][:controller]` -  Defaults to `"node[:auto][:internal_ip]"`.
+* `node[:ip_ex][:controller]` -  Defaults to `"node[:auto][:external_ip]"`.
+* `node[:ip][:rabbitmq]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip][:keystone]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:keystone]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:swift]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:swift]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:glance]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:glance]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:cinder]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:cinder]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:neutron]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:neutron]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:nova]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:nova]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:heat]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:heat]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:ceilometer]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:ceilometer]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:sahara]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:ip_ex][:sahara]` -  Defaults to `"node[:ip_ex][:controller]"`.
+* `node[:ip][:monitoring]` -  Defaults to `"node[:ip][:controller]"`.
+* `node[:odl][:ram]` -  Defaults to `"1G"`.
 
-####Neutron: 
-- vlan
-- openvswitch 
-- namespaces
+# Recipes
 
-####Compute: 
-- kvm
+* centos_cloud::add_disk
+* centos_cloud::ceilometer
+* centos_cloud::ceph
+* centos_cloud::cinder
+* centos_cloud::common
+* centos_cloud::controller
+* centos_cloud::dashboard
+* centos_cloud::default
+* centos_cloud::firewall
+* centos_cloud::glance
+* centos_cloud::gluster
+* centos_cloud::heat
+* centos_cloud::keystone
+* centos_cloud::mysql
+* centos_cloud::neutron
+* centos_cloud::node
+* centos_cloud::nova-compute
+* centos_cloud::nova
+* centos_cloud::ntp
+* centos_cloud::opendaylight
+* centos_cloud::openvswitch
+* centos_cloud::rabbitmq-server
+* centos_cloud::repos
+* centos_cloud::sahara
+* centos_cloud::selinux
+* centos_cloud::swift-node
+* centos_cloud::swift-proxy
+* centos_cloud::test
 
-####Glance: 
-- swift backend
+# Resources
 
-####Cinder: 
-- lvm driver
+* [centos_cloud_config](#centos_cloud_config)
+* [centos_cloud_database](#centos_cloud_database)
+* [centos_cloud_scp_file](#centos_cloud_scp_file)
+* [centos_cloud_ssh_command](#centos_cloud_ssh_command)
+* [centos_cloud_ssh_key_manage](#centos_cloud_ssh_key_manage)
 
-####Includes:
-- heat 
-- ceilometer
-- swift
+## centos_cloud_config
 
-Requirements
-------------
-#### OS
+### Actions
 
-- CentOS 6.4 minimal x86_64
+- set:
 
-#### Interfaces
+### Attribute Parameters
 
-- At least one network interface on controller and nodes
+- file:
+- command:
 
-#### LVM
+## centos_cloud_database
 
-- Volume group for cinder 
+### Actions
 
-#### cookbooks
-- `simple_iptables` - centos_cloud needs simple_iptables to manage iptables.
-- `libcloud` -  centos_cloud needs libcloud to use scp, manage ssh-keys, etc.
-- `selinux` - centos_cloud needs selinux to disable selinux.
-- `tar` - centos_cloud needs tar to manage tar.gz
+- create:
 
-#### databags
-- openstack 
+### Attribute Parameters
 
-```
-$ knife data bag show ssh_keypairs openstack
-id : openstack
-private_key: -----BEGIN RSA PRIVATE KEY----- ... -----END RSA PRIVATE KEY-----
-public_key: ssh-rsa ... user@host
-```
+- name:
+- password:
 
-Attributes
-----------
+## centos_cloud_scp_file
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>[:creds][:admin_password]</tt></td>
-    <td>string</td>
-    <td>admin user password</td>
-    <td><tt>mySuperSecret</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:creds][:mysql_password]</tt></td>
-    <td>string</td>
-    <td>mysql root user password</td>
-    <td><tt>r00tSqlPass</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:creds][:keystone_token]</tt></td>
-    <td>string</td>
-    <td>keystone token</td>
-    <td><tt>c6c5de883bfd0ef30a71</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:creds][:swift_hash]</tt></td>
-    <td>string</td>
-    <td>swift hash</td>
-    <td><tt>12c51e21fc2824fff5c5</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:creds][:quantum_secret]</tt></td>
-    <td>string</td>
-    <td>quantum shared secret</td>
-    <td><tt>c6c5de883bfd0ef30a71</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:creds][:ssh_keypair]</tt></td>
-    <td>string</td>
-    <td>name of databag containing ssh-keypair </td>
-    <td><tt>openstack</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:controller]</tt></td>
-    <td>string</td>
-    <td>compute node ipaddress</td>
-    <td><tt>node[:ipaddress]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:qpid]</tt></td>
-    <td>string</td>
-    <td>message broker ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:keystone]</tt></td>
-    <td>string</td>
-    <td>identity service ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:swift]</tt></td>
-    <td>string</td>
-    <td>objectstore service ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:glance]</tt></td>
-    <td>string</td>
-    <td>image service  ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:cinder]</tt></td>
-    <td>string</td>
-    <td>block storage service ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:quantum]</tt></td>
-    <td>string</td>
-    <td>network service  ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:nova]</tt></td>
-    <td>string</td>
-    <td>compute service ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:heat]</tt></td>
-    <td>string</td>
-    <td>cloudformation service ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-  <tr>
-    <td><tt>[:ip][:ceilometer]</tt></td>
-    <td>string</td>
-    <td>metric service ipaddress</td>
-    <td><tt>[:ip][:controller]</tt></td>
-  </tr>
-</table>
+### Actions
 
-Usage
------
+- set:
 
-Just include `centos-cloud` in your node's `run_list`:
+### Attribute Parameters
 
-```json
-{
-  "run_list": [
-    "recipe[centos-cloud]"
-  ]
-}
-```
-http://[IPADDRESS]/dashboard  
-login: admin 
-password: mySuperSecret
+- file:
+- command:
 
-Add compute node
+## centos_cloud_ssh_command
 
-```json
-{
-  "ip" : { 
-    "controller": "IPADDRESS"
-  },
-  "run_list": [
-    "recipe[centos-cloud::node]"
-  ]
-}
-```
+### Actions
 
+- set:
 
+### Attribute Parameters
 
-Contributing
-------------
+- file:
+- command:
 
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write you change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+## centos_cloud_ssh_key_manage
 
-License and Authors
--------------------
-Authors: Leonid Laboshin
+### Actions
+
+- add:
+
+### Attribute Parameters
+
+- item:
+- databag:  Defaults to <code>"ssh_keypairs"</code>.
+
+# License and Maintainer
+
+Maintainer:: cloudtechlab (<laboshinl@gmail.com>)
+
+License:: Do What The Fuck You Want To Public License, Version 2

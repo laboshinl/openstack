@@ -33,6 +33,8 @@ template "/etc/libvirt/libvirtd.conf" do
   mode  "0644"
   group "root"
   notifies :restart, "service[libvirtd]"
+  notifies :run,"execute[virsh net-destroy default ||:]"
+  notifies :run,"execute[virsh net-undefine default ||:]"
 end
 
 template "/etc/sysconfig/libvirtd" do
@@ -41,12 +43,14 @@ template "/etc/sysconfig/libvirtd" do
   mode  "0644"
   group "root"
   notifies :restart, "service[libvirtd]"
+  notifies :run,"execute[virsh net-destroy default ||:]"
+  notifies :run,"execute[virsh net-undefine default ||:]"
 end
 
 firewalld_rule "nova-compute" do
   action :set
   protocol "tcp"
-  port %w[5900-5999 6080 6081 6082]
+  port %w[5900-5999 6080-6082]
 end
 
 firewalld_rule "libvirtd" do
@@ -72,9 +76,9 @@ template "/etc/ceilometer/ceilometer.conf" do
 end
 
 execute "virsh net-destroy default ||:" do
-  action :run
+  action :nothing
 end 
 
 execute "virsh net-undefine default ||:" do
-  action :run
+  action :nothing
 end

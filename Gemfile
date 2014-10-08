@@ -15,6 +15,7 @@ gem 'berkshelf'
 # end
 
 group :development do  
+  gem 'knife-cookbook-doc'
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
   gem 'guard'

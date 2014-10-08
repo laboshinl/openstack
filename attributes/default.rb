@@ -53,6 +53,7 @@ else
 end
 
 #Automatic attributes 
+#<> Volume group will be used by cinder 
 default[:auto][:volume_group] = largest_vg
 default[:auto][:external_ip]  = node[:ipaddress]
 default[:auto][:internal_ip]  = internal_ipv4

@@ -17,6 +17,7 @@ end
 
 # Install cinder packages
 %w[
+  iscsi-initiator-utils
   openstack-cinder
   targetcli
 ].each do |pkg|

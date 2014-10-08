@@ -11,4 +11,4 @@ depends  "libcloud",">=0.1.0"
 depends  "lvm",">=1.2.2"
 
 supports "centos", ">= 7.0"
-supports "fedora", ">= 20"
+
