@@ -33,7 +33,7 @@ include_recipe "centos_cloud::ntp"
   end
 end
 
-#<> - Copy private ssh key to id_rsa & add public key to authorized_keys;
+#<> - Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
 libcloud_ssh_keys "openstack" do
   data_bag "ssh_keypairs"
   action [:create, :add]

@@ -96,7 +96,7 @@ This recipe produces some common for all nodes initial configuration.
 - Call firewalld resipe to define additional services;
 - Call ntp recipe to setup time synchronisation;
 - Install some usefull tools;
-- Copy private ssh key to id_rsa & add public key to authorized_keys;
+- Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
 - Disable NetworkManager
 - Disable IPv6;
 - Write openstack credential to root's .bashrc;
