@@ -22,7 +22,7 @@ include_recipe "centos_cloud::ntp"
 
 =begin
 #<
-This recipe does some configuration common for all nodes.
+This recipe produces some common for all nodes initial configuration.
 #>
 =end
 

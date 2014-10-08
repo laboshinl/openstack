@@ -91,9 +91,12 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 
 The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
 
-This recipe does some configuration common for all nodes.
+This recipe produces some common for all nodes initial configuration.
 
-1. Adds private ssh key to id_rsa and punlic key to authorized_keys
+Copy private ssh key to id_rsa and add public key to authorized_keys
+Disable NetworkManager
+Disable IPv6
+Write openstack credential to root's .bashrc
 
 ## centos_cloud::firewall
 
