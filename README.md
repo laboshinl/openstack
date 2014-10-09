@@ -89,6 +89,14 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 
 This recipe installs and configures openstack block storage
 
+- [x] Create database for cinder
+- [x] Install cinder packages
+- [x] Enable services
+- > Fix [bug](https://bugs.launchpad.net/cinder/+bug/1300136)
+- [x] Configure services
+- [x] Populate cinder database
+- [x] Accept incoming connections on cinder ports
+
 ## centos_cloud::common
 
 This recipe produces some initial configuration.

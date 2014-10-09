@@ -14,12 +14,12 @@
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
 
-# <> - [x] Create database for cinder
+#<> - [x] Create database for cinder
 centos_cloud_database "cinder" do
   password node[:creds][:mysql_password]
 end
 
-# <> - [x] Install cinder packages
+#<> - [x] Install cinder packages
 %w[
   iscsi-initiator-utils
   openstack-cinder
@@ -30,7 +30,7 @@ end
   end
 end
 
-# <> - [x] Enable services
+#<> - [x] Enable services
 service "target" do
   action [:enable, :start] 
 end
@@ -45,7 +45,7 @@ end
   end
 end 
 
-# <> - > Fix [bug](https://bugs.launchpad.net/cinder/+bug/1300136)
+#<> - > Fix [bug](https://bugs.launchpad.net/cinder/+bug/1300136)
 cookbook_file "/usr/lib/python2.7/site-packages/cinder/volume/iscsi.py" do
   source "patch/iscsi.py"
   mode   "0644"
@@ -53,7 +53,7 @@ cookbook_file "/usr/lib/python2.7/site-packages/cinder/volume/iscsi.py" do
   group  "root"
 end
 
-# <> - [x] Configure services
+#<> - [x] Configure services
 template "/etc/cinder/cinder.conf" do
  source "cinder/cinder.conf.erb"
  notifies :run, "execute[Populate cinder database]"
@@ -64,7 +64,7 @@ template "/etc/cinder/api-paste.ini" do
  notifies :restart, "service[openstack-cinder-api]"
 end
 
-# <> - [x] Populate cinder database
+#<> - [x] Populate cinder database
 execute "Populate cinder database" do 
   command "cinder-manage db sync"
   notifies :restart, "service[openstack-cinder-volume]"
@@ -73,7 +73,7 @@ execute "Populate cinder database" do
   action :nothing
 end
 
-# <> - [x] Accept incoming connections on cinder ports
+#<> - [x] Accept incoming connections on cinder ports
 firewalld_rule "cinder" do
   service "cinder"
   zone "public"
