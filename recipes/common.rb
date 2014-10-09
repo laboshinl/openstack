@@ -45,6 +45,7 @@ end
 #end
 
 #<> - [x] Disable IPv6;
+#<> - [] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 libcloud_file_append "/etc/sysctl.conf" do
   line [
     "net.ipv6.conf.all.disable_ipv6=1",

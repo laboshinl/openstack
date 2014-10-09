@@ -97,6 +97,7 @@ This recipe produces some common for all nodes initial configuration.
 - Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
 - [] Disable NetworkManager
 - [x] Disable IPv6;
+- [] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
 - Write openstack credential to root's `.bashrc`;
 
 ## centos_cloud::firewall
