@@ -93,12 +93,11 @@ This recipe produces some common for all nodes initial configuration.
 - Call [repos](#centos_cloudrepos) recipe recipe to configure repositories;
 - Call [firewall](#centos_cloudfirewall) recipe to define additional services;
 - Call [ntp](#centos_cloudfirewall) recipe to setup time synchronisation;
-- Install some usefull tools;
-- Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
-- [] Disable NetworkManager
+- [x] Install some usefull tools;
+- [x] Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
+- [x] <del>Disable NetworkManager</del>
 - [x] Disable IPv6;
-- [] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- Write openstack credential to root's `.bashrc`;
+- [x] Write openstack credentials to root's `.bashrc`;
 
 ## centos_cloud::firewall
 
