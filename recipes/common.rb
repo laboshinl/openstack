@@ -39,12 +39,12 @@ libcloud_ssh_keys "openstack" do
   action [:create, :add]
 end
 
-#<> - Disable NetworkManager 
+#<> - [] Disable NetworkManager 
 #service "NetworkManager" do 
 #  action [:stop, :disable]
 #end
 
-#<> - Disable IPv6;
+#<> - [x] Disable IPv6;
 libcloud_file_append "/etc/sysctl.conf" do
   line [
     "net.ipv6.conf.all.disable_ipv6=1",

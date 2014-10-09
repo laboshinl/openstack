@@ -95,8 +95,8 @@ This recipe produces some common for all nodes initial configuration.
 - Call [ntp](#centos_cloudfirewall) recipe to setup time synchronisation;
 - Install some usefull tools;
 - Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
-- Disable NetworkManager
-- Disable IPv6;
+- [] Disable NetworkManager
+- [x] Disable IPv6;
 - Write openstack credential to root's `.bashrc`;
 
 ## centos_cloud::firewall
