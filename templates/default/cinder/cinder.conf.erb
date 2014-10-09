@@ -3,7 +3,7 @@
 auth_strategy = keystone
 notification_driver = cinder.openstack.common.notifier.rpc_notifier
 control_exchange = cinder
-iscsi_helper = lioadm
+iscsi_helper = iscsiadm
 iscsi_ip_address = 127.0.0.1
 osapi_volume_workers = <%=node[:cpu][:real]%>
 sql_connection = mysql://cinder:<%=node[:creds][:mysql_password]%>@localhost/cinder

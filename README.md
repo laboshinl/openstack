@@ -60,8 +60,8 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::add_disk
 * centos_cloud::ceilometer
 * centos_cloud::ceph
-* centos_cloud::cinder
-* [centos_cloud::common](#centos_cloudcommon) - This recipe produces some common for all nodes initial configuration.
+* [centos_cloud::cinder](#centos_cloudcinder)
+* [centos_cloud::common](#centos_cloudcommon) - This recipe produces some initial configuration.
 * centos_cloud::controller
 * centos_cloud::dashboard
 * centos_cloud::default
@@ -85,9 +85,13 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::swift-node
 * centos_cloud::swift-proxy
 
+## centos_cloud::cinder
+
+This recipe installs and configures openstack block storage
+
 ## centos_cloud::common
 
-This recipe produces some common for all nodes initial configuration.
+This recipe produces some initial configuration.
 
 - Call [selinux](#centos_cloudselinux) recipe to disable selinux;
 - Call [repos](#centos_cloudrepos) recipe recipe to configure repositories;

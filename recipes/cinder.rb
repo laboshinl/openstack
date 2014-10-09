@@ -7,15 +7,19 @@
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
+#<
+# This recipe installs and configures openstack block storage
+#>
+
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
 
-# Create database for cinder
+# <> - [x] Create database for cinder
 centos_cloud_database "cinder" do
   password node[:creds][:mysql_password]
 end
 
-# Install cinder packages
+# <> - [x] Install cinder packages
 %w[
   iscsi-initiator-utils
   openstack-cinder
@@ -26,6 +30,7 @@ end
   end
 end
 
+# <> - [x] Enable services
 service "target" do
   action [:enable, :start] 
 end
@@ -40,7 +45,15 @@ end
   end
 end 
 
-# Configure service
+# <> - > Fix [bug](https://bugs.launchpad.net/cinder/+bug/1300136)
+cookbook_file "/usr/lib/python2.7/site-packages/cinder/volume/iscsi.py" do
+  source "patch/iscsi.py"
+  mode   "0644"
+  owner  "root"
+  group  "root"
+end
+
+# <> - [x] Configure services
 template "/etc/cinder/cinder.conf" do
  source "cinder/cinder.conf.erb"
  notifies :run, "execute[Populate cinder database]"
@@ -51,7 +64,7 @@ template "/etc/cinder/api-paste.ini" do
  notifies :restart, "service[openstack-cinder-api]"
 end
 
-# Populate database
+# <> - [x] Populate cinder database
 execute "Populate cinder database" do 
   command "cinder-manage db sync"
   notifies :restart, "service[openstack-cinder-volume]"
@@ -60,13 +73,13 @@ execute "Populate cinder database" do
   action :nothing
 end
 
-# Accept incoming connections on glance ports
+# <> - [x] Accept incoming connections on cinder ports
 firewalld_rule "cinder" do
-  port %w[8776]
+  service "cinder"
   zone "public"
 end
 
-firewalld_rule "cinder" do
-  port %w[3260]
+firewalld_rule "iscsi" do
+  service "iscsi"
   zone "internal"
 end
