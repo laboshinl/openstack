@@ -58,7 +58,7 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 # Recipes
 
 * centos_cloud::add_disk
-* centos_cloud::ceilometer
+* [centos_cloud::ceilometer](#centos_cloudceilometer)
 * centos_cloud::ceph
 * [centos_cloud::cinder](#centos_cloudcinder)
 * [centos_cloud::common](#centos_cloudcommon) - This recipe produces some initial configuration.
@@ -85,6 +85,16 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::swift-node
 * centos_cloud::swift-proxy
 
+## centos_cloud::ceilometer
+
+This recipe installs and configures openstack telemetry service
+- [x] Accept ceilometer ports
+- [x] Configure `Mongo` database server
+- [x] Create ceilometer database
+- [x] Install ceilometer packages
+- [x] Configure ceilometer
+- [x] Populate ceilometer database
+
 ## centos_cloud::cinder
 
 This recipe installs and configures openstack block storage
@@ -92,7 +102,7 @@ This recipe installs and configures openstack block storage
 - [x] Create database for cinder
 - [x] Install cinder packages
 - [x] Enable services
-- > Fix [bug](https://bugs.launchpad.net/cinder/+bug/1300136)
+- Fix [bug](https://bugs.launchpad.net/cinder/+bug/1300136)
 - [x] Configure services
 - [x] Populate cinder database
 - [x] Accept incoming connections on cinder ports
