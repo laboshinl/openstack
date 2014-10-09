@@ -45,7 +45,7 @@ end
   end
 end 
 
-#<> - > Fix [bug](https://bugs.launchpad.net/cinder/+bug/1300136)
+#<> - Fix [bug](https://bugs.launchpad.net/cinder/+bug/1300136)
 cookbook_file "/usr/lib/python2.7/site-packages/cinder/volume/iscsi.py" do
   source "patch/iscsi.py"
   mode   "0644"
