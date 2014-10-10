@@ -87,6 +87,7 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 
 ## centos_cloud::ceilometer
 
+<p> Install `Mongo` database packages <\p>
 - [x] Configure `Mongo` database server
 - [x] Create ceilometer database
 - [x] Install ceilometer packages

@@ -13,7 +13,7 @@
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
 
-# <p> Install `Mongo` database packages <\p>
+#<> <p> Install `Mongo` database packages <\p>
 %w[
   mongodb-server 
   mongodb 
