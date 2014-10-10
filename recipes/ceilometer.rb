@@ -15,7 +15,7 @@ This recipe installs and configures openstack telemetry service
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
 
-#<> Install `Mongo` database packages <br>
+#<> Install mongodb-server <br>
 %w[
   mongodb-server 
   mongodb 

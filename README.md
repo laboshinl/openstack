@@ -89,7 +89,7 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 
 This recipe installs and configures openstack telemetry service
 
-Install `Mongo` database packages <br>
+Install mongodb-server <br>
 Create ceilometer database <br>
 Install ceilometer packages <br>
 Configure ceilometer <br>
