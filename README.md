@@ -196,6 +196,9 @@ The recipe disables selinux. It disables selinux in config and executes 'setenfo
 - item:
 - databag:  Defaults to <code>"ssh_keypairs"</code>.
 
+# How to use
+
+
 # License and Maintainer
 
 Maintainer:: cloudtechlab (<laboshinl@gmail.com>)
