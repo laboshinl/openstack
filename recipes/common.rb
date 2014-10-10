@@ -2,13 +2,15 @@
 # Cookbook Name:: centos_cloud
 # Recipe:: common
 #
+=begin
+#<
+This recipe produces some initial configuration. 
+#>
+=end
 # Copyright © 2014 Leonid Laboshin <laboshinl@gmail.com>
 # This work is free. You can redistribute it and/or modify it under the
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
-#<
-#This recipe produces some initial configuration. 
-#>
 
 #<> - Call [selinux](#centos_cloudselinux) recipe to disable selinux;
 include_recipe "centos_cloud::selinux"
@@ -24,7 +26,9 @@ include_recipe "libcloud::ssh_key"
 include_recipe "centos_cloud::ntp"
 
 #<> - [x] Install some usefull tools;
-%w[bash-completion python-openstackclient].each do |pkg|
+%w[
+bash-completion python-openstackclient
+].each do |pkg|
   package pkg do
     action :install
   end

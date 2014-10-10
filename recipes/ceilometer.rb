@@ -1,9 +1,11 @@
 #
 # Cookbook Name:: centos_cloud
 # Recipe:: ceilometer
-#< 
-# This recipe installs and configures openstack telemetry service
+=begin
+#<
+This recipe installs and configures openstack telemetry service
 #>
+=end
 # Copyright © 2014 Leonid Laboshin <laboshinl@gmail.com>
 # This work is free. You can redistribute it and/or modify it under the
 # terms of the Do What The Fuck You Want To Public License, Version 2,
@@ -13,7 +15,7 @@
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
 
-#<> <p> Install `Mongo` database packages <\p>
+#<> <br> Install `Mongo` database packages 
 %w[
   mongodb-server 
   mongodb 
@@ -23,7 +25,7 @@ include_recipe "centos_cloud::mysql"
   end
 end
 
-#<> - [x] Configure `Mongo` database server
+#<> <br> Configure `Mongo` database server
 service "mongod" do
   action [:enable,:start]
 end

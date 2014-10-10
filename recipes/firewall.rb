@@ -2,23 +2,22 @@
 # Cookbook Name:: centos_cloud
 # Recipe:: firewall
 #
-# Copyright © 2014 Leonid Laboshin <laboshinl@gmail.com>
-# This work is free. You can redistribute it and/or modify it under the
-# terms of the Do What The Fuck You Want To Public License, Version 2,
-# as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
-
 =begin
 #<
 The recipe defines openstack-related firewalld services. It also adds external and internal interfaces to 'public' and 'internal' zones rescectively.
 #>
 =end
+# Copyright © 2014 Leonid Laboshin <laboshinl@gmail.com>
+# This work is free. You can redistribute it and/or modify it under the
+# terms of the Do What The Fuck You Want To Public License, Version 2,
+# as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
 %w[
 iscsi.xml                      openstack-heat-api.xml         openstack-nova-api.xml
 ntp.xml                        openstack-heat-cfn-api.xml     openstack-novncproxy.xml
 openstack-cinder.xml           openstack-keystone-admin.xml   rabbitmq.xml
 openstack-glance-api.xml       openstack-keystone-public.xml  vncdisplay.xml
-openstack-glance-registry.xml  openstack-neutron-server.xml
+openstack-glance-registry.xml  openstack-neutron-server.xml   openstack-ceilometer-api.xml
 ].each do |tmp|
   template "/etc/firewalld/services/#{tmp}" do
     owner "root"
