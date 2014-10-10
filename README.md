@@ -83,19 +83,18 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 * centos_cloud::sahara
 * [centos_cloud::selinux](#centos_cloudselinux) - The recipe disables selinux.
 * centos_cloud::swift-node
-* centos_cloud::swift-proxy
+* [centos_cloud::swift-proxy](#centos_cloudswift-proxy)
 
 ## centos_cloud::ceilometer
 
 This recipe installs and configures openstack telemetry service
 
 <br> Install `Mongo` database packages
-<br> Configure `Mongo` database server
-- [x] Create ceilometer database
-- [x] Install ceilometer packages
-- [x] Configure ceilometer
-- [x] Populate ceilometer database
-- [x] Accept ceilometer ports
+<br> Create ceilometer database
+<br> Install ceilometer packages
+<br> Configure ceilometer
+<br> Populate ceilometer database
+<br> Accept ceilometer ports
 
 ## centos_cloud::cinder
 
@@ -134,6 +133,14 @@ This recipe configures secured ntp client.
 ## centos_cloud::selinux
 
 The recipe disables selinux. It disables selinux in config and executes 'setenforce 0'.
+
+## centos_cloud::swift-proxy
+
+This recipe installs and configures openstack-swift-proxy
+<br> Install swift-proxy packages
+<br> Configure proxy-server
+<br> Create object, container and account builders
+<br> Accept swift-proxy ports
 
 # Resources
 
