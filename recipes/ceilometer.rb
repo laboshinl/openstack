@@ -3,7 +3,7 @@
 # Recipe:: ceilometer
 =begin
 #<
-This recipe installs and configures openstack telemetry service
+This recipe installs and configures openstack metering service
 #>
 =end
 # Copyright © 2014 Leonid Laboshin <laboshinl@gmail.com>
@@ -11,11 +11,10 @@ This recipe installs and configures openstack telemetry service
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
-
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
 
-#<> Install mongodb-server <br>
+#<> [x] Install mongodb-server <br>
 %w[
   mongodb-server 
   mongodb 
