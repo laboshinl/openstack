@@ -15,7 +15,7 @@ This recipe installs and configures openstack telemetry service
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
 
-#<> <br> Install `Mongo` database packages 
+#<> Install `Mongo` database packages <br>
 %w[
   mongodb-server 
   mongodb 
@@ -29,14 +29,14 @@ service "mongod" do
   action [:enable,:start]
 end
 
-#<> <br> Create ceilometer database
+#<> Create ceilometer database <br>
 execute "create ceilometer database" do
   command %Q{mongo ceilometer --eval 'db.addUser("ceilometer",}<<
     %Q{"#{node[:creds][:mysql_password]}", false)'}
   action :run
 end
 
-#<> <br> Install ceilometer packages
+#<> Install ceilometer packages <br>
 %w[
   openstack-ceilometer-api 
   openstack-ceilometer-central
@@ -50,7 +50,7 @@ end
   end
 end
 
-#<> <br> Configure ceilometer
+#<> Configure ceilometer <br>
 template "/etc/ceilometer/ceilometer.conf" do
   mode   "0640"
   owner  "root"
@@ -61,13 +61,13 @@ template "/etc/ceilometer/ceilometer.conf" do
   notifies :restart, "service[openstack-ceilometer-collector]"
 end
 
-#<> <br> Populate ceilometer database
+#<> Populate ceilometer database <br>
 execute "populate ceilometer database" do
   command "/usr/bin/ceilometer-dbsync"
   action :run
 end
 
-#<> <br> Accept ceilometer ports
+#<> Accept ceilometer ports <br>
 firewalld_rule "openstack-ceilometer-api" do
   action :set
   zone "public"
