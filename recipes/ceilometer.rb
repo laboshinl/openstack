@@ -1,8 +1,9 @@
 #
 # Cookbook Name:: centos_cloud
 # Recipe:: ceilometer
-#<> This recipe installs and configures openstack telemetry service
-#
+#< 
+# This recipe installs and configures openstack telemetry service
+#>
 # Copyright © 2014 Leonid Laboshin <laboshinl@gmail.com>
 # This work is free. You can redistribute it and/or modify it under the
 # terms of the Do What The Fuck You Want To Public License, Version 2,
@@ -12,16 +13,8 @@
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
 
-#<> - [x] Accept ceilometer ports
-firewalld_rule "ceilometer" do
-  action :set
-  protocol "tcp"
-  port ["8877"]
-end
-
-# Install Mongo packages
+# <p> Install `Mongo` database packages <\p>
 %w[
-  python-ceilometer
   mongodb-server 
   mongodb 
 ].each do |pkg|
@@ -71,4 +64,17 @@ end
 execute "populate ceilometer database" do
   command "/usr/bin/ceilometer-dbsync"
   action :run
+end
+
+#<> - [x] Accept ceilometer ports
+firewalld_rule "openstack-ceilometer-api" do
+  action :set
+  zone "public"
+  service "openstack-ceilometer-api"
+end
+
+firewalld_rule "openstack-ceilometer-api" do
+  action :set
+  zone "internal"
+  service "openstack-ceilometer-api"
 end

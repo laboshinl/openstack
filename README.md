@@ -87,13 +87,12 @@ Installs/Configures openstack cloudstructure based on CentOS 7.0
 
 ## centos_cloud::ceilometer
 
-This recipe installs and configures openstack telemetry service
-- [x] Accept ceilometer ports
 - [x] Configure `Mongo` database server
 - [x] Create ceilometer database
 - [x] Install ceilometer packages
 - [x] Configure ceilometer
 - [x] Populate ceilometer database
+- [x] Accept ceilometer ports
 
 ## centos_cloud::cinder
 
