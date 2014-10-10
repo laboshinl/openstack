@@ -11,24 +11,20 @@ include_recipe "lvm"
 include_recipe "centos_cloud::common"
 
 %w[
-xfsprogs
-openstack-swift-object
-openstack-swift-container
-openstack-swift-account
+xfsprogs                  openstack-swift-object
+openstack-swift-container openstack-swift-account
 ].each do |pkg|
   package pkg do
     action :install
   end
 end
 
-%w[/srv/node/ /srv/node/device].each do |dir|
-  directory dir do
-    mode "0755"
-    owner "swift"
-    group "swift"
-    action :create
-    recursive true
-  end
+directory "/srv/node/device" do
+  mode "0755"
+  owner "swift"
+  group "swift"
+  action :create
+  recursive true
 end
 
 lvm_logical_volume "swift" do 
@@ -38,14 +34,8 @@ lvm_logical_volume "swift" do
   mount_point '/srv/node/device/' 
 end 
 
-firewalld_rule "swift-node" do
-  action :set
-  protocol "tcp"
-  port %w[6000 6001 6002 873]
-end
-
-centos_cloud_config "/etc/swift/swift.conf" do
-  command "swift-hash swift_hash_path_suffix #{node[:creds][:swift_hash]}"
+template "/etc/swift/swift.conf" do
+  source "swift/swift.conf.erb"
 end
 
 %w[object account container].each do |cfg|
@@ -104,3 +94,8 @@ openstack-swift-object
   end
 end
 
+firewalld_rule "swift-node" do
+  action :set
+  protocol "tcp"
+  port %w[6000 6001 6002 873]
+end

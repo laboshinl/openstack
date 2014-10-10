@@ -25,19 +25,18 @@ include_recipe "centos_cloud::mysql"
   end
 end
 
-#<> <br> Configure `Mongo` database server
 service "mongod" do
   action [:enable,:start]
 end
 
-#<> - [x] Create ceilometer database
+#<> <br> Create ceilometer database
 execute "create ceilometer database" do
   command %Q{mongo ceilometer --eval 'db.addUser("ceilometer",}<<
     %Q{"#{node[:creds][:mysql_password]}", false)'}
   action :run
 end
 
-#<> - [x] Install ceilometer packages
+#<> <br> Install ceilometer packages
 %w[
   openstack-ceilometer-api 
   openstack-ceilometer-central
@@ -51,7 +50,7 @@ end
   end
 end
 
-#<> - [x] Configure ceilometer
+#<> <br> Configure ceilometer
 template "/etc/ceilometer/ceilometer.conf" do
   mode   "0640"
   owner  "root"
@@ -62,13 +61,13 @@ template "/etc/ceilometer/ceilometer.conf" do
   notifies :restart, "service[openstack-ceilometer-collector]"
 end
 
-#<> - [x] Populate ceilometer database
+#<> <br> Populate ceilometer database
 execute "populate ceilometer database" do
   command "/usr/bin/ceilometer-dbsync"
   action :run
 end
 
-#<> - [x] Accept ceilometer ports
+#<> <br> Accept ceilometer ports
 firewalld_rule "openstack-ceilometer-api" do
   action :set
   zone "public"
