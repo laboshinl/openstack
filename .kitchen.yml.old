@@ -19,9 +19,9 @@ platforms:
     attributes:
       ip:
         rabbitmq: 198.18.0.12
-        keystone: 198.18.0.12
-        cinder: 198.18.0.12
-        glance: 198.18.0.12
+        keystone: 198.18.0.13
+        cinder: 198.18.0.14
+        glance: 198.18.0.15
         nova: 198.18.0.16
         neutron: 198.18.0.17
         swift-proxy: 198.18.0.18
@@ -30,9 +30,9 @@ platforms:
         sahara: 198.18.0.21
       ip_ex:
         rabbitmq: 240.18.0.12
-        keystone: 240.18.0.12
-        cinder: 240.18.0.12
-        glance: 240.18.0.12
+        keystone: 240.18.0.13
+        cinder: 240.18.0.14
+        glance: 240.18.0.15
         nova: 240.18.0.16
         neutron: 240.18.0.17
         swift-proxy: 240.18.0.18
@@ -46,12 +46,8 @@ platforms:
     data_bags_path: "test/integration/data_bags"
 
 suites:
-  - name: main
+  - name: main-rabbit
     driver:
-      customize:
-        memory: 1024
-      attached_disks:
-        - ["sdb.vmdk", "4096", "0", "1", "hdd"]
       vm_hostname: rabbit.testcloud.com
       network:
         - ["private_network", {ip: "240.18.0.12"}]
@@ -62,9 +58,44 @@ suites:
         internal_ip: "198.18.0.12"
     run_list:
       - recipe[centos_cloud::rabbitmq-server]
+  - name: main-keystone
+    driver:
+      vm_hostname: keystone.testcloud.com
+      network:
+        - ["private_network", {ip: "240.18.0.13"}]
+        - ["private_network", {ip: "198.18.0.13",virtualbox__intnet: true}]
+    attributes:
+      auto:
+        external_ip: "240.18.0.13"
+        internal_ip: "198.18.0.13"
+    run_list:
       - recipe[centos_cloud::keystone]
+  - name: main-cinder
+    driver:
+      attached_disks:
+        - ["sdb.vmdk", "2048", "0", "1", "hdd"]
+      vm_hostname: cinder.testcloud.com
+      network:
+        - ["private_network", {ip: "240.18.0.14"}]
+        - ["private_network", {ip: "198.18.0.14",virtualbox__intnet: true}]
+    attributes:
+      auto:
+        external_ip: "240.18.0.14"
+        internal_ip: "198.18.0.14"
+    run_list:
       - recipe[centos_cloud::add_disk]
       - recipe[centos_cloud::cinder]
+  - name: main-glance
+    driver:
+      vm_hostname: glance.testcloud.com
+      network:
+        - ["private_network", {ip: "240.18.0.15"}]
+        - ["private_network", {ip: "198.18.0.15",virtualbox__intnet: true}]
+    attributes:
+      auto:
+        external_ip: "240.18.0.15"
+        internal_ip: "198.18.0.15"
+    run_list:
       - recipe[centos_cloud::glance]
   - name: main-nova
     driver:

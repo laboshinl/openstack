@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>openstack-ceilometer-api</short>
+  <description>ceilometer (openstack metering service)</description>
+  <port protocol="tcp" port="8877"/>
+</service>

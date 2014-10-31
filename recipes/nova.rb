@@ -70,8 +70,14 @@ execute "Populate nova database" do
   notifies :restart, "service[openstack-nova-novncproxy]"
 end
 
-firewalld_rule "openstack-novncproxy" do
+firewalld_rule "openstack-nova" do
   action :set
   zone "public"
+  service %w[openstack-nova-api openstack-novncproxy]
+end
+
+firewalld_rule "openstack-nova" do
+  action :set
+  zone "internal"
   service %w[openstack-nova-api openstack-novncproxy]
 end

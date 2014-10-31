@@ -34,6 +34,10 @@ bash-completion python-openstackclient
   end
 end
 
+service "network" do
+  action :nothing
+end
+
 #<> - [x] Copy private ssh key to `id_rsa` & add public key to `authorized_keys`;
 libcloud_ssh_keys "openstack" do
   data_bag "ssh_keypairs"
@@ -41,9 +45,10 @@ libcloud_ssh_keys "openstack" do
 end
 
 #<> - [x] <del>Disable NetworkManager</del> 
-#service "NetworkManager" do 
-#  action [:stop, :disable]
-#end
+service "NetworkManager" do 
+  action [:stop, :disable]
+  notifies :restart, "service[network]", :immediately
+end
 
 #<> - [x] Disable IPv6;
 libcloud_file_append "/etc/sysctl.conf" do

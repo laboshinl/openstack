@@ -42,8 +42,7 @@ end
 firewalld_rule "mysql" do
   action :set
   zone "internal"
-  protocol "tcp"
-  port "3306"
+  service "mysql"
 end
 
 execute "Set mysql admin password" do

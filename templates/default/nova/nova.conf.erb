@@ -8,7 +8,7 @@ neutron_auth_strategy = keystone
 neutron_region_name = RegionOne
 neutron_url_timeout = 30
 neutron_ovs_bridge = br-int
-neutron_url = http://<%=node[:ip_ex][:neutron]%>:9696
+neutron_url = http://<%=node[:ip][:neutron]%>:9696
 neutron_admin_tenant_name = admin
 neutron_admin_username = admin
 neutron_admin_password = <%=node[:creds][:admin_password]%>

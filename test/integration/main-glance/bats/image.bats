@@ -1,6 +1,6 @@
 #!/usr/bin/env bats
-UUID=00000000-0000-0000-0000-000000000000
-#UUID=`uuidgen`
+
+UUID=00000000-0000-0000-9000-$(date +%da%mb%Hc%Md)
 
 upload_image(){
   source /root/.bashrc

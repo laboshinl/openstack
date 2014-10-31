@@ -27,9 +27,6 @@ describe "openstack-cinder-volume" do
   it "is running" do
     expect(service("openstack-cinder-volume")).to be_running
   end
-#  it "is listening on port 9292" do
-#    expect(port(9292)).to be_listening
-#  end
 end
 
 describe "openstack-cinder-api" do
@@ -64,7 +61,7 @@ end
 
 describe " targetcli" do
   it "is installed" do
-    expect(package(" targetcli")).to be_installed
+    expect(package("targetcli")).to be_installed
   end
   it "is enabled" do
     expect(service("target")).to be_enabled

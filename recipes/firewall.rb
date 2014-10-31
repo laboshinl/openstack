@@ -18,6 +18,7 @@ ntp.xml                        openstack-heat-cfn-api.xml     openstack-novncpro
 openstack-cinder.xml           openstack-keystone-admin.xml   rabbitmq.xml
 openstack-glance-api.xml       openstack-keystone-public.xml  vncdisplay.xml
 openstack-glance-registry.xml  openstack-neutron-server.xml   openstack-ceilometer-api.xml
+mysql.xml                      openstack-swift-proxy.xml
 ].each do |tmp|
   template "/etc/firewalld/services/#{tmp}" do
     owner "root"

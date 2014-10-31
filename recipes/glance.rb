@@ -64,8 +64,14 @@ execute "Populate glance database" do
   notifies :restart, "service[openstack-glance-api]"
 end
 
-firewalld_rule "glance" do
+firewalld_rule "openstack-glance-api" do
   action :set
-  protocol "tcp"
-  port %w[9292]
+  zone "internal"
+  service "openstack-glance-api"
+end
+
+firewalld_rule "openstack-glance-api" do
+  action :set
+  zone "public"
+  service "openstack-glance-api"
 end

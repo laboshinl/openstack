@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>openstack-swift-proxy</short>
+  <description>swift (openstack object storage service)</description>
+  <port protocol="tcp" port="8080"/>
+</service>

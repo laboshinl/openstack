@@ -7,9 +7,11 @@
 # terms of the Do What The Fuck You Want To Public License, Version 2,
 # as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
 
+=begin
 #<
-# This recipe installs and configures openstack block storage
+ This recipe installs and configures openstack block storage
 #>
+=end
 
 include_recipe "centos_cloud::common"
 include_recipe "centos_cloud::mysql"
@@ -53,6 +55,14 @@ cookbook_file "/usr/lib/python2.7/site-packages/cinder/volume/iscsi.py" do
   group  "root"
 end
 
+#<> - Fix [bug](https://bugs.launchpad.net/cinder/+bug/1368527)
+#cookbook_file "/usr/lib/python2.7/site-packages/cinder/openstack/common/strutils.py" do
+#  source "patch/strutils.py"
+#  mode   "0644"
+#  owner  "root"
+#  group  "root"
+#end
+
 #<> - [x] Configure services
 template "/etc/cinder/cinder.conf" do
  source "cinder/cinder.conf.erb"
@@ -74,9 +84,14 @@ execute "Populate cinder database" do
 end
 
 #<> - [x] Accept incoming connections on cinder ports
-firewalld_rule "cinder" do
-  service "cinder"
+firewalld_rule "openstack-cinder" do
+  service "openstack-cinder"
   zone "public"
+end
+
+firewalld_rule "openstack-cinder" do
+  service "openstack-cinder"
+  zone "internal"
 end
 
 firewalld_rule "iscsi" do

@@ -13,16 +13,14 @@ include_recipe "centos_cloud::mysql"
 # Open keystone-related ports
 firewalld_rule "keystone" do
   action :set
-  protocol "tcp"
   zone "internal"
-  port %w[35357]
+  service "openstack-keystone-admin"
 end
 
 firewalld_rule "keystone" do
   action :set
-  protocol "tcp"
   zone "public"
-  port %w[5000]
+  service "openstack-keystone-public"
 end
 
 # Install MySQL, create database
