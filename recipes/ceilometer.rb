@@ -30,6 +30,7 @@ end
 
 #<> Create ceilometer database <br>
 execute "create ceilometer database" do
+  ignore_failure true
   command %Q{mongo ceilometer --eval 'db.addUser("ceilometer",}<<
     %Q{"#{node[:creds][:mysql_password]}", false)'}
   action :run

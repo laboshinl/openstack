@@ -35,6 +35,7 @@ execute "add internal interface to internal zone" do
 end
 
 execute "add external interface to public zone" do
+  not_if {node[:auto][:internal_nic]==node[:auto][:external_nic]}
   command "firewall-cmd --permanent --zone=public --add-interface=#{node[:auto][:external_nic]}"
   action :run
   notifies :restart, "service[firewalld]"
